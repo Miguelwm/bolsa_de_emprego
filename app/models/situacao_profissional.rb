@@ -1,0 +1,2 @@
+class SituacaoProfissional < ApplicationRecord
+end

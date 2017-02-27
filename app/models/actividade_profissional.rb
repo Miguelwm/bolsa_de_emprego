@@ -1,0 +1,2 @@
+class ActividadeProfissional < ApplicationRecord
+end

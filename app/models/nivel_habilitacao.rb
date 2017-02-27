@@ -1,0 +1,2 @@
+class NivelHabilitacao < ApplicationRecord
+end

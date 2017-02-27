@@ -1,0 +1,2 @@
+class AreaProfissional < ApplicationRecord
+end
