@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nif: MyString
+  apresentacao: MyText
+  perfil: one
+  actividade_profissional: one
+
+two:
+  nif: MyString
+  apresentacao: MyText
+  perfil: two
+  actividade_profissional: two

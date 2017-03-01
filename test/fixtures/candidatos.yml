@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nascimento: 2017-03-01
+  bi: MyString
+  apresentacao: MyText
+  habilitacao: MyText
+  experiencia: MyText
+  perfil: one
+  area_profissional: one
+  nivel_habilitacao: one
+  situacao_profissional: one
+
+two:
+  nascimento: 2017-03-01
+  bi: MyString
+  apresentacao: MyText
+  habilitacao: MyText
+  experiencia: MyText
+  perfil: two
+  area_profissional: two
+  nivel_habilitacao: two
+  situacao_profissional: two
