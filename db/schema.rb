@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20170301145704) do
     t.string   "bi"
     t.text     "habilitacao"
     t.text     "experiencia"
-    t.binary   "data"
+    t.binary   "cv"
     t.integer  "perfil_id"
     t.integer  "area_profissional_id"
     t.integer  "nivel_habilitacao_id"

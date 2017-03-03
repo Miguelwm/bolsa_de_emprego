@@ -13,6 +13,7 @@ gem 'bcrypt',         '3.1.11'
 gem 'carrierwave',             '0.11.2'
 gem 'mini_magick',             '4.5.1'
 gem 'fog',                     '1.38.0'
+gem 'simple_form'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server

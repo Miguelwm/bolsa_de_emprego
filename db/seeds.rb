@@ -25,6 +25,7 @@ perfil1 = conta1.create_perfil!(morada:"Rua do Sobe e Desce,150",
 
 perfil1.create_entidade!(nif: "123456789", actividade_profissional_id: actividade.id)
 
+
 #Candidato
 
 area = AreaProfissional.create!(area: "Programador Web")

@@ -13,4 +13,7 @@ class BolsaDeEmpregoController < ApplicationController
 
   def noticias
   end
+
+  def new
+  end
 end

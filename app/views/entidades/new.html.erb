@@ -1,0 +1,46 @@
+<% provide(:title, 'Sign up') %>
+<% provide(:button_text, 'Registar') %>
+<h1>Nova Entidade</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  <%= simple_form_for(@entidade) do |f| %>
+    <%= f.fields_for :perfil do |p| %>
+      <%= p.fields_for :conta do |c| %>
+
+        <%= c.input :nome, placeholder: 'Nome' %>
+
+        <%= c.input :email, placeholder: 'email@example.com' %>
+
+        <%= c.input :password, placeholder: 'Password' %>
+
+        <%= c.input :password_confirmation,label: 'Confirmação de Password', placeholder: 'Password' %>
+      <% end %>
+
+      <%= p.file_field :foto, label: 'Foto(por testar)' %>
+
+      <%= p.input :morada, placeholder: 'Morada'%>
+
+      <%= p.input :codigo_postal, placeholder: 'Codigo Postal'%>
+
+      <%= p.input :localidade, placeholder: 'Localidade'%>
+
+      <%= p.input :contacto1, label: 'Contacto 1', placeholder: '222222222'%>
+      <%= p.input :contacto2, label: 'Contacto 2', placeholder: '222222222'%>
+
+      <%= p.input :pagina, label: 'Pagina da Entidade', placeholder: 'http://.....'%>
+
+      <%= p.input :apresentacao, label: 'Apresentação', placeholder: 'Apresentação'%>
+
+    <% end %>
+
+    <%= f.input :nif, label: 'NIF', placeholder: 'xxxxxxxxx'%>
+
+    <%= f.input :actividade_profissional_id, :collection => @todas_actividades,
+    :label_method => :actividade,
+    :value_method => :id,
+    :label => 'Actividade Profissional', :include_blank => false %>
+
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  <% end %>
+  </div>
+</div>

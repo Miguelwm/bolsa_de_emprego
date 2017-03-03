@@ -1,5 +1,6 @@
 class Conta < ApplicationRecord
   has_one :perfil, :inverse_of => :conta
+  accepts_nested_attributes_for :perfil, allow_destroy: true
 
   before_save   :downcase_email
   validates :nome, presence: true, length: { maximum: 50 }
