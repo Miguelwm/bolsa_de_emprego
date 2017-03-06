@@ -18,3 +18,7 @@
 #ActiveSupport::Inflector.inflections do |inflect|
 #  inflect.irregular 'conta', 'contas'
 #end
+
+ActiveSupport::Inflector.inflections do |inflect|
+  inflect.irregular 'oferta', 'ofertas'
+end

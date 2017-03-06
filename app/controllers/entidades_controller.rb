@@ -1,6 +1,6 @@
 class EntidadesController < ApplicationController
   before_action :logged_in_entidade, only: [:edit, :update]
-  before_action :contas_correcta,   only: [:edit, :update]
+  before_action :conta_correcta,   only: [:edit, :update]
 
   def new
     @todas_actividades = ActividadeProfissional.all
@@ -41,14 +41,7 @@ class EntidadesController < ApplicationController
                     :password_confirmation]])
     end
 
-    def logged_in_entidade
-      unless logged_in?
-        redirect_to frontoffice_login_path
-      end
-    end
-
-
-    def contas_correcta
+    def conta_correcta
       @entidade = Entidade.find(params[:id])
       redirect_to(root_url) unless conta_atual?(@entidade.perfil.conta)
     end

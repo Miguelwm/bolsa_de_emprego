@@ -1,4 +1,6 @@
 class CandidatosController < ApplicationController
+  before_action :conta_logged_in, only: [:edit, :update]
+  before_action :conta_correcta,   only: [:edit, :update]
 
   def new
     @todas_areas = AreaProfissional.all
@@ -11,6 +13,7 @@ class CandidatosController < ApplicationController
   def create
     @candidato = Candidato.new(candidato_params)
     if @candidato.save
+      log_in @candidato.perfil.conta
       redirect_to root_url
     else
       render new
@@ -41,6 +44,11 @@ class CandidatosController < ApplicationController
                     :codigo_postal,:localidade, :contacto1, :contacto2,
                     :pagina, :apresentacao, conta_attributes: [:nome, :email,
                     :password, :password_confirmation]])
+    end
+
+    def conta_correcta
+      @candidato = Candidato.find(params[:id])
+      redirect_to(root_url) unless conta_atual?(@candidato.perfil.conta)
     end
 
 end

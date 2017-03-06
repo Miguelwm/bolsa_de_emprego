@@ -23,10 +23,12 @@ perfil1 = conta1.create_perfil!(morada:"Rua do Sobe e Desce,150",
                               pagina: "http://stackoverflow.com/",
                               apresentacao: "Entidade Reguladora de Angulos")
 
-perfil1.create_entidade!(nif: "123456789", actividade_profissional_id: actividade.id)
+entidade1 = perfil1.create_entidade!(nif: "123456789", actividade_profissional_id: actividade.id)
 
 
 #Candidato
+
+AreaProfissional.create!(area: "Designer")
 
 area = AreaProfissional.create!(area: "Programador Web")
 
@@ -53,6 +55,29 @@ perfil2.create_candidato!(nascimento: DateTime.new(1991,5,1),
                           area_profissional_id: area.id,
                           nivel_habilitacao_id: nivel.id,
                           situacao_profissional_id: situacao.id)
+
+
+#Oferta
+
+TipoContrato.create(tipo: "Trabalho em termo certo")
+TipoContrato.create(tipo: "Trabalho em termo incerto")
+TipoContrato.create(tipo: "Trabalho sem termo")
+TipoContrato.create(tipo: "Trabalho de muita curta duração")
+TipoContrato.create(tipo: "Trabalho com trabalhador estrangeiro não comunitário ou apátrida")
+TipoContrato.create(tipo: "Trabalho a tempo parcial")
+TipoContrato.create(tipo: "Trabalho com pluralidade de empregadores")
+TipoContrato.create(tipo: "Trabalho intermitente")
+TipoContrato.create(tipo: "Trabalho em comissão de serviço")
+
+Salario.create(quantia: "500 - 750")
+Salario.create(quantia: "750 - 1000")
+Salario.create(quantia: "1000 - 1250")
+Salario.create(quantia: "1250 - 1500")
+Salario.create(quantia: "1500 - 1750")
+Salario.create(quantia: "1750 - 2000")
+
+entidade1.create_oferta
+
 
 
 

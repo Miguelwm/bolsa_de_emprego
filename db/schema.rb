@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170301145704) do
+ActiveRecord::Schema.define(version: 20170306174918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,25 @@ ActiveRecord::Schema.define(version: 20170301145704) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "ofertas", force: :cascade do |t|
+    t.string   "titulo"
+    t.date     "val_inicio"
+    t.date     "val_fim"
+    t.text     "descricao"
+    t.boolean  "activo",               default: false
+    t.integer  "entidade_id"
+    t.integer  "area_profissional_id"
+    t.integer  "tipo_contrato_id"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.integer  "salario_id"
+    t.string   "picture"
+    t.index ["area_profissional_id"], name: "index_ofertas_on_area_profissional_id", using: :btree
+    t.index ["entidade_id"], name: "index_ofertas_on_entidade_id", using: :btree
+    t.index ["salario_id"], name: "index_ofertas_on_salario_id", using: :btree
+    t.index ["tipo_contrato_id"], name: "index_ofertas_on_tipo_contrato_id", using: :btree
+  end
+
   create_table "perfils", force: :cascade do |t|
     t.text     "morada"
     t.string   "codigo_postal"
@@ -86,8 +105,20 @@ ActiveRecord::Schema.define(version: 20170301145704) do
     t.index ["conta_id"], name: "index_perfils_on_conta_id", using: :btree
   end
 
+  create_table "salarios", force: :cascade do |t|
+    t.string   "quantia"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "situacao_profissionals", force: :cascade do |t|
     t.string   "situacao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tipo_contratos", force: :cascade do |t|
+    t.string   "tipo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -98,5 +129,9 @@ ActiveRecord::Schema.define(version: 20170301145704) do
   add_foreign_key "candidatos", "situacao_profissionals"
   add_foreign_key "entidades", "actividade_profissionals"
   add_foreign_key "entidades", "perfils"
+  add_foreign_key "ofertas", "area_profissionals"
+  add_foreign_key "ofertas", "entidades"
+  add_foreign_key "ofertas", "salarios"
+  add_foreign_key "ofertas", "tipo_contratos"
   add_foreign_key "perfils", "conta", column: "conta_id"
 end

@@ -1,0 +1,23 @@
+<%= simple_form_for(@oferta) do |f| %>
+
+    <%= f.input :titulo, label: 'Titulo'%>
+
+    <%= f.input :val_inicio, label: 'Validade Inicio'%>
+    <%= f.input :val_fim, label: 'Validade fim'%>
+
+    <%= f.input :descricao, label: 'Descrição' %>
+
+    <%= f.input :area_profissional_id, :collection => @todas_areas,
+    :label_method => :area,
+    :value_method => :id,
+    :label => 'Area Profissional', :include_blank => false %>
+
+    <%= f.input :tipo_contrato_id, :collection => @todos_tipos,
+    :label_method => :tipo,
+    :value_method => :id,
+    :label => 'Tipo de Contrato', :include_blank => false %>
+
+    <%= f.input :activo, label: 'Activo' %>
+
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  <% end %>
