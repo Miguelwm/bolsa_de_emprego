@@ -1,6 +1,6 @@
 class Conta < ApplicationRecord
   has_one :perfil, :inverse_of => :conta
-  accepts_nested_attributes_for :perfil, allow_destroy: true, :update_only => true
+  #accepts_nested_attributes_for :perfil, allow_destroy: true, :update_only => true
 
   before_save   :downcase_email
   validates :nome, presence: true, length: { maximum: 50 }
@@ -10,6 +10,12 @@ class Conta < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+
+  def Conta.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
 
  private
 

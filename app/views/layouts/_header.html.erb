@@ -10,8 +10,13 @@
         <li><%= link_to "Noticias", '#' %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Registra-me", frontoffice_registo_path %></li>
-        <li><%= link_to "Log in", '#' %></li>
+        <% if logged_in? %>
+          <li><%= link_to conta_atual.nome , '#' %></li>
+          <li><%= link_to "Sair", frontoffice_logout_path, method: "delete" %></li>
+        <% else %>
+          <li><%= link_to "Registra-me", frontoffice_registo_path %></li>
+          <li><%= link_to "Log in", frontoffice_login_path %></li>
+        <% end %>
       </ul>
     </nav>
   </div>

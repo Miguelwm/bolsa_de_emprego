@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+
   root 'bolsa_de_emprego#home'
   get 'frontoffice/home', to: 'bolsa_de_emprego#home'
 
@@ -11,6 +13,10 @@ Rails.application.routes.draw do
   get 'frontoffice/registo',  to: 'bolsa_de_emprego#new'
   get 'frontoffice/registo/entidade', to: 'entidades#new'
   get 'frontoffice/registo/candidato', to: 'candidatos#new'
+
+  get    'frontoffice/login',   to: 'sessions#new'
+  post   'frontoffice/login',   to: 'sessions#create'
+  delete 'frontoffice/logout',  to: 'sessions#destroy'
 
   resources :entidades
   resources :candidatos
