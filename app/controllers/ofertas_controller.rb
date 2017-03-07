@@ -5,13 +5,13 @@ class OfertasController < ApplicationController
    def new
     @todas_areas = AreaProfissional.all
     @todos_tipos = TipoContrato.all
+    @todos_salarios = Salario.all
     @oferta = Oferta.new
     @oferta.entidade = conta_atual.perfil.entidade
   end
 
   def create
     @oferta = conta_atual.perfil.entidade.ofertas.build(oferta_params)
-    debugger
     if @oferta.save
       redirect_to root_url
     else
@@ -22,6 +22,7 @@ class OfertasController < ApplicationController
   def edit
     @todas_areas = AreaProfissional.all
     @todos_tipos = TipoContrato.all
+    @todos_salarios = Salario.all
   end
 
   def update
@@ -37,7 +38,7 @@ class OfertasController < ApplicationController
     def oferta_params
       params.require(:oferta).permit(:titulo, :val_inicio, :val_fim, :descricao,
                                     :area_profissional_id, :tipo_contrato_id,
-                                    :activo)
+                                    :salario_id ,:activo)
     end
 
     def conta_correcta

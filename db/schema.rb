@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170306174918) do
+ActiveRecord::Schema.define(version: 20170307113244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,19 @@ ActiveRecord::Schema.define(version: 20170306174918) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "noticias", force: :cascade do |t|
+    t.string   "titulo"
+    t.date     "data"
+    t.text     "sumario"
+    t.text     "texto"
+    t.boolean  "destaque"
+    t.boolean  "activo"
+    t.integer  "conta_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conta_id"], name: "index_noticias_on_conta_id", using: :btree
+  end
+
   create_table "ofertas", force: :cascade do |t|
     t.string   "titulo"
     t.date     "val_inicio"
@@ -129,6 +142,7 @@ ActiveRecord::Schema.define(version: 20170306174918) do
   add_foreign_key "candidatos", "situacao_profissionals"
   add_foreign_key "entidades", "actividade_profissionals"
   add_foreign_key "entidades", "perfils"
+  add_foreign_key "noticias", "conta", column: "conta_id"
   add_foreign_key "ofertas", "area_profissionals"
   add_foreign_key "ofertas", "entidades"
   add_foreign_key "ofertas", "salarios"

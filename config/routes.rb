@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'noticias/new'
+
+  get 'noticias/edit'
+
   get 'sessions/new'
 
   root 'bolsa_de_emprego#home'
@@ -20,9 +24,14 @@ Rails.application.routes.draw do
 
   get    'frontoffice/oferta', to: 'ofertas#new'
 
+  get    'backoffice/home', to: 'bolsa_de_emprego#home'
+
+  get    'backoffice/noticia', to: 'noticias#new'
+
   resources :entidades
   resources :candidatos
   resources :ofertas
+  resources :noticias
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

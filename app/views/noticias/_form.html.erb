@@ -1,0 +1,16 @@
+<%= simple_form_for(@noticia) do |f| %>
+
+    <%= f.input :titulo, label: 'Titulo'%>
+
+    <%= f.input :data, label: 'Data'%>
+
+    <%= f.input :sumario, label: 'Sumario'%>
+
+    <%= f.input :texto, label: 'Texto' %>
+
+    <%= f.input :destaque, label: 'Destaque' %>
+
+    <%= f.input :activo, label: 'Activo' %>
+
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  <% end %>

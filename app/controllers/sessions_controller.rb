@@ -6,10 +6,14 @@ class SessionsController < ApplicationController
     conta = Conta.find_by(email: params[:session][:email].downcase)
     if conta && conta.authenticate(params[:session][:password])
       log_in conta
-      if(conta.perfil.entidade == nil)
-        redirect_to conta.perfil.candidato
+      if(conta.admin?)
+        redirect_to root_url
       else
-        redirect_to conta.perfil.entidade
+        if(conta.perfil.entidade == nil)
+          redirect_to conta.perfil.candidato
+        else
+          redirect_to conta.perfil.entidade
+        end
       end
     else
       render 'new'

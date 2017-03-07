@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titulo: MyString
+  data: 2017-03-07
+  sumario: MyText
+  texto: MyText
+  destaque: false
+  activo: false
+
+two:
+  titulo: MyString
+  data: 2017-03-07
+  sumario: MyText
+  texto: MyText
+  destaque: false
+  activo: false

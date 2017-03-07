@@ -17,6 +17,11 @@
     :value_method => :id,
     :label => 'Tipo de Contrato', :include_blank => false %>
 
+    <%= f.input :salario_id, :collection => @todos_salarios,
+    :label_method => :quantia,
+    :value_method => :id,
+    :label => 'Salario', :include_blank => false %>
+
     <%= f.input :activo, label: 'Activo' %>
 
     <%= f.submit yield(:button_text), class: "btn btn-primary" %>

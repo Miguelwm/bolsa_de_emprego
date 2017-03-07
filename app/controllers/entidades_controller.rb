@@ -1,5 +1,5 @@
 class EntidadesController < ApplicationController
-  before_action :logged_in_entidade, only: [:edit, :update]
+  before_action :conta_logged_in, only: [:edit, :update]
   before_action :conta_correcta,   only: [:edit, :update]
 
   def new
