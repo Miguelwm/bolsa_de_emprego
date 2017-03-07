@@ -1,20 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'noticias/new'
+  root   'frontoffice#home'
+  get    'frontoffice/home', to: 'frontoffice#home'
 
-  get 'noticias/edit'
-
-  get 'sessions/new'
-
-  root 'bolsa_de_emprego#home'
-  get 'frontoffice/home', to: 'bolsa_de_emprego#home'
-
-  get    'frontoffice/entidades', to: 'bolsa_de_emprego#entidades'
-  get    'frontoffice/candidatos', to: 'bolsa_de_emprego#candidatos'
-  get    'frontoffice/ofertas', to: 'bolsa_de_emprego#ofertas'
-  get    'frontoffice/noticias', to: 'bolsa_de_emprego#noticias'
-
-  get    'frontoffice/registo',  to: 'bolsa_de_emprego#new'
+  get    'frontoffice/registo',  to: 'frontoffice#new'
   get    'frontoffice/registo/entidade', to: 'entidades#new'
   get    'frontoffice/registo/candidato', to: 'candidatos#new'
 
@@ -22,11 +11,12 @@ Rails.application.routes.draw do
   post   'frontoffice/login',   to: 'sessions#create'
   delete 'frontoffice/logout',  to: 'sessions#destroy'
 
-  get    'frontoffice/oferta', to: 'ofertas#new'
+  get    'frontoffice/oferta',  to: 'ofertas#new'
 
-  get    'backoffice/home', to: 'bolsa_de_emprego#home'
+  get    'backoffice/login',    to: 'sessions#new'
+  get    'backoffice/home',     to: 'backoffice#home'
 
-  get    'backoffice/noticia', to: 'noticias#new'
+  get    'backoffice/noticia',  to: 'noticias#new'
 
   resources :entidades
   resources :candidatos

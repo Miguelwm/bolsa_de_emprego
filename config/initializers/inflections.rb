@@ -15,11 +15,8 @@
 #   inflect.acronym 'RESTful'
 # end
 
-#ActiveSupport::Inflector.inflections do |inflect|
-#  inflect.irregular 'conta', 'contas'
-#end
-
 ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'oferta', 'ofertas'
   inflect.irregular 'noticia', 'noticias'
+  #inflect.irregular 'conta', 'contas'
 end
