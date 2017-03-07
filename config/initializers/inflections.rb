@@ -18,5 +18,5 @@
 ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'oferta', 'ofertas'
   inflect.irregular 'noticia', 'noticias'
-  #inflect.irregular 'conta', 'contas'
+  inflect.irregular 'conta', 'contas'
 end

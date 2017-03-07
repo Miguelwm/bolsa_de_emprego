@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20170307113244) do
     t.index ["situacao_profissional_id"], name: "index_candidatos_on_situacao_profissional_id", using: :btree
   end
 
-  create_table "conta", force: :cascade do |t|
+  create_table "contas", force: :cascade do |t|
     t.string   "nome"
     t.string   "email"
     t.datetime "created_at",                      null: false
@@ -142,10 +142,10 @@ ActiveRecord::Schema.define(version: 20170307113244) do
   add_foreign_key "candidatos", "situacao_profissionals"
   add_foreign_key "entidades", "actividade_profissionals"
   add_foreign_key "entidades", "perfils"
-  add_foreign_key "noticias", "conta", column: "conta_id"
+  add_foreign_key "noticias", "contas"
   add_foreign_key "ofertas", "area_profissionals"
   add_foreign_key "ofertas", "entidades"
   add_foreign_key "ofertas", "salarios"
   add_foreign_key "ofertas", "tipo_contratos"
-  add_foreign_key "perfils", "conta", column: "conta_id"
+  add_foreign_key "perfils", "contas"
 end
