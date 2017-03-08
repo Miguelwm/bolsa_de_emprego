@@ -1,0 +1,63 @@
+<% provide(:title, @noticia.titulo) %>
+<h1>Detalhes da Noticia</h1>
+<div class="row">
+  <div class="col-md-6">
+    <div class ="titulo">
+      <b>Titulo</b><br>
+      <%= @noticia.titulo %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class ="data">
+      <b>Data</b><br>
+      <%= @noticia.data %>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+      <div class ="sumario">
+        <b>Sumario</b><br>
+        <%= @noticia.data %>
+      </div>
+    <div class ="activo">
+      <b>Texto</b><br>
+      <%= @noticia.texto %>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class ="imagem">
+      ==IMAGEM==
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class ="destaque">
+      <b>Destaque</b><br>
+      <%= @noticia.destaque %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class ="activo">
+      <b>Activo</b><br>
+      <%= @noticia.activo %>
+    </div>
+  </div>
+</div>
+
+
+<br>
+<div class="row">
+  <div class="col-md-1">
+    <%=button_to 'Editar', edit_noticia_path(@noticia), method: :get%>
+  </div>
+  <div class="col-md-1 col-md-offset-1">
+    <%=button_to 'Apagar', @conta, method: :delete%>
+  </div>
+  <div class="col-md-1">
+    <%=button_to 'Inserir', new_noticia_path, method: :get%>
+  </div>
+  <div class="col-md-1">
+    <%=button_to 'Listagem', noticias_path, method: :get%>
+  </div>
+</div>

@@ -1,11 +1,11 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "Bolsa de Emprego", root_path, id: "logo" %>
+    <%= link_to "Bolsa de Emprego", backhome_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to "Home", home_path %></li>
-        <li><%= link_to "Utilizadores", '#' %></li>
-        <li><%= link_to "Noticias", '#' %></li>
+        <li><%= link_to "Home", backhome_path %></li>
+        <li><%= link_to "Utilizadores", contas_path %></li>
+        <li><%= link_to "Noticias", noticias_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>

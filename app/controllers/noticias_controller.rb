@@ -1,6 +1,7 @@
 class NoticiasController < ApplicationController
-  before_action :conta_logged_in, only: [:edit, :update]
-  before_action :conta_admin,   only: [:edit, :update, :new, :update]
+  before_action :conta_admin
+
+  layout 'backoffice'
 
   def new
     @noticia = Noticia.new
@@ -22,19 +23,23 @@ class NoticiasController < ApplicationController
 
   def update
     @noticia = Noticia.find(params[:id])
-    if @noticia.update_attributes(noticia)
+    if @noticia.update_attributes(noticia_params)
       redirect_to @noticia
     else
       render 'edit'
     end
   end
 
+  def index
+    @todas_noticias = Noticia.all
+  end
+
+  def show
+    @noticia = Noticia.find(params[:id])
+  end
+
   private
     def noticia_params
       params.require(:noticia).permit( :titulo, :data, :sumario, :texto, :destaque, :activo)
-    end
-
-    def conta_admin
-      redirect_to(root_url) unless conta_atual.try(:admin?)
     end
 end

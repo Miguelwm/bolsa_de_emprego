@@ -19,9 +19,16 @@ Rails.application.routes.draw do
 
   scope 'backoffice/' do
     get    'login',    to: 'sessions#new'
-    get    'home',     to: 'backoffice#home'
-    get    'utilizadores', to: 'contas#index'
-    get    'noticia',  to: 'noticias#new'
+    get    'home',     to: 'backoffice#home', as: 'backhome'
+
+    resources :contas, path: 'utilizadores' do
+      collection do
+        get   'alterarpassword/:id', to: 'contas#edit_password' ,as: 'alterarpassword'
+        put   'alterarpassword/:id', to: 'contas#update_password'
+      end
+    end
+
+    resources :noticias
   end
 
 
@@ -29,8 +36,6 @@ Rails.application.routes.draw do
   resources :entidades
   resources :candidatos
   resources :ofertas
-  resources :noticias, only: [:index,:show]
-  resources :contas, path: 'utilizadores'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

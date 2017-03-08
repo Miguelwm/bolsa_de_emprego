@@ -1,0 +1,31 @@
+<% provide(:title, 'Utilizadores') %>
+<h1>Utilizadores</h1>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Noticia</th>
+          <th>Data</th>
+          <th>Destaque</th>
+          <th>Activo</th>
+          <th>Acções</th>
+        </tr>
+      </thead>
+      <% @todas_noticias.each do |noticia| %>
+        <tbody>
+          <td><%=noticia.titulo%></td>
+          <td><%=noticia.data%></td>
+          <td><%=noticia.destaque%></td>
+          <td><%=noticia.activo%></td>
+          <td>
+            <%=button_to 'Detalhes', noticia, method: :get%>
+            <%=button_to 'Editar', edit_noticia_path(noticia), method: :get%>
+            <%=button_to 'Apagar', noticia, method: :delete%>
+          </td>
+        </tbody>
+      <% end %>
+    </table>
+    <%=button_to 'Inserir', new_noticia_path, method: :get%>
+  </div>
+</div>

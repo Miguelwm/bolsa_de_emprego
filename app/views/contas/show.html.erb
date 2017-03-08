@@ -28,7 +28,7 @@
     <%=button_to 'Editar', edit_conta_path(@conta), method: :get%>
   </div>
   <div class="col-md-1 ">
-    <%=button_to 'Alterar Password', @conta, method: :delete%>
+    <%=button_to 'Alterar Password', alterarpassword_contas_path(@conta), method: :get%>
   </div>
   <div class="col-md-1 col-md-offset-1">
     <%=button_to 'Apagar', @conta, method: :delete%>
@@ -37,6 +37,6 @@
     <%=button_to 'Inserir', new_conta_path, method: :get%>
   </div>
   <div class="col-md-1">
-    <%=button_to 'Listagem', utilizadores_path, method: :get%>
+    <%=button_to 'Listagem', contas_path, method: :get%>
   </div>
 </div>

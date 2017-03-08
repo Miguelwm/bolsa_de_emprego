@@ -1,4 +1,5 @@
 class ContasController < ApplicationController
+  before_action :conta_admin
   layout 'backoffice'
 
   def new
@@ -41,8 +42,24 @@ class ContasController < ApplicationController
 
   def destroy
     @conta = Conta.find(params[:id]).destroy
-    redirect_to utilizadores_path
+    redirect_to contas_path
   end
+
+  def edit_password
+    @conta = Conta.find(params[:id])
+  end
+
+  def update_password
+    @conta = Conta.find(params[:id])
+    if @conta.update_attributes(conta_params)
+      redirect_to @conta
+    else
+      render 'edit_password'
+    end
+
+  end
+
+
 
   private
     def conta_params

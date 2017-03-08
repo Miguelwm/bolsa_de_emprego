@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
         redirect_to frontoffice_login_path
       end
     end
+
+    def conta_admin
+      redirect_to(root_url) unless conta_atual.try(:admin?)
+    end
 end
