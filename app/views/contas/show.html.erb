@@ -1,0 +1,42 @@
+<% provide(:title, @conta.nome) %>
+<h1>Detalhes do Utilizador</h1>
+<div class="row">
+  <div class="col-md-6">
+    <div class ="nome">
+      <b>Nome</b><br>
+      <%= @conta.nome %>
+    </div>
+    <div class ="email">
+      <b>Email</b><br>
+      <%= @conta.email %>
+    </div>
+  </div>
+  <div class="col-md-6">
+      <div class ="tipo">
+        <b>Tipo</b><br>
+        <%= tipo_conta(@conta) %>
+      </div>
+    <div class ="activo">
+      <b>Activo</b><br>
+      <%= actividade_conta(@conta) %>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-1">
+    <%=button_to 'Editar', edit_conta_path(@conta), method: :get%>
+  </div>
+  <div class="col-md-1 ">
+    <%=button_to 'Alterar Password', @conta, method: :delete%>
+  </div>
+  <div class="col-md-1 col-md-offset-1">
+    <%=button_to 'Apagar', @conta, method: :delete%>
+  </div>
+  <div class="col-md-1">
+    <%=button_to 'Inserir', new_conta_path, method: :get%>
+  </div>
+  <div class="col-md-1">
+    <%=button_to 'Listagem', utilizadores_path, method: :get%>
+  </div>
+</div>

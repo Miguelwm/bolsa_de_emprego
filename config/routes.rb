@@ -1,27 +1,37 @@
 Rails.application.routes.draw do
 
   root   'frontoffice#home'
-  get    'frontoffice/home', to: 'frontoffice#home'
 
-  get    'frontoffice/registo',  to: 'frontoffice#new'
-  get    'frontoffice/registo/entidade', to: 'entidades#new'
-  get    'frontoffice/registo/candidato', to: 'candidatos#new'
+  scope 'frontoffice/' do
+    get    'home', to: 'frontoffice#home'
 
-  get    'frontoffice/login',   to: 'sessions#new'
-  post   'frontoffice/login',   to: 'sessions#create'
-  delete 'frontoffice/logout',  to: 'sessions#destroy'
+    get    'registo',  to: 'frontoffice#new'
+    get    'registo/entidade', to: 'entidades#new'
+    get    'registo/candidato', to: 'candidatos#new'
 
-  get    'frontoffice/oferta',  to: 'ofertas#new'
+    get    'login',   to: 'sessions#new'
+    post   'login',   to: 'sessions#create'
+    delete 'logout',  to: 'sessions#destroy'
 
-  get    'backoffice/login',    to: 'sessions#new'
-  get    'backoffice/home',     to: 'backoffice#home'
+    get    'oferta',  to: 'ofertas#new'
 
-  get    'backoffice/noticia',  to: 'noticias#new'
+  end
+
+  scope 'backoffice/' do
+    get    'login',    to: 'sessions#new'
+    get    'home',     to: 'backoffice#home'
+    get    'utilizadores', to: 'contas#index'
+    get    'noticia',  to: 'noticias#new'
+  end
+
+
 
   resources :entidades
   resources :candidatos
   resources :ofertas
-  resources :noticias
+  resources :noticias, only: [:index,:show]
+  resources :contas, path: 'utilizadores'
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

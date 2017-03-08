@@ -1,0 +1,29 @@
+<% provide(:title, 'Utilizadores') %>
+<h1>Utilizadores</h1>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Activo</th>
+          <th>Acções</th>
+        </tr>
+      </thead>
+      <% @todas_contas.each do |conta| %>
+        <tbody>
+          <td><%=conta.nome%></td>
+          <td><%=tipo_conta(conta)%></td>
+          <td><%=actividade_conta(conta)%></td>
+          <td>
+            <%=button_to 'Detalhes', conta, method: :get%>
+            <%=button_to 'Editar', edit_conta_path(conta), method: :get%>
+            <%=button_to 'Apagar', conta, method: :delete%>
+          </td>
+        </tbody>
+      <% end %>
+    </table>
+    <%=button_to 'Inserir', new_conta_path, method: :get%>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 class Conta < ApplicationRecord
-  has_one :perfil, :inverse_of => :conta
-  has_many :noticias, :inverse_of =>:conta
+  has_one :perfil, :inverse_of => :conta ,dependent: :destroy
+  has_many :noticias, :inverse_of =>:conta ,dependent: :destroy
   accepts_nested_attributes_for :perfil, allow_destroy: true, :update_only => true
 
   before_save   :downcase_email

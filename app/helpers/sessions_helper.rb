@@ -20,4 +20,5 @@ module SessionsHelper
     session.delete(:conta_id)
     @conta_atual = nil
   end
+
 end

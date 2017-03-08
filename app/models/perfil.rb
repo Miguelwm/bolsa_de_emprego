@@ -1,8 +1,8 @@
 class Perfil < ApplicationRecord
   belongs_to :conta, :inverse_of => :perfil
   validates_presence_of :conta
-  has_one :entidade, :inverse_of => :perfil
-  has_one :candidato, :inverse_of => :perfil
+  has_one :entidade, :inverse_of => :perfil ,dependent: :destroy
+  has_one :candidato, :inverse_of => :perfil ,dependent: :destroy
   accepts_nested_attributes_for :entidade, allow_destroy: true
   accepts_nested_attributes_for :candidato, allow_destroy: true
   accepts_nested_attributes_for :conta,  :update_only => true
