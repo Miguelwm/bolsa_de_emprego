@@ -1,0 +1,33 @@
+<% provide(:title, @candidato.perfil.conta.nome) %>
+<h3>@candidato.perfil.conta.nome</h3>
+<div class="row">
+  <div class="col-md-12">
+    <div class="col-md-3">
+      <%= image_tag candidato.perfil.foto.url if candidato.perfil.foto? %><br>
+    </div>
+    <div class="col-md-9">
+      <%= @candidato.perfil.apresentacao %><br>
+      <h3><b>Dados Profissionais</b></h3><br>
+      <b>Situação Profissional</b><br>
+      <%= @candidato.situacao_profissional.situacao %><br>
+      <b>Nivel Habilitação</b><br>
+      <%= @candidato.nivel_habilitacao.nivel %><br>
+      <b>Habilitações Literarias</b><br>
+      <%= @candidato.habilitacao %><br>
+      <b>Experiencia Profissional</b><br>
+      <%= @candidato.experiencia %><br>
+
+      <h3><b>Dados Pessoais</b></h3><br>
+      <b>Morada</b><br>
+      <%= @candidato.perfil.morada %><br>
+      <%= @candidato.perfil.codigo_postal %>,<%= @candidato.perfil.localidade %><br>
+      <b>Contactos</b><br>
+      <%= @candidato.perfil.contacto1 %>
+      <%= @candidato.perfil.conta.email %>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+    <li><%= link_to "Ver Candidatos", candidatos_path %></li>
+</div>

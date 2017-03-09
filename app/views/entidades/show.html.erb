@@ -1,0 +1,41 @@
+<% provide(:title, @entidade.perfil.conta.nome) %>
+<h3>@entidade.perfil.conta.nome</h3>
+<div class="row">
+  <div class="col-md-12">
+    <div class="col-md-3">
+      <%= image_tag @entidade.perfil.foto.url if @entidade.perfil.foto? %><br>
+    </div>
+    <div class="col-md-9">
+      <%= @entidade.perfil.apresentacao %><br>
+      <b>Actividade Profissional</b><br>
+      <%= @entidade.actividade_profissional.actividade %><br>
+      <b>Morada</b><br>
+      <%= @entidade.perfil.morada %><br>
+      <%= @entidade.perfil.codigo_postal %>,<%= @entidade.perfil.localidade %><br>
+      <b>Contactos</b><br>
+      <%= @entidade.perfil.contacto1 %>
+      <%= @entidade.perfil.conta.email %>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <h3>Ofertas Activas</h3>
+  <div class="col-md-12">
+    <% ofertas_activas(@entidade).each do |oferta| %>
+      <div class="col-md-3">
+        ===IMAGEM===
+      </div>
+      <div class="col-md-4">
+        <%= link_to oferta.titulo, oferta %><br>
+        <%= oferta.val_inicio %> a <%= oferta.val_fim %><br>
+        <%= oferta.perfil.conta.nome %><br>
+        <%= oferta.descricao %><br>
+      </div>
+    <% end %>
+  </div>
+</div>
+<br>
+<div class="row">
+  <%= link_to "Ver Entidades", entidades_path %>
+</div>

@@ -4,7 +4,6 @@ class ContasController < ApplicationController
 
   def new
     @conta = Conta.new
-    @conta.admin = true
   end
 
   def create

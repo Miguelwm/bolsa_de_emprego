@@ -7,12 +7,12 @@ class SessionsController < ApplicationController
     if conta && conta.authenticate(params[:session][:password])
       log_in conta
       if(conta.admin?)
-        redirect_to backoffice_home_path
+        redirect_to backhome_path
       else
         if(conta.perfil.entidade == nil)
-          redirect_to conta.perfil.candidato
+          redirect_to root_url
         else
-          redirect_to conta.perfil.entidade
+          redirect_to root_url
         end
       end
     else

@@ -3,18 +3,18 @@
     <%= link_to "Bolsa de Emprego", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to "Home", home_path %></li>
-        <li><%= link_to "Entidades", '#' %></li>
-        <li><%= link_to "Candidatos", '#' %></li>
-        <li><%= link_to "Ofertas", '#' %></li>
-        <li><%= link_to "Noticias", '#' %></li>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Entidades", entidades_path %></li>
+        <li><%= link_to "Candidatos", candidatos_path %></li>
+        <li><%= link_to "Ofertas", ofertas_path %></li>
+        <li><%= link_to "Noticias", noticias_frontoffice_index_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
           <li><%= link_to conta_atual.nome , '#' %></li>
           <li><%= link_to "Sair", logout_path, method: "delete" %></li>
         <% else %>
-          <li><%= link_to "Registra-me", registo_path %></li>
+          <li><%= link_to "Registra-me", new_frontoffice_path %></li>
           <li><%= link_to "Log in", login_path %></li>
         <% end %>
       </ul>

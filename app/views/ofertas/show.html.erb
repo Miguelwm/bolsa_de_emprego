@@ -1,0 +1,42 @@
+<% provide(:title, @oferta.titulo) %>
+<h3>@oferta.titulo</h3>
+<div class="row">
+  <div class="col-md-12">
+    <div class="col-md-3">
+      <%= image_tag @oferta.picture.url if @oferta.picture? %><br>
+    </div>
+    <div class="col-md-9">
+      <%= @oferta.descricao %><br>
+      <%= @oferta.val_inicio %> a <%= @oferta.val_fim %><br>
+      <b>Empresa</b><br>
+      <%= link_to @oferta.entidade.perfil.conta.nome, @oferta.entidade %><br>
+      <b>Area Profissional</b><br>
+      <%= @oferta.area_profissional.area %><br>
+      <b>Tipo de Contrato</b><br>
+      <%= @oferta.tipo_contrato.tipo %><br>
+      <b>Salario</b><br>
+      <%= @oferta.salario.quantia %><br>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <h3>Outras ofertas na mesma Area</h3>
+  <div class="col-md-12">
+    <% ofertas_mesma_area(@oferta).each do |oferta| %>
+      <div class="col-md-3">
+        ===IMAGEM===
+      </div>
+      <div class="col-md-4">
+        <%= link_to oferta.titulo, oferta %><br>
+        <%= oferta.val_inicio %> a <%= oferta.val_fim %><br>
+        <%= oferta.entidade.perfil.conta.nome %><br>
+        <%= oferta.descricao %><br>
+      </div>
+    <% end %>
+  </div>
+</div>
+<br>
+<div class="row">
+  <%= link_to "Ver Ofertas", ofertas_path %>
+</div>

@@ -1,0 +1,24 @@
+<% provide(:title, 'Ultimas Entidades') %>
+  <h3>Ultimas Empresas</h3>
+    <% @ultimas_entidades.each do |entidade| %>
+      <div class="col-md-3">
+        <div class="foto">
+          <%= image_tag entidade.perfil.foto.url if entidade.perfil.foto? %><br>
+        </div>
+      </div>
+
+      <div class="col-md-9">
+        <div class="conteudo">
+          <%=link_to entidade.perfil.conta.nome, entidade%><br>
+          <%= entidade.perfil.conta.nome%><br>
+          <%= entidade.perfil.apresentacao%><br>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <br>
+      </div>
+    <% end %>
+<div class="col-md-12">
+  <%=link_to 'Ver todas as Entidades', entidades_path%>
+</div>
+

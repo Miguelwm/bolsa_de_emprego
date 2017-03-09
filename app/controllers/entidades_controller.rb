@@ -32,6 +32,15 @@ class EntidadesController < ApplicationController
     end
   end
 
+  def index
+    @entidades = Entidade.paginate(page: params[:page], per_page: 8)
+  end
+
+  def show
+    @entidade = Entidade.find(params[:id])
+  end
+
+
   private
     def entidade_params
       params.require(:entidade).permit( :nif, :actividade_profissional_id ,

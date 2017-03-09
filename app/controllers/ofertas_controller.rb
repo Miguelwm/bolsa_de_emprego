@@ -34,6 +34,18 @@ class OfertasController < ApplicationController
     end
   end
 
+  def index
+    @todas_entidades = Entidade.paginate(page: params[:page], per_page: 8)
+  end
+
+  def index
+    @ofertas = Oferta.paginate(page: params[:page], per_page: 8)
+  end
+
+  def show
+    @oferta = Oferta.find(params[:id])
+  end
+
   private
     def oferta_params
       params.require(:oferta).permit(:titulo, :val_inicio, :val_fim, :descricao,

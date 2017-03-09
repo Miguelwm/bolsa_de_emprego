@@ -2,6 +2,13 @@ Rails.application.routes.draw do
 
   root   'frontoffice#home'
 
+  resources :frontoffice, only:[:index_noticias, :show_noticia, :new, :home] do
+    collection do
+      get 'noticias', to: 'frontoffice#index_noticias'
+      get 'noticia/:id', to: 'frontoffice#show_noticia', as: 'noticia'
+    end
+  end
+
   scope 'frontoffice/' do
     get    'home', to: 'frontoffice#home'
 
@@ -13,8 +20,11 @@ Rails.application.routes.draw do
     post   'login',   to: 'sessions#create'
     delete 'logout',  to: 'sessions#destroy'
 
-    get    'oferta',  to: 'ofertas#new'
+    #get    'oferta',  to: 'ofertas#new'
 
+    resources :entidades
+    resources :candidatos
+    resources :ofertas
   end
 
   scope 'backoffice/' do
@@ -33,9 +43,7 @@ Rails.application.routes.draw do
 
 
 
-  resources :entidades
-  resources :candidatos
-  resources :ofertas
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

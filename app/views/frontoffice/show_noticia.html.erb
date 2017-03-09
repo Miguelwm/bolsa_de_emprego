@@ -1,0 +1,17 @@
+<% provide(:title, @noticia.titulo) %>
+<h3>@noticia.titulo</h3>
+<div class="row">
+  <div class="col-md-12">
+    <div class="col-md-9">
+      <%= @noticia.data %>
+      <%= @noticia.texto %>
+    </div>
+    <div class="col-md-3">
+      ===IMAGEM===
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <%= link_to "Ver todas", noticias_frontoffice_index_path %>
+</div>

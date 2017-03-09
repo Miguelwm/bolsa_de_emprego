@@ -1,0 +1,18 @@
+<% provide(:title, 'Noticias') %>
+<h1>Noticias</h1>
+<div class="row">
+  <%= will_paginate %>
+    <div class="col-md-6">
+      <% @frontoffice.each do |noticia| %>
+        <div class="col-md-6">
+            ===IMAGEM===
+        </div>
+        <div class="col-md-6">
+          <%= link_to noticia.titulo, noticia_frontoffice_index_path(noticia) %><br>
+          <%= noticia.data%><br>
+          <%= noticia.sumario%><br>
+        </div>
+      <% end %>
+    </div>
+  <%= will_paginate %>
+</div>

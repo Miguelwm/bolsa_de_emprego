@@ -1,0 +1,23 @@
+<% provide(:title, 'Ultimas Noticias') %>
+  <h3>Ultimas Noticias</h3>
+    <% @ultimas_noticias.each do |noticia| %>
+      <div class="col-md-6">
+        <div class="foto">
+          ===IMAGEM===
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="conteudo">
+          <%= link_to noticia.titulo, noticia_frontoffice_index_path(noticia) %><br>
+          <%= noticia.data%><br>
+          <%= noticia.sumario%><br>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <br>
+      </div>
+    <% end %>
+<div class="col-md-12">
+  <%= link_to "Ver todas as Noticias", noticias_frontoffice_index_path %>
+</div>

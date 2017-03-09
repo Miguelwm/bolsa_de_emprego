@@ -36,6 +36,14 @@ class CandidatosController < ApplicationController
     end
   end
 
+  def index
+    @candidatos = Candidato.paginate(page: params[:page], per_page: 8)
+  end
+
+  def show
+    @candidato = Candidato.find(params[:id])
+  end
+
   private
     def candidato_params
       params.require(:candidato).permit(:nascimento, :bi, :cv, :area_profissional_id,

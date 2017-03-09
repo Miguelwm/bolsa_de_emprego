@@ -1,7 +1,7 @@
 module ContasHelper
 
   def tipo_conta(conta)
-    if(conta.admin?)
+    if(conta.perfil == nil)
         tipo = "Backoffice"
       else
         if(conta.perfil.entidade == nil)

@@ -1,0 +1,23 @@
+<% provide(:title, 'Ultimas Empresas') %>
+  <h3>Ultimos Empresas</h3>
+    <% @ultimos_candidatos.each do |candidato| %>
+      <div class="col-md-6">
+        <div class="foto">
+          <%= image_tag candidato.perfil.foto.url if candidato.perfil.foto? %><br>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="conteudo">
+          <%=link_to candidato.perfil.conta.nome, candidato%><br>
+          <%= candidato.area_profissional.area%><br>
+          <%= candidato.habilitacao%><br>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <br>
+      </div>
+    <% end %>
+<div class="col-md-12">
+  <%=link_to 'Ver todos os Candidatos', candidatos_path%>
+</div>

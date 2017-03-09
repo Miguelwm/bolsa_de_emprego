@@ -1,0 +1,18 @@
+<% provide(:title, 'Entidades') %>
+<h1>Entidades</h1>
+<div class="row">
+  <%= will_paginate %>
+    <div class="col-md-6">
+      <% @entidades.each do |entidade| %>
+        <div class="col-md-6">
+            <%= image_tag entidade.perfil.foto.url if entidade.perfil.foto? %><br>
+        </div>
+        <div class="col-md-6">
+          <%= link_to entidade.perfil.conta.nome,entidade %><br>
+          <%= num_ofertas_activas(entidade)%> oferta(s) ativa(s)<br>
+          <%= entidade.perfil.apresentacao%><br>
+        </div>
+      <% end %>
+    </div>
+  <%= will_paginate %>
+</div>

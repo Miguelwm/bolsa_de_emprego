@@ -1,0 +1,28 @@
+<% provide(:title, 'Ultimas Ofertas') %>
+  <h3>Ultimas Ofertas</h3>
+    <% @ultimas_ofertas.each do |oferta| %>
+      <div class="col-md-3">
+        <div class="foto">
+          <%= image_tag oferta.picture.url if oferta.picture? %><br>
+        </div>
+      </div>
+
+      <div class="col-md-9">
+        <div class="conteudo">
+          <%=link_to oferta.titulo, oferta%><br>
+          <%= oferta.val_inicio%> a <%= oferta.val_fim%><br>
+          <%= oferta.entidade.perfil.conta.nome%><br>
+          <%= oferta.entidade.perfil.conta.nome%><br>
+          <%= oferta.descricao%><br>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <br>
+      </div>
+
+    <% end %>
+<div class="col-md-12">
+  <%=link_to 'Ver todas as Ofertas', ofertas_path%>
+</div>
+
+
