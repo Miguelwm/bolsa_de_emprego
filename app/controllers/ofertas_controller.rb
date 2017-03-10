@@ -35,10 +35,6 @@ class OfertasController < ApplicationController
   end
 
   def index
-    @todas_entidades = Entidade.paginate(page: params[:page], per_page: 8)
-  end
-
-  def index
     @ofertas = Oferta.paginate(page: params[:page], per_page: 8)
   end
 

@@ -13,6 +13,23 @@
           <%= oferta.entidade.perfil.conta.nome%><br>
           <%= oferta.descricao%><br>
         </div>
+        <div class="col-md-12">
+        <% if logged_in? && is_candidato? %>
+          <div id="form_candidatura">
+            <% if candidato_atual.ofertas?(oferta) %>
+              <%= render 'candidatado' %>
+            <% else %>
+              <%= form_for(candidato_atual.candidaturas.build) do |f| %>
+                <div><%= hidden_field_tag :oferta_id, oferta.id %></div>
+                <%= f.submit "Candidatar-me",
+                  data: { confirm:'Esta prestes a candidatar-se a esta oferta,
+                    este processo não pode ser revertido.Pretende continuar?'},
+                    class: "btn btn-primary" %>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+        </div>
       <% end %>
     </div>
   <%= will_paginate %>

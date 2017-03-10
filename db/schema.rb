@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170307113244) do
+ActiveRecord::Schema.define(version: 20170310101157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,16 @@ ActiveRecord::Schema.define(version: 20170307113244) do
     t.index ["nivel_habilitacao_id"], name: "index_candidatos_on_nivel_habilitacao_id", using: :btree
     t.index ["perfil_id"], name: "index_candidatos_on_perfil_id", using: :btree
     t.index ["situacao_profissional_id"], name: "index_candidatos_on_situacao_profissional_id", using: :btree
+  end
+
+  create_table "candidaturas", force: :cascade do |t|
+    t.integer  "candidato_id"
+    t.integer  "oferta_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["candidato_id", "oferta_id"], name: "index_candidaturas_on_candidato_id_and_oferta_id", unique: true, using: :btree
+    t.index ["candidato_id"], name: "index_candidaturas_on_candidato_id", using: :btree
+    t.index ["oferta_id"], name: "index_candidaturas_on_oferta_id", using: :btree
   end
 
   create_table "contas", force: :cascade do |t|
@@ -81,6 +91,7 @@ ActiveRecord::Schema.define(version: 20170307113244) do
     t.integer  "conta_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "picture"
     t.index ["conta_id"], name: "index_noticias_on_conta_id", using: :btree
   end
 

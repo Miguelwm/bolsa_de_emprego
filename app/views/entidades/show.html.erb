@@ -1,5 +1,5 @@
 <% provide(:title, @entidade.perfil.conta.nome) %>
-<h3>@entidade.perfil.conta.nome</h3>
+<h3><%=@entidade.perfil.conta.nome%></h3>
 <div class="row">
   <div class="col-md-12">
     <div class="col-md-3">
@@ -24,13 +24,16 @@
   <div class="col-md-12">
     <% ofertas_activas(@entidade).each do |oferta| %>
       <div class="col-md-3">
-        ===IMAGEM===
+        <%= image_tag oferta.picture.url if oferta.picture? %><br>
       </div>
       <div class="col-md-4">
         <%= link_to oferta.titulo, oferta %><br>
         <%= oferta.val_inicio %> a <%= oferta.val_fim %><br>
-        <%= oferta.perfil.conta.nome %><br>
+        <%= oferta.entidade.perfil.conta.nome %><br>
         <%= oferta.descricao %><br>
+      </div>
+      <div class="col-md-12">
+        <br>
       </div>
     <% end %>
   </div>

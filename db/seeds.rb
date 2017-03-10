@@ -13,8 +13,8 @@ Noticia.create!(titulo:"Noticia do dia" , data:DateTime.new(2017,3,7) ,
 #Entidade
 
 actividade = ActividadeProfissional.create!(actividade:"Informatica")
-
 ActividadeProfissional.create!(actividade:"Mecanica")
+ActividadeProfissional.create!(actividade:"Farmaceutica")
 
 conta1 = Conta.create!(nome: "Entidade",
                       email:"entidade@seed.com",

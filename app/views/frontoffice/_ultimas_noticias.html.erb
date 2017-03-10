@@ -3,7 +3,7 @@
     <% @ultimas_noticias.each do |noticia| %>
       <div class="col-md-6">
         <div class="foto">
-          ===IMAGEM===
+          <%= image_tag noticia.picture.url if noticia.picture? %><br>
         </div>
       </div>
 

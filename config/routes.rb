@@ -23,8 +23,21 @@ Rails.application.routes.draw do
     #get    'oferta',  to: 'ofertas#new'
 
     resources :entidades
-    resources :candidatos
-    resources :ofertas
+    resources :ofertas do
+      member do
+        get :candidato
+      end
+    end
+
+
+    resources :candidatos do
+      member do
+        get :oferta
+      end
+    end
+
+    resources :candidaturas,       only: [:create]
+
   end
 
   scope 'backoffice/' do

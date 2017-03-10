@@ -5,12 +5,15 @@
     <div class="col-md-6">
       <% @frontoffice.each do |noticia| %>
         <div class="col-md-6">
-            ===IMAGEM===
+            <%= image_tag noticia.picture.url if noticia.picture? %><br>
         </div>
         <div class="col-md-6">
           <%= link_to noticia.titulo, noticia_frontoffice_index_path(noticia) %><br>
           <%= noticia.data%><br>
           <%= noticia.sumario%><br>
+        </div>
+        <div class="col-md-12">
+          <br>
         </div>
       <% end %>
     </div>

@@ -2,16 +2,19 @@
 <h1>Candidatos</h1>
 <div class="row">
   <%= will_paginate %>
-    <div class="col-md-6">
+    <div class="col-md-12">
       <% @candidatos.each do |candidato| %>
-        <div class="col-md-6">
+        <div class="col-md-3">
           <%= image_tag candidato.perfil.foto.url if candidato.perfil.foto? %><br>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-9">
           <%= link_to candidato.perfil.conta.nome,candidato %><br>
           <%= candidato.area_profissional.area%><br>
           <%= candidato.experiencia%><br>
           <%= candidato.nivel_habilitacao.nivel%><br>
+        </div>
+        <div class="col-md-12">
+          <br>
         </div>
       <% end %>
     </div>
