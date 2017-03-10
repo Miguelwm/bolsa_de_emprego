@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310101157) do
+ActiveRecord::Schema.define(version: 20170310160751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,16 @@ ActiveRecord::Schema.define(version: 20170310101157) do
     t.datetime "updated_at",                 null: false
     t.index ["actividade_profissional_id"], name: "index_entidades_on_actividade_profissional_id", using: :btree
     t.index ["perfil_id"], name: "index_entidades_on_perfil_id", using: :btree
+  end
+
+  create_table "interesses", force: :cascade do |t|
+    t.integer  "interessado_id"
+    t.integer  "interessado_em_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["interessado_em_id"], name: "index_interesses_on_interessado_em_id", using: :btree
+    t.index ["interessado_id", "interessado_em_id"], name: "index_interesses_on_interessado_id_and_interessado_em_id", unique: true, using: :btree
+    t.index ["interessado_id"], name: "index_interesses_on_interessado_id", using: :btree
   end
 
   create_table "nivel_habilitacaos", force: :cascade do |t|

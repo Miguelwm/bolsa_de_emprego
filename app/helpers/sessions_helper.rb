@@ -24,6 +24,14 @@ module SessionsHelper
     conta_atual.perfil.candidato
   end
 
+  def is_entidade?
+    !conta_atual.perfil.entidade.nil?
+  end
+
+  def entidade_atual
+    conta_atual.perfil.entidade
+  end
+
   def log_out
     session.delete(:conta_id)
     @conta_atual = nil

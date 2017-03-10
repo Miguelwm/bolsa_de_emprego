@@ -13,6 +13,20 @@
           <%= entidade.perfil.apresentacao%><br>
         </div>
         <div class="col-md-12">
+          <% if logged_in? && is_candidato? %>
+            <div id="form_interesse">
+              <% if candidato_atual.perfil.interessados?(entidade.perfil) %>
+                <%= render 'desinteressado' %>
+
+              <% else %>
+                <%= form_for(conta_atual.perfil.interesses_activos.build) do |f| %>
+                  <div><%= hidden_field_tag :interessado_em_id, entidade.perfil.id %></div>
+                  <%= f.submit "Interessado",
+                      class: "btn btn-primary" %>
+                  <% end %>
+                <% end %>
+            </div>
+          <% end %>
           <br>
         </div>
       <% end %>
