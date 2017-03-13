@@ -36,7 +36,11 @@ AreaProfissional.create!(area: "Designer")
 
 area = AreaProfissional.create!(area: "Programador Web")
 
+NivelHabilitacao.create!(nivel: "9º")
 nivel = NivelHabilitacao.create!(nivel: "12º")
+NivelHabilitacao.create!(nivel: "Licenciartura")
+NivelHabilitacao.create!(nivel: "Mestrado")
+NivelHabilitacao.create!(nivel: "Douturamento")
 
 situacao = SituacaoProfissional.create!(situacao: "Desempregado")
 
@@ -85,6 +89,66 @@ Oferta.create!(titulo:"Programação Web",val_inicio: DateTime.new(2017,4,2),
   activo: true ,tipo_contrato_id:tipo.id ,salario_id: salario.id ,
   area_profissional_id:area.id, entidade_id: entidade1.id)
 
+
+
+
+15.times do |n|
+  nome  = Faker::Name.name
+  email = "example-entidade-#{n+1}@seed.org"
+
+  conta = Conta.create!(nome: nome,
+              email:email,
+              password:              "foobar",
+              password_confirmation: "foobar")
+
+  localidade = Faker::Lorem.sentence(5)
+  apresentacao = Faker::Lorem.sentence(5)
+  contacto = rand(999999999)
+
+  perfil = conta.create_perfil!(morada:"Rua do Sobe e Desce,150",
+                              codigo_postal:"4421-569",
+                              localidade:localidade,
+                              contacto1: "966698551",
+                              pagina: "http://stackoverflow.com/",
+                              apresentacao: apresentacao)
+
+  nif = rand(999999999)
+
+  perfil.create_entidade!(nif: nif, actividade_profissional_id: 1)
+
+end
+
+15.times do |n|
+  nome  = Faker::Name.name
+  email = "example-candidatp-#{n+1}@seed.org"
+
+  conta = Conta.create!(nome: nome,
+              email:email,
+              password:              "foobar",
+              password_confirmation: "foobar")
+
+  localidade = Faker::Lorem.sentence(5)
+  apresentacao = Faker::Lorem.sentence(5)
+
+  perfil = conta.create_perfil!(morada:"Rua do Sobe e Desce,150",
+                              codigo_postal:"4421-569",
+                              localidade:localidade,
+                              contacto1: "966698551",
+                              pagina: "http://stackoverflow.com/",
+                              apresentacao: apresentacao)
+
+  habilitacao = Faker::Lorem.sentence(5)
+  experiencia = Faker::Lorem.sentence(5)
+  perfil.create_candidato!(nascimento: DateTime.new(1991,5,1),
+                          bi: "11564876",
+                          habilitacao: habilitacao,
+                          experiencia: experiencia,
+                          area_profissional_id: 1,
+                          nivel_habilitacao_id: 1,
+                          situacao_profissional_id: 1)
+
+
+end
 
 
 
