@@ -1,9 +1,9 @@
 class FrontofficeController < ApplicationController
   def home
-    @ultimas_ofertas = Oferta.last(3)
-    @ultimas_noticias = Noticia.last(3)
-    @ultimas_entidades = Entidade.last(3)
-    @ultimos_candidatos = Candidato.last(3)
+    @ultimas_ofertas = Oferta.last(3).to_a.reverse
+    @ultimas_noticias = Noticia.last(3).to_a.reverse
+    @ultimas_entidades = Entidade.last(3).to_a.reverse
+    @ultimos_candidatos = Candidato.last(3).to_a.reverse
   end
 
   def new

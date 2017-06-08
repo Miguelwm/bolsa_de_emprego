@@ -1,13 +1,13 @@
 <% provide(:title, 'Ultimas Empresas') %>
   <h3>Ultimos Candidatos</h3>
     <% @ultimos_candidatos.each do |candidato| %>
-      <div class="col-md-6">
+      <div class="col-md-3">
         <div class="foto">
           <%= image_tag candidato.perfil.foto.url if candidato.perfil.foto? %><br>
         </div>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-9">
         <div class="conteudo">
           <%=link_to candidato.perfil.conta.nome, candidato%><br>
           <%= candidato.area_profissional.area%><br>

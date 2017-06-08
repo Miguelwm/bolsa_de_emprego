@@ -26,7 +26,8 @@ perfil1 = conta1.create_perfil!(morada:"Rua do Sobe e Desce,150",
                               localidade:"Baguim do Monte",
                               contacto1: "966698551",
                               pagina: "http://stackoverflow.com/",
-                              apresentacao: "Entidade Reguladora de Angulos")
+                              apresentacao: "Entidade Reguladora de Angulos",
+                              foto:  File.open(File.join(Rails.root, "/app/assets/images/seed/100x150.png")))
 
 entidade1 = perfil1.create_entidade!(nif: "123456789", actividade_profissional_id: actividade.id)
 
@@ -54,7 +55,8 @@ perfil2 = conta2.create_perfil!(morada:"Rua da Curva e Contracurva,999",
                               localidade:"Praça do Delgaco",
                               contacto1: "215669235",
                               pagina: "https://www.w3schools.com/",
-                              apresentacao: "Candidato a Trabalho")
+                              apresentacao: "Candidato a Trabalho",
+                              foto: File.open(File.join(Rails.root, "/app/assets/images/seed/100x150.png")))
 
 perfil2.create_candidato!(nascimento: DateTime.new(1991,5,1),
                           bi: "11564876",
@@ -110,7 +112,8 @@ Oferta.create!(titulo:"Programação Web",val_inicio: DateTime.new(2017,4,2),
                               localidade:localidade,
                               contacto1: "966698551",
                               pagina: "http://stackoverflow.com/",
-                              apresentacao: apresentacao)
+                              apresentacao: apresentacao,
+                              foto: File.open(File.join(Rails.root, "/app/assets/images/seed/100x150.png")))
 
   nif = rand(999999999)
 
@@ -135,7 +138,8 @@ end
                               localidade:localidade,
                               contacto1: "966698551",
                               pagina: "http://stackoverflow.com/",
-                              apresentacao: apresentacao)
+                              apresentacao: apresentacao,
+                              foto: File.open(File.join(Rails.root, "/app/assets/images/seed/100x150.png")))
 
   habilitacao = Faker::Lorem.sentence(5)
   experiencia = Faker::Lorem.sentence(5)
@@ -149,6 +153,3 @@ end
 
 
 end
-
-
-
