@@ -6,15 +6,32 @@
       <%= image_tag @entidade.perfil.foto.url if @entidade.perfil.foto? %><br>
     </div>
     <div class="col-md-9">
-      <%= @entidade.perfil.apresentacao %><br>
+      <%= @entidade.perfil.apresentacao %><br><br>
       <b>Actividade Profissional</b><br>
-      <%= @entidade.actividade_profissional.actividade %><br>
+      <%= @entidade.actividade_profissional.actividade %><br><br>
       <b>Morada</b><br>
       <%= @entidade.perfil.morada %><br>
-      <%= @entidade.perfil.codigo_postal %>,<%= @entidade.perfil.localidade %><br>
+      <%= @entidade.perfil.codigo_postal %>,<%= @entidade.perfil.localidade %><br><br>
       <b>Contactos</b><br>
-      <%= @entidade.perfil.contacto1 %>
-      <%= @entidade.perfil.conta.email %>
+      <%if @entidade.perfil.contacto2.nil?%>
+        <% if !@entidade.perfil.contacto1.nil? %>
+          <%= "Contacto: " + @entidade.perfil.contacto1 %>
+          <p>
+          <%end%><%end%>
+      <%if @entidade.perfil.contacto1.nil? %>
+       <%if !@entidade.perfil.contacto2.nil? %>
+          <%= "Contacto: " + @entidade.perfil.contacto2 %>
+          <p>
+          <%end%><%end%>
+      <%if !@entidade.perfil.contacto1.nil?%>
+       <%if !@entidade.perfil.contacto2.nil?%>
+          <%= "Contactos: " + @entidade.perfil.contacto1 + " ; " + @entidade.perfil.contacto2 %>
+          <p>
+          <%end%><%end%>
+      <% if !@entidade.perfil.conta.email.nil? %>
+      <%= "Email: " + @entidade.perfil.conta.email %>
+      <p>
+      <%end%>
     </div>
   </div>
 </div>

@@ -50,6 +50,8 @@ class EntidadesController < ApplicationController
                     :password_confirmation]])
     end
 
+
+
     def conta_correcta
       @entidade = Entidade.find(params[:id])
       redirect_to(root_url) unless conta_atual?(@entidade.perfil.conta)

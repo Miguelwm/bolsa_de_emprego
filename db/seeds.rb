@@ -89,8 +89,14 @@ Salario.create!(quantia: "1750 - 2000")
 Oferta.create!(titulo:"Programação Web",val_inicio: DateTime.new(2017,4,2),
   val_fim: DateTime.new(2019,4,2)  ,descricao:"Procura-se trabalhador com conhecimentos de programação web para contrato de dois anos" ,
   activo: true ,tipo_contrato_id:tipo.id ,salario_id: salario.id ,
-  area_profissional_id:area.id, entidade_id: entidade1.id)
+  area_profissional_id:area.id, entidade_id: entidade1.id, foto: File.open(File.join(Rails.root, "/app/assets/images/seed/100x150.png")))
 
+  15.times do |n|
+    Oferta.create!(titulo:"#{n+1}",val_inicio: DateTime.new(2017,4,2),
+      val_fim: DateTime.new(2019,4,2)  ,descricao:Faker::Lorem.sentence(5) ,
+      activo: true ,tipo_contrato_id:tipo.id ,salario_id: salario.id ,
+      area_profissional_id:area.id, entidade_id: entidade1.id,foto: File.open(File.join(Rails.root, "/app/assets/images/seed/100x150.png")))
+end
 
 
 
@@ -153,3 +159,14 @@ end
 
 
 end
+
+# Following relationships
+candidatos = Candidato.all
+entidade  = Entidade.first
+interessantes = candidatos[2..14]
+interessantes.each { |candidato| Perfil.find_by_id(entidade.perfil_id).interesse(Perfil.find_by_id(candidato.perfil_id)) }
+
+entidades = Entidade.all
+candidato  = Candidato.first
+interessantes = entidades[2..14]
+interessantes.each { |entidade| Perfil.find_by_id(candidato.perfil_id).interesse(Perfil.find_by_id(entidade.perfil_id)) }

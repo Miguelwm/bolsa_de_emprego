@@ -46,7 +46,7 @@ class OfertasController < ApplicationController
     def oferta_params
       params.require(:oferta).permit(:titulo, :val_inicio, :val_fim, :descricao,
                                     :area_profissional_id, :tipo_contrato_id,
-                                    :salario_id ,:activo)
+                                    :salario_id ,:activo, :foto)
     end
 
     def conta_correcta

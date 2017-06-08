@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310160751) do
+ActiveRecord::Schema.define(version: 20170608135340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20170310160751) do
     t.integer  "situacao_profissional_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "user"
     t.index ["area_profissional_id"], name: "index_candidatos_on_area_profissional_id", using: :btree
     t.index ["nivel_habilitacao_id"], name: "index_candidatos_on_nivel_habilitacao_id", using: :btree
     t.index ["perfil_id"], name: "index_candidatos_on_perfil_id", using: :btree
@@ -63,6 +64,7 @@ ActiveRecord::Schema.define(version: 20170310160751) do
     t.boolean  "admin",           default: false
     t.boolean  "activo",          default: false
     t.string   "password_digest"
+    t.integer  "user"
   end
 
   create_table "entidades", force: :cascade do |t|
@@ -71,6 +73,7 @@ ActiveRecord::Schema.define(version: 20170310160751) do
     t.integer  "actividade_profissional_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.integer  "user"
     t.index ["actividade_profissional_id"], name: "index_entidades_on_actividade_profissional_id", using: :btree
     t.index ["perfil_id"], name: "index_entidades_on_perfil_id", using: :btree
   end
@@ -118,6 +121,7 @@ ActiveRecord::Schema.define(version: 20170310160751) do
     t.datetime "updated_at",                           null: false
     t.integer  "salario_id"
     t.string   "picture"
+    t.string   "foto"
     t.index ["area_profissional_id"], name: "index_ofertas_on_area_profissional_id", using: :btree
     t.index ["entidade_id"], name: "index_ofertas_on_entidade_id", using: :btree
     t.index ["salario_id"], name: "index_ofertas_on_salario_id", using: :btree
@@ -136,6 +140,7 @@ ActiveRecord::Schema.define(version: 20170310160751) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "foto"
+    t.integer  "user"
     t.index ["conta_id"], name: "index_perfils_on_conta_id", using: :btree
   end
 
