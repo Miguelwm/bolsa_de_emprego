@@ -1,6 +1,6 @@
 <% provide(:title, "Log in") %>
 <h1>Log in</h1>
-
+<% if !logged_in? %>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= simple_form_for(:session, url: login_path) do |f| %>
@@ -11,7 +11,10 @@
 
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
-
     <p>New user? <%= link_to "Sign up now!", registo_path %></p>
   </div>
 </div>
+<%else%><center><div class="col-md-12"><br> <%= link_to "Você já está loggado.", root_url, class:"btn btn-success btn-lg"%> <br> </div></center>
+<div class=" col-md-12"> <br> </div>
+<center><div class=" col-md-12"><%=link_to "Pretende terminar a sua sessão?", log_out, class: "btn btn-warning btn-lg"%> <br> </div></center>
+<%end%>

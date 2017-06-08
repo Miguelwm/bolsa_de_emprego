@@ -16,7 +16,7 @@ actividade = ActividadeProfissional.create!(actividade:"Informatica")
 ActividadeProfissional.create!(actividade:"Mecanica")
 ActividadeProfissional.create!(actividade:"Farmaceutica")
 
-conta1 = Conta.create!(nome: "Entidade",
+conta1 = Conta.create!(nome: "Wiremaze",
                       email:"entidade@seed.com",
                       password:              "foobar",
                       password_confirmation: "foobar")
@@ -45,7 +45,7 @@ NivelHabilitacao.create!(nivel: "Douturamento")
 
 situacao = SituacaoProfissional.create!(situacao: "Desempregado")
 
-conta2 = Conta.create!(nome: "Candidato",
+conta2 = Conta.create!(nome: "Miguel Pereira",
                       email:"candidato@seed.com",
                       password:              "foobar",
                       password_confirmation: "foobar")

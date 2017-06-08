@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    if !logged_in?
     conta = Conta.find_by(email: params[:session][:email].downcase)
     if conta && conta.authenticate(params[:session][:password])
       log_in conta
@@ -19,6 +20,7 @@ class SessionsController < ApplicationController
       render 'new'
     end
   end
+end
 
   def destroy
     log_out
