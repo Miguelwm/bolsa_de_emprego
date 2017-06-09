@@ -17,7 +17,9 @@ module SessionsHelper
   end
 
   def is_candidato?
-    !conta_atual.perfil.candidato.nil?
+    if !conta_atual.perfil.nil?
+      !conta_atual.perfil.candidato.nil?
+    end
   end
 
   def candidato_atual

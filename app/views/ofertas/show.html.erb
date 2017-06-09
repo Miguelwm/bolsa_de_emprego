@@ -6,14 +6,14 @@
       <%= image_tag @oferta.foto if @oferta.foto? %><br>
     </div>
     <div class="col-md-9">
-      <%= @oferta.descricao %><br>
-      <%= @oferta.val_inicio %> a <%= @oferta.val_fim %><br>
+      <%= @oferta.descricao %><br><br>
+      <%= @oferta.val_inicio %> a <%= @oferta.val_fim %><br><br><br>
       <b>Empresa</b><br>
-      <%= link_to @oferta.entidade.perfil.conta.nome, @oferta.entidade %><br>
+      <%= link_to @oferta.entidade.perfil.conta.nome, @oferta.entidade %><br><br>
       <b>Area Profissional</b><br>
-      <%= @oferta.area_profissional.area %><br>
+      <%= @oferta.area_profissional.area %><br><br>
       <b>Tipo de Contrato</b><br>
-      <%= @oferta.tipo_contrato.tipo %><br>
+      <%= @oferta.tipo_contrato.tipo %><br><br>
       <b>Salario</b><br>
       <%= @oferta.salario.quantia %><br>
     </div>

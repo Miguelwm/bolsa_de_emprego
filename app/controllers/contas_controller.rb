@@ -12,6 +12,7 @@ class ContasController < ApplicationController
     @conta.password = "BolsaAdmin"
     @conta.password_confirmation ="BolsaAdmin"
     if @conta.save
+      flash[:success] = "Bem vindo à Bolsa de Emprego!"
       redirect_to utilizadores_path
     else
       render 'new'
@@ -41,6 +42,7 @@ class ContasController < ApplicationController
 
   def destroy
     @conta = Conta.find(params[:id]).destroy
+    flash[:success] = "A conta " + @conta.nome + " foi eliminada com sucesso"
     redirect_to contas_path
   end
 

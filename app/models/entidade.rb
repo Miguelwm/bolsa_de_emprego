@@ -6,6 +6,10 @@ class Entidade < ApplicationRecord
   accepts_nested_attributes_for :perfil, :update_only => true
 
 
+validates :nif, presence: true, allow_blank: false
+validates :actividade_profissional_id, presence:true, allow_blank: false
+
+
 
 
 end

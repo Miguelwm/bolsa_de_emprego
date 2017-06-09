@@ -1,7 +1,7 @@
 <% provide(:title, 'Candidatos') %>
 <h1>Candidatos</h1>
 <div class="row">
-  <%= will_paginate %>
+
     <div class="col-md-12">
       <% @candidatos.each do |candidato| %>
         <div class="col-md-2">
@@ -22,4 +22,7 @@
       <% end %>
     </div>
   <%= will_paginate %>
+  <br>
+  <br>
+  <%= link_to "Quero-me registar", registo_path %>
 </div>

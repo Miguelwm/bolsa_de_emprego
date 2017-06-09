@@ -1,7 +1,6 @@
   <%= simple_form_for(@entidade) do |f| %>
     <%= f.fields_for :perfil do |p| %>
       <%= p.fields_for :conta do |c| %>
-
         <%= c.input :nome, placeholder: 'Nome' %>
 
         <%= c.input :email, placeholder: 'email@example.com' %>
@@ -10,7 +9,7 @@
 
         <%= c.input :password_confirmation,label: 'Confirmação de Password', placeholder: 'Password' %>
       <% end %>
-
+      <b><%= "Fotografia: " %> </b>
       <%= p.file_field :foto, label: 'Foto(por testar)' %>
 
       <%= p.input :morada, placeholder: 'Morada'%>
@@ -29,11 +28,9 @@
     <% end %>
 
     <%= f.input :nif, label: 'NIF', placeholder: 'xxxxxxxxx'%>
-
-    <%= f.input :actividade_profissional_id, :collection => @todas_actividades,
-    :label_method => :actividade,
-    :value_method => :id,
-    :label => 'Actividade Profissional', :include_blank => false %>
-
+    <b><%= "Actividade Profissional: " %> </b>
+    <%= f.collection_select :actividade_profissional_id, ActividadeProfissional.order(:actividade), :id, :actividade, label:  'Actividade Profissional', include_blank: true %>
+<p>
+<br>
     <%= f.submit yield(:button_text), class: "btn btn-primary" %>
   <% end %>

@@ -202,8 +202,6 @@ GEM
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     heritage (0.3.2)
-    holder_rails (2.9.3)
-      railties (>= 3.1.0)
     i18n (0.8.1)
     inflecto (0.0.2)
     ipaddress (0.8.3)
@@ -296,6 +294,8 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.6)
+    tinymce-rails (4.6.3)
+      railties (>= 3.1.1)
     trollop (2.1.2)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
@@ -328,7 +328,6 @@ DEPENDENCIES
   faker (= 1.6.6)
   fog (= 1.38.0)
   heritage
-  holder_rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
@@ -340,6 +339,7 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
+  tinymce-rails
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)

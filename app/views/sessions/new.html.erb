@@ -1,5 +1,5 @@
 <% provide(:title, "Log in") %>
-<h1>Log in</h1>
+<h1>Autenticar</h1>
 <% if !logged_in? %>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -14,7 +14,14 @@
     <p>New user? <%= link_to "Sign up now!", registo_path %></p>
   </div>
 </div>
-<%else%><center><div class="col-md-12"><br> <%= link_to "Você já está loggado.", root_url, class:"btn btn-success btn-lg"%> <br> </div></center>
-<div class=" col-md-12"> <br> </div>
-<center><div class=" col-md-12"><%=link_to "Pretende terminar a sua sessão?", log_out, class: "btn btn-warning btn-lg"%> <br> </div></center>
-<%end%>
+<% else %>
+<center>
+  <div class="col-md-12">
+    <br>
+    <div class="alert alert-warning">Você já está autenticado!</div>
+    <%= link_to "Voltar à página inicial.", root_url, class:"btn btn-success btn-lg"%>
+    <%=link_to "Pretende terminar a sua sessão?", log_out, class: "btn btn-warning btn-lg"%>
+    <br>
+  </div>
+</center>
+<% end %>

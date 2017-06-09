@@ -4,7 +4,7 @@ class Conta < ApplicationRecord
   accepts_nested_attributes_for :perfil, allow_destroy: true, :update_only => true
 
   before_save   :downcase_email
-  validates :nome, presence: true, length: { maximum: 50 }
+  validates :nome, presence: true, length: { maximum: 50, minimum: 2}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },

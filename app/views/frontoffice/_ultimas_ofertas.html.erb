@@ -1,9 +1,8 @@
-<% provide(:title, 'Ultimas Ofertas') %>
   <h3>Ultimas Ofertas</h3>
     <% @ultimas_ofertas.each do |oferta| %>
       <div class="col-md-3">
         <div class="foto">
-          <%= image_tag oferta.picture.url if oferta.picture? %><br>
+          <%= image_tag oferta.foto.url if oferta.foto? %><br>
         </div>
       </div>
 
@@ -24,5 +23,3 @@
 <div class="col-md-12">
   <%=link_to 'Ver todas as Ofertas', ofertas_path%>
 </div>
-
-
