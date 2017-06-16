@@ -10,7 +10,8 @@
         <div class="conteudo">
           <%=link_to candidato.perfil.conta.nome, candidato%><br>
           <%= candidato.area_profissional.area%><br>
-          <%= candidato.habilitacao%><br>
+          <%= candidato.habilitacao.html_safe%><br>
+          <%= candidato.experiencia.html_safe%><br>
         </div>
       </div>
       <div class="col-md-12">

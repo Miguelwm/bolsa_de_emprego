@@ -1,6 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+#session_lembrar_me {
+  width: auto;
+  margin-left: 0;
+}
+
+
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;

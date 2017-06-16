@@ -1,0 +1,4 @@
+<%= form_for(conta_atual.perfil.interesses_activos.find_by(interessado_id: @candidato.perfil.id),
+           html: { method: :delete }) do |f| %>
+<%= f.submit "Retirar interesse", class: "btn btn-danger" %>
+<% end %>

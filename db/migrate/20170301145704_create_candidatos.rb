@@ -5,7 +5,7 @@ class CreateCandidatos < ActiveRecord::Migration[5.0]
       t.string :bi
       t.text :habilitacao
       t.text :experiencia
-      t.binary :cv
+      t.string :cv
       t.references :perfil, foreign_key: true
       t.references :area_profissional, foreign_key: true
       t.references :nivel_habilitacao, foreign_key: true

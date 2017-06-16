@@ -30,8 +30,18 @@ class NoticiasController < ApplicationController
     end
   end
 
+  def destroy
+    @noticia = Noticia.find(params[:id]).destroy
+    flash[:success] = "A noticia " + @noticia.titulo + " foi eliminada com sucesso"
+    redirect_to noticias_path
+  end
+
   def index
-    @todas_noticias = Noticia.all
+    if params[:search] && !params[:search].blank?
+      @todas_noticias = Noticia.search(params[:search])
+    else
+      @todas_noticias = Noticia.all
+    end
   end
 
   def show
@@ -40,6 +50,6 @@ class NoticiasController < ApplicationController
 
   private
     def noticia_params
-      params.require(:noticia).permit( :titulo, :data, :sumario, :texto, :destaque, :activo)
+      params.require(:noticia).permit( :titulo, :data, :sumario, :texto, :destaque, :activo, :foto)
     end
 end

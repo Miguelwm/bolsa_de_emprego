@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  # get 'password_resets/new'
+  #
+  # get 'password_resets/edit'
+
   root   'frontoffice#home'
 
   resources :frontoffice, only:[:index_noticias, :show_noticia, :new, :home] do
@@ -8,6 +12,8 @@ Rails.application.routes.draw do
       get 'noticia/:id', to: 'frontoffice#show_noticia', as: 'noticia'
     end
   end
+
+    get 'frontoffice', to: 'frontoffice#front'
 
   scope 'frontoffice/' do
     get    'home', to: 'frontoffice#home'
@@ -19,6 +25,20 @@ Rails.application.routes.draw do
     get    'login',   to: 'sessions#new'
     post   'login',   to: 'sessions#create'
     delete 'logout',  to: 'sessions#destroy'
+    get    'detalhes', to: 'detalhes#home'
+    get    'alterarpassword', to: 'contas#edit_password_front'
+
+    resources :account_activationns, only: [:edit]
+    resources :password_resets,      only: [:new, :create, :edit, :update]
+
+    scope 'detalhes' do
+    resources :alterar_password,     only: [:edit, :update]
+    get 'candidaturas', to: 'detalhes#showcandidaturas', as: 'candidaturascandidato'
+    get 'interessadas', to: 'detalhes#showinteressadas'
+    get 'ofertas', to: 'detalhes#showofertasativas', as: 'ofertasativas'
+    get 'historico', to: 'detalhes#showhistorico'
+    get 'interessados', to: 'detalhes#showinteressados'
+    end
 
     resources :entidades
     resources :ofertas do
@@ -46,9 +66,11 @@ Rails.application.routes.draw do
     resources :contas, path: 'utilizadores' do
       collection do
         get   'alterarpassword/:id', to: 'contas#edit_password' ,as: 'alterarpassword'
-        put   'alterarpassword/:id', to: 'contas#update_password'
+        patch  'alterarpassword/:id', to: 'contas#update_password'
+
       end
     end
+
 
     resources :noticias
   end

@@ -4,18 +4,21 @@
   <div class="col-md-12">
     <div class="col-md-3">
       <%= image_tag @candidato.perfil.foto.url if @candidato.perfil.foto? %><br>
+      <%= link_to "Curriculum Vitae", @candidato.cv_url %><br><br>
+      <%= render 'editar' if logged_in? && candidato_atual==@candidato%>
+      <%= render 'interessado_form' if logged_in? && is_entidade?%>
     </div>
     <div class="col-md-9">
-      <%= @candidato.perfil.apresentacao %><br>
+      <%= @candidato.perfil.apresentacao.html_safe %><br>
       <h3><b>Dados Profissionais</b></h3><br>
       <b>Situação Profissional</b><br>
       <%= @candidato.situacao_profissional.situacao %><br>
       <b>Nivel Habilitação</b><br>
       <%= @candidato.nivel_habilitacao.nivel %><br>
       <b>Habilitações Literarias</b><br>
-      <%= @candidato.habilitacao %><br>
+      <%= @candidato.habilitacao.html_safe %><br>
       <b>Experiencia Profissional</b><br>
-      <%= @candidato.experiencia %><br>
+      <%= @candidato.experiencia.html_safe %><br>
 
       <h3><b>Dados Pessoais</b></h3><br>
       <b>Morada</b><br>

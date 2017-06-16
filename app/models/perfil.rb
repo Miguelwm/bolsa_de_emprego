@@ -7,16 +7,19 @@ class Perfil < ApplicationRecord
   accepts_nested_attributes_for :candidato, allow_destroy: true
   accepts_nested_attributes_for :conta,  :update_only => true
   mount_uploader :foto, PictureUploader
+  validates :foto, presence:true, allow_blank:false
 
   has_many :interesses_activos, class_name:  "Interesse",
                                   foreign_key: "interessado_em_id",
                                   dependent:   :destroy
-  has_many :interessados, through: :interesses_activos, source: :interessado
 
   has_many :interesses_passivos, class_name:  "Interesse",
-                                   foreign_key: "interessado_id",
-                                   dependent:   :destroy
-  has_many :interessados_em, through: :interesses_passivos, source: :interessado_em
+                                 foreign_key: "interessado_id",
+                                 dependent:   :destroy
+
+  has_many :interessados, through: :interesses_activos, source: :interessado #Following
+  has_many :interessados_em, through: :interesses_passivos, source: :interessado_em #Followers
+
 
 
 
@@ -24,14 +27,14 @@ class Perfil < ApplicationRecord
 
 
   def interesse(objeto)
-    interessados_em << objeto
+    interessados << objeto
   end
 
   def desinteresse(objeto)
-    interessados_em.delete(objeto)
+    interessados.delete(objeto)
   end
 
   def interessados?(objeto)
-    interessados_em.include?(objeto)
+    interessados.include?(objeto)
   end
 end

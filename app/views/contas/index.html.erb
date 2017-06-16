@@ -1,6 +1,27 @@
 <% provide(:title, 'Utilizadores') %>
 <h1>Utilizadores</h1>
 <div class="row">
+
+  <div class="col-md-11">
+    <%= form_tag(contas_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Procurar" %>
+        <b><%= "Tipo: " %> </b>
+        <%= select_tag :searchtipo, options_for_select(['Backoffice','Candidato','Entidade'], params[:searchtipo]), include_blank:true %>
+        <%= submit_tag "Procurar", :name => nil %><br><br>
+    <% end %>
+  </div>
+  <div class="col-md-1">
+    <%=button_to 'Inserir', new_conta_path, method: :get%>
+  </div>
+  <div class="col-md-12">
+    <br>
+  </div>
+  <div class="col-md-12">
+    <% if @todas_contas.blank? && (params[:search] || params[:searcharea]) %>
+       <h3>Não existem contas que coincidam com a sua pesquisa</h3><br><br>
+    <% end %>
+  </div>
+
   <div class="col-md-12">
     <table class="table table-striped">
       <thead>
@@ -14,7 +35,7 @@
       <% @todas_contas.each do |conta| %>
         <tbody>
           <td><%=conta.nome%></td>
-          <td><%=tipo_conta(conta)%></td>
+          <td><%=conta.tipo%></td>
           <td><%=actividade_conta(conta)%></td>
           <td>
             <%=button_to 'Detalhes', conta, method: :get%>
@@ -24,6 +45,6 @@
         </tbody>
       <% end %>
     </table>
-    <%=button_to 'Inserir', new_conta_path, method: :get%>
+
   </div>
 </div>

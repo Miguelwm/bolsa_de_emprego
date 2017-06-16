@@ -1,0 +1,59 @@
+<%= tinymce %>
+<%= simple_form_for(@candidato) do |f| %>
+    <%= f.fields_for :perfil do |p| %>
+      <%= p.fields_for :conta do |c| %>
+
+        <%= c.input :nome, placeholder: 'Nome' %>
+
+        <%= c.input :email, placeholder: 'email@example.com' %>
+      <% end %>
+      <b><%= "Fotografia: " %> </b>
+      <%= p.file_field :foto, label: 'Foto' %><br>
+
+      <%= p.input :morada, placeholder: 'Morada'%>
+
+      <%= p.input :codigo_postal, placeholder: 'Codigo Postal'%>
+
+      <%= p.input :localidade, placeholder: 'Localidade'%>
+
+      <%= p.input :contacto1, label: 'Contacto 1', placeholder: '222222222'%>
+      <%= p.input :contacto2, label: 'Contacto 2', placeholder: '222222222'%>
+
+      <%= p.input :pagina, label: 'Pagina Pessoal', placeholder: 'http://.....'%>
+
+      <b><%= "Apresentação: "%></b><br>
+      <%= p.text_area :apresentacao, :class => "tinymce"%>
+
+    <% end %>
+
+    <%= f.input :nascimento, label: 'Data de Nascimento', data:{ provide:'datepicker' }%>
+
+    <%= f.input :bi, label: 'Bilhete de Identidade'%>
+    <%= f.input :cv, label: 'Curriculum Vitae'%>
+
+    <%= f.input :area_profissional_id, :collection => AreaProfissional.order(:area), :label_method => :area,
+                                                                                                       :value_method => :id,
+                                                                                                       :label => "Actividade profissional",
+                                                                                                       :include_blank => true %>
+
+
+
+    <%= f.input :nivel_habilitacao_id, :collection => NivelHabilitacao.order(:nivel), :label_method => :nivel,
+                                                                                                       :value_method => :id,
+                                                                                                       :label => "Actividade profissional",
+                                                                                                       :include_blank => true %>
+
+    <b><%= "Habilitações Literarias: "%></b><br>
+    <%= f.text_area :habilitacao, :class => "tinymce"%><br>
+
+    <%= f.input :situacao_profissional_id, :collection =>SituacaoProfissional.order(:situacao), :label_method => :situacao,
+                                                                                                       :value_method => :id,
+                                                                                                       :label => "Actividade profissional",
+                                                                                                       :include_blank => true %>
+
+
+    <b><%= "Experiencia: "%></b><br>
+    <%= f.text_area :experiencia, :class => "tinymce"%><br>
+
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  <% end %>

@@ -25,20 +25,17 @@
     </div>
   </div>
 
-  <div class="col-md-12">
+  <div class="col-md-6">
     <div class ="imagem">
-      ==IMAGEM==
+      <b>Imagem</b><br>
+      <%= image_tag @noticia.foto.url%>
     </div>
   </div>
 
   <div class="col-md-6">
     <div class ="destaque">
-      <b>Destaque</b><br>
-      <%= @noticia.destaque %>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class ="activo">
+      <br><br><b>Destaque</b><br>
+      <%= @noticia.destaque %><br><br>
       <b>Activo</b><br>
       <%= @noticia.activo %>
     </div>

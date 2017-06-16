@@ -1,0 +1,33 @@
+<h3> Histórico </h3>
+<% if homeofertas_inativas(entidade_atual).any? %>
+<% homeofertas_inativas(entidade_atual).each do |oferta| %>
+  <div class="col-md-3">
+    <div class="foto">
+      <%= image_tag oferta.foto.url if oferta.foto? %><br>
+    </div>
+  </div>
+
+  <div class="col-md-9">
+    <div class="conteudo">
+      <%=link_to oferta.titulo, oferta%><br>
+      <%= oferta.val_inicio%> a <%= oferta.val_fim%><br>
+      <%= oferta.entidade.perfil.conta.nome%><br>
+      <%= oferta.entidade.perfil.conta.nome%><br>
+      <%= oferta.descricao%><br>
+      <%= link_to "Reativar", edit_oferta_path(oferta), class: "btn btn-primary" %>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <br>
+  </div>
+<% end %>
+<div class="col-md-12">
+<%=link_to 'Ver todos as Ofertas', historico_path, class: "btn btn-primary" %>
+</div>
+<% else %>
+<div class="col-md-9">
+<br>
+<br>
+<h2>Não tem nenhuma oferta inativa</h2>
+</div>
+<% end %>

@@ -9,8 +9,9 @@
       <div class="col-md-9">
         <div class="conteudo">
           <%=link_to entidade.perfil.conta.nome, entidade%><br>
-          <%= entidade.perfil.conta.nome%><br>
-          <%= entidade.perfil.apresentacao%><br>
+          <%= num_ofertas_activas(entidade)%> oferta(s) ativa(s)<br>
+          <%= entidade.actividade_profissional.actividade%><br>
+          <%= entidade.perfil.apresentacao.html_safe%><br>
         </div>
       </div>
       <div class="col-md-12">

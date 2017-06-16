@@ -12,13 +12,9 @@
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
           <% if conta_atual.perfil == nil %>
-            <li><%= link_to conta_atual.nome , edit_conta_path(conta_atual) %></li>
+            <li><%= link_to conta_atual.nome , backhome_path %></li>
             <% else %>
-              <% if is_candidato? %>
-                <li><%= link_to conta_atual.nome , edit_candidato_path(candidato_atual) %></li>
-              <% else %>
-                <li><%= link_to conta_atual.nome , edit_entidade_path(conta_atual.perfil.entidade) %></li>
-              <% end %>
+              <li><%= link_to conta_atual.nome , detalhes_path %></li>
           <% end %>
           <li><%= link_to "Sair", logout_path, method: "delete" %></li>
         <% else %>

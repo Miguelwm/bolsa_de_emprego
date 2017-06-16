@@ -3,10 +3,12 @@
 <div class="row">
   <div class="col-md-12">
     <div class="col-md-3">
-      <%= image_tag @entidade.perfil.foto.url if @entidade.perfil.foto? %><br>
+      <%= image_tag @entidade.perfil.foto.url if @entidade.perfil.foto? %><br><br>
+      <%= render 'editar' if logged_in? && entidade_atual==@entidade%>
+      <%= render 'interessado_form' if logged_in? && is_candidato?%>
     </div>
     <div class="col-md-9">
-      <%= @entidade.perfil.apresentacao %><br><br>
+      <%= @entidade.perfil.apresentacao.html_safe %><br><br>
       <b>Actividade Profissional</b><br>
       <%= @entidade.actividade_profissional.actividade %><br><br>
       <b>Morada</b><br>
@@ -40,14 +42,20 @@
   <h3>Ofertas Activas</h3>
   <div class="col-md-12">
     <% ofertas_activas(@entidade).each do |oferta| %>
-      <div class="col-md-3">
-        <%= image_tag oferta.picture.url if oferta.picture? %><br>
+      <div class="col-md-2">
+        <%= image_tag oferta.foto.url if oferta.foto? %><br>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-5">
         <%= link_to oferta.titulo, oferta %><br>
         <%= oferta.val_inicio %> a <%= oferta.val_fim %><br>
         <%= oferta.entidade.perfil.conta.nome %><br>
         <%= oferta.descricao %><br>
+        <% if oferta.entidade==entidade_atual %>
+          <%= link_to "Editar", edit_oferta_path(oferta), class: "btn btn-primary" %>
+          <div class="col-md-12">
+            <p>
+          </div>
+        <% end %>
       </div>
       <div class="col-md-12">
         <br>

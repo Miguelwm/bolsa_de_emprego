@@ -1,0 +1,7 @@
+<div id="form_candidatura">
+<% if candidato_atual.ofertas?(@oferta) %>
+  <%= render 'candidatado' %>
+<% else %>
+  <%= render 'candidatar' %>
+<% end %>
+</div>

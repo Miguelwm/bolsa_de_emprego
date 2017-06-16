@@ -6,6 +6,14 @@ class Candidato < ApplicationRecord
 
   validates_presence_of :perfil
 
+validates :cv, presence: true
+validates :bi, presence: true
+validates :nivel_habilitacao_id, presence: true, allow_blank: false
+validates :area_profissional_id, presence: true, allow_blank: false
+validates :situacao_profissional_id, presence: true, allow_blank: false
+mount_uploader :cv, CvUploader
+
+
   accepts_nested_attributes_for :perfil, :update_only => true
 
   has_many :candidaturas, class_name:  "Candidatura",

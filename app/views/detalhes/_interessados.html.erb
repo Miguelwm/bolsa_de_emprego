@@ -1,0 +1,27 @@
+<h3> Candidatos interessados </h3>
+<% if homeinteresse(entidade_atual).any? %>
+<% homeinteresse(entidade_atual).each do |perfil| %>
+    <div class="col-md-3">
+      <% candidato = perfil.candidato %>
+      <%= image_tag candidato.perfil.foto.url if candidato.perfil.foto? %><br><br>
+    </div>
+    <div class="col-md-9">
+      <%= link_to candidato.perfil.conta.nome,candidato %><br>
+      <%= candidato.area_profissional.area%><br>
+      <%= candidato.experiencia.html_safe%><br>
+      <%= candidato.nivel_habilitacao.nivel%><br><br>
+    </div>
+  <div class="col-md-12">
+    <br>
+  </div>
+<% end %>
+<div class="col-md-12">
+<%=link_to 'Ver todos os candidatos', interessados_path, class: "btn btn-primary" %>
+</div>
+<% else %>
+<div class="col-md-9">
+<br>
+<br>
+<h2>Ainda nenhum candidato manisfetou interesse na sua impresa</h2>
+</div>
+<%end%>

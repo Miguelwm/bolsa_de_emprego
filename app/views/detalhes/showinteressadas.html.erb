@@ -1,0 +1,31 @@
+<% provide :title, "Empresas" %>
+<h1>Empresas interessadas em mim</h1><br>
+<div class="row">
+      <% if @interessados.any? %>
+        <div class="col-md-12">
+      <% @interessados.each do |perfil| %>
+      <% entidade = perfil.entidade %>
+        <div class="col-md-2">
+          <%= image_tag perfil.foto.url if perfil.foto? %><br><br>
+        </div>
+        <div class="col-md-10">
+          <%= link_to perfil.conta.nome,entidade %><br>
+          <%= num_ofertas_activas(entidade)%> oferta(s) ativa(s)<br>
+          <%= perfil.apresentacao.html_safe%><br><br>
+        </div>
+        <div class="col-md-12">
+          <br>
+        </div>
+      <% end %>
+    </div>
+  <%= will_paginate @interessados %>
+  <% else %>
+  <div class="col-md-9">
+  <br>
+  <br>
+  <h2>Ainda nenhum candidato manisfetou interesse na sua impresa</h2>
+  </div>
+  <%end%>
+  <br>
+  <br>
+</div>

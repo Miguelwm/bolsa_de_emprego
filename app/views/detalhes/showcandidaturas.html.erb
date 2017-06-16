@@ -1,0 +1,32 @@
+<% provide :title, "Candidaturas"%>
+<h1> Candidaturas </h1><br><br>
+<div class="row">
+<% if @candidaturas.any? %>
+<% @candidaturas.each do |candidatura| %>
+  <div class="col-md-3">
+    <div class="foto">
+      <%= image_tag candidatura.oferta.foto.url if candidatura.oferta.foto? %><br>
+    </div>
+  </div>
+  <div class="col-md-9">
+      <%=link_to candidatura.oferta.titulo, candidatura.oferta%><br>
+      <%= candidatura.oferta.val_inicio%> a <%= candidatura.oferta.val_fim%><br>
+      <%= candidatura.oferta.entidade.perfil.conta.nome%><br>
+      <%= candidatura.oferta.entidade.perfil.conta.nome%><br>
+      <%= candidatura.oferta.descricao%><br>
+  </div>
+  <div class="col-md-12">
+    <br>
+  </div>
+<% end %>
+<div class="col-md-12">
+<%= will_paginate @candidaturas %>
+</div>
+<% else %>
+<div class="col-md-9">
+<br>
+<br>
+<h2> Ainda não se candidatou a nenhuma oferta, veja as ofertas <%=link_to "aqui", ofertas_path%></h2>
+</div>
+<%end%>
+</div>

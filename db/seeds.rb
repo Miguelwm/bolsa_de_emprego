@@ -3,11 +3,19 @@ admin = Conta.create!(nome:  "Admin",
              password:              "foobar",
              password_confirmation: "foobar",
              admin: true,
-             activo: true)
+             activo: true,
+             tipo: "Backoffice")
 
 Noticia.create!(titulo:"Noticia do dia" , data:DateTime.new(2017,3,7) ,
                     sumario:"Texto muito resumido" , texto:"Texto elquentemente elaborado" ,
-                    destaque:true ,activo:true ,conta_id:admin.id)
+                    destaque:true ,activo:true ,conta_id:admin.id,foto:  File.open(File.join(Rails.root, "/app/assets/images/seed/100x150.png")))
+
+
+15.times do |n|
+    Noticia.create!(titulo:Faker::Space.planet, data:Faker::Date.between(1.year.ago, Date.today) ,
+                        sumario:Faker::ChuckNorris.fact , texto:Faker::ChuckNorris.fact * 5 ,
+                        destaque:false ,activo:true ,conta_id:admin.id,foto:  File.open(File.join(Rails.root, "/app/assets/images/seed/100x150.png")))
+end
 
 
 #Entidade
@@ -19,7 +27,8 @@ ActividadeProfissional.create!(actividade:"Farmaceutica")
 conta1 = Conta.create!(nome: "Wiremaze",
                       email:"entidade@seed.com",
                       password:              "foobar",
-                      password_confirmation: "foobar")
+                      password_confirmation: "foobar", activo: true,
+                      tipo: "Entidade")
 
 perfil1 = conta1.create_perfil!(morada:"Rua do Sobe e Desce,150",
                               codigo_postal:"4421-569",
@@ -44,11 +53,15 @@ NivelHabilitacao.create!(nivel: "Mestrado")
 NivelHabilitacao.create!(nivel: "Douturamento")
 
 situacao = SituacaoProfissional.create!(situacao: "Desempregado")
+SituacaoProfissional.create!(situacao: "Empregado")
+SituacaoProfissional.create!(situacao: "Empregado Part-time")
+SituacaoProfissional.create!(situacao: "Estudante")
 
 conta2 = Conta.create!(nome: "Miguel Pereira",
                       email:"candidato@seed.com",
                       password:              "foobar",
-                      password_confirmation: "foobar")
+                      password_confirmation: "foobar", activo: true,
+                      tipo: "Candidato")
 
 perfil2 = conta2.create_perfil!(morada:"Rua da Curva e Contracurva,999",
                               codigo_postal:"4456-859",
@@ -64,7 +77,8 @@ perfil2.create_candidato!(nascimento: DateTime.new(1991,5,1),
                           experiencia: "Nenhuma",
                           area_profissional_id: area.id,
                           nivel_habilitacao_id: nivel.id,
-                          situacao_profissional_id: situacao.id)
+                          situacao_profissional_id: situacao.id,
+                          cv: File.open(File.join(Rails.root, "/app/assets/images/seed/100x150.png")))
 
 
 #Oferta
@@ -101,13 +115,14 @@ end
 
 
 15.times do |n|
-  nome  = Faker::Name.name
+  nome  = Faker::Company.name
   email = "example-entidade-#{n+1}@seed.org"
 
   conta = Conta.create!(nome: nome,
               email:email,
               password:              "foobar",
-              password_confirmation: "foobar")
+              password_confirmation: "foobar", activo: true,
+              tipo: "Entidade")
 
   localidade = Faker::Lorem.sentence(5)
   apresentacao = Faker::Lorem.sentence(5)
@@ -129,12 +144,13 @@ end
 
 15.times do |n|
   nome  = Faker::Name.name
-  email = "example-candidatp-#{n+1}@seed.org"
+  email = "example-candidato-#{n+1}@seed.org"
 
   conta = Conta.create!(nome: nome,
               email:email,
               password:              "foobar",
-              password_confirmation: "foobar")
+              password_confirmation: "foobar", activo: true,
+              tipo: "Candidato")
 
   localidade = Faker::Lorem.sentence(5)
   apresentacao = Faker::Lorem.sentence(5)
@@ -147,6 +163,7 @@ end
                               apresentacao: apresentacao,
                               foto: File.open(File.join(Rails.root, "/app/assets/images/seed/100x150.png")))
 
+
   habilitacao = Faker::Lorem.sentence(5)
   experiencia = Faker::Lorem.sentence(5)
   perfil.create_candidato!(nascimento: DateTime.new(1991,5,1),
@@ -155,18 +172,19 @@ end
                           experiencia: experiencia,
                           area_profissional_id: 1,
                           nivel_habilitacao_id: 1,
-                          situacao_profissional_id: 1)
+                          situacao_profissional_id: 1,
+                          cv: File.open(File.join(Rails.root, "/app/assets/images/seed/100x150.png")))
 
 
 end
 
 # Following relationships
-candidatos = Candidato.all
-entidade  = Entidade.first
-interessantes = candidatos[2..14]
-interessantes.each { |candidato| Perfil.find_by_id(entidade.perfil_id).interesse(Perfil.find_by_id(candidato.perfil_id)) }
-
-entidades = Entidade.all
-candidato  = Candidato.first
-interessantes = entidades[2..14]
-interessantes.each { |entidade| Perfil.find_by_id(candidato.perfil_id).interesse(Perfil.find_by_id(entidade.perfil_id)) }
+# candidatos = Candidato.all
+# entidade  = Entidade.first
+# interessantes = candidatos[2..14]
+# interessantes.each { |candidato| Perfil.find_by_id(entidade.perfil_id).interesse(Perfil.find_by_id(candidato.perfil_id)) }
+#
+# entidades = Entidade.all
+# candidato  = Candidato.first
+# interessantes = entidades[2..14]
+# interessantes.each { |entidade| Perfil.find_by_id(candidato.perfil_id).interesse(Perfil.find_by_id(entidade.perfil_id)) }

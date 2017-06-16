@@ -8,11 +8,12 @@
 
     <%= f.input :texto, label: 'Texto' %>
 
-    <%= p.file_field :foto, label: 'Foto(por testar)' %>
+    <%= f.file_field :foto, label: 'Foto(por testar)' %>
 
     <%= f.input :destaque, label: 'Destaque' %>
 
     <%= f.input :activo, label: 'Activo' %>
 
     <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    <%= link_to "Cancelar", noticia_path(@noticia) , class: "btn btn-warning" %>
   <% end %>

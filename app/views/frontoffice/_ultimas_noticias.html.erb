@@ -1,12 +1,12 @@
   <h3>Ultimas Noticias</h3>
     <% @ultimas_noticias.each do |noticia| %>
-      <div class="col-md-6">
+      <div class="col-md-3">
         <div class="foto">
-          <%= image_tag noticia.picture.url if noticia.picture? %><br>
+          <%= image_tag noticia.foto.url if noticia.foto? %><br>
         </div>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-9">
         <div class="conteudo">
           <%= link_to noticia.titulo, noticia_frontoffice_index_path(noticia) %><br>
           <%= noticia.data%><br>

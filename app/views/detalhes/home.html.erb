@@ -1,0 +1,10 @@
+<% provide :title, conta_atual.nome%>
+
+<div class="container">
+  <% if !conta_atual.perfil.nil? && conta_atual.perfil.entidade.nil? && !conta_atual.perfil.candidato.nil? %>
+  <%= render 'homecandidato' %>
+  <%end%>
+  <% if !conta_atual.perfil.nil? && !conta_atual.perfil.entidade.nil? && conta_atual.perfil.candidato.nil? %>
+  <%= render 'homeentidade' %>
+  <%end%>
+</div>

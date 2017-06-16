@@ -1,3 +1,4 @@
+  <%= tinymce %>
   <%= simple_form_for(@entidade) do |f| %>
     <%= f.fields_for :perfil do |p| %>
       <%= p.fields_for :conta do |c| %>
@@ -23,13 +24,17 @@
 
       <%= p.input :pagina, label: 'Pagina da Entidade', placeholder: 'http://.....'%>
 
-      <%= p.input :apresentacao, label: 'Apresentação', placeholder: 'Apresentação'%>
+
+      <b><%= "Apresentação: "%></b><br>
+      <%= p.text_area :apresentacao, :class => "tinymce"%><br>
 
     <% end %>
 
     <%= f.input :nif, label: 'NIF', placeholder: 'xxxxxxxxx'%>
-    <b><%= "Actividade Profissional: " %> </b>
-    <%= f.collection_select :actividade_profissional_id, ActividadeProfissional.order(:actividade), :id, :actividade, label:  'Actividade Profissional', include_blank: true %>
+    <%= f.input :actividade_profissional_id, :collection => ActividadeProfissional.order(:actividade), :label_method => :actividade,
+                                                                                                       :value_method => :id,
+                                                                                                       :label => "Actividade profissional",
+                                                                                                       :include_blank => true %>
 <p>
 <br>
     <%= f.submit yield(:button_text), class: "btn btn-primary" %>

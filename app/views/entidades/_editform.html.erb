@@ -1,0 +1,38 @@
+<%= tinymce %>
+<%= simple_form_for(@entidade) do |f| %>
+  <%= f.fields_for :perfil do |p| %>
+    <%= p.fields_for :conta do |c| %>
+      <%= c.input :nome, placeholder: 'Nome' %>
+
+      <%= c.input :email, placeholder: 'email@example.com' %>
+
+    <% end %>
+    <b><%= "Fotografia: " %> </b>
+    <%= p.file_field :foto, label: 'Foto' %>
+
+    <%= p.input :morada, placeholder: 'Morada'%>
+
+    <%= p.input :codigo_postal, placeholder: 'Codigo Postal'%>
+
+    <%= p.input :localidade, placeholder: 'Localidade'%>
+
+    <%= p.input :contacto1, label: 'Contacto 1', placeholder: '222222222'%>
+    <%= p.input :contacto2, label: 'Contacto 2', placeholder: '222222222'%>
+
+    <%= p.input :pagina, label: 'Pagina da Entidade', placeholder: 'http://.....'%>
+
+
+    <b><%= "Apresentação: "%></b><br>
+    <%= p.text_area :apresentacao, :class => "tinymce"%><br>
+
+  <% end %>
+
+  <%= f.input :nif, label: 'NIF', placeholder: 'xxxxxxxxx'%>
+  <%= f.input :actividade_profissional_id, :collection => ActividadeProfissional.order(:actividade), :label_method => :actividade,
+                                                                                                     :value_method => :id,
+                                                                                                     :label => "Actividade profissional",
+                                                                                                     :include_blank => true %>
+<p>
+<br>
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

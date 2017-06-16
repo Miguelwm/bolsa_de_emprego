@@ -1,0 +1,10 @@
+<h1>Bolsa de Emprego</h1>
+
+<p>Ola <%= @conta.nome %>,</p>
+
+<p>
+Bem vindo a Bolsa de Emprego! Clica no link abaixo para ativares a tua conta:
+</p>
+
+<%= link_to "Activar", edit_account_activationn_url(@conta.activacao_token,
+                                                    email: @conta.email) %>

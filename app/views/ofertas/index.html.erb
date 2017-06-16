@@ -1,9 +1,25 @@
 <% provide(:title, 'Ofertas') %>
 <h1>Ofertas</h1>
 <div class="row">
-  <%= will_paginate %>
+
+  <div class="col-md-12">
+    <%= form_tag(ofertas_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Procurar ofertas" %>
+        <b><%= "Area Profissional: " %> </b>
+        <%= select_tag :searcharea, options_from_collection_for_select(AreaProfissional.all, :id, :area, params[:searcharea]), include_blank:true %>
+        <%= submit_tag "Procurar", :name => nil %><br><br>
+    <% end %>
+  </div>
+  <div class="col-md-12">
+    <br>
+  </div>
+  <div class="col-md-12">
+    <% if @ofertas.where(activo:true).blank? && (params[:search] || params[:searcharea]) %>
+       <h3>Não existem ofertas que coincidam com a sua pesquisa</h3><br><br>
+    <% end %>
+
     <div class="col-md-12">
-      <% @ofertas.each do |oferta| %>
+      <% @ofertas.where(activo:true).each do |oferta| %>
         <div class="col-md-2">
             <%= image_tag oferta.foto.url if oferta.foto? %><br>
         </div>
@@ -11,28 +27,40 @@
           <%= link_to oferta.titulo, oferta %><br>
           <%= oferta.val_inicio %> a <%= oferta.val_fim %><br>
           <%= oferta.entidade.perfil.conta.nome%><br>
+          <%= oferta.area_profissional.area%><br>
           <%= oferta.descricao%><br>
+          <% if oferta.entidade==entidade_atual %>
+            <%= link_to "Editar", edit_oferta_path(oferta), class: "btn btn-primary" %>
+            <div class="col-md-12">
+              <p>
+            </div>
+          <% end %>
+          <% if logged_in? && is_candidato? %>
+            <p>
+            <div id="form_candidatura">
+              <% if candidato_atual.ofertas?(oferta) %>
+                <%= render 'candidatado' %>
+              <% else %>
+                <%= form_for(candidato_atual.candidaturas.build) do |f| %>
+                  <div><%= hidden_field_tag :oferta_id, oferta.id %></div>
+                  <%= f.submit "Candidatar-me",
+                    data: { confirm:'Esta prestes a candidatar-se a esta oferta,
+                      este processo não pode ser revertido.Pretende continuar?'},
+                      class: "btn btn-primary" %>
+                      <p>
+                <% end %>
+              <% end %>
+              <br>
+            </div>
+          <% end %>
         </div>
         <div class="col-md-12">
-        <% if logged_in? && is_candidato? %>
-          <p>
-          <div id="form_candidatura">
-            <% if candidato_atual.ofertas?(oferta) %>
-              <%= render 'candidatado' %>
-            <% else %>
-              <%= form_for(candidato_atual.candidaturas.build) do |f| %>
-                <div><%= hidden_field_tag :oferta_id, oferta.id %></div>
-                <%= f.submit "Candidatar-me",
-                  data: { confirm:'Esta prestes a candidatar-se a esta oferta,
-                    este processo não pode ser revertido.Pretende continuar?'},
-                    class: "btn btn-primary" %>
-                    <p>
-              <% end %>
-            <% end %>
-            <br>
-          </div>
-        <% end %>
+
         </div>
+        <div class="col-md-12">
+          <br>
+       </div>
+
       <% end %>
     </div>
   <%= will_paginate %>

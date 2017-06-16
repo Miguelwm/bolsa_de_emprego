@@ -9,9 +9,14 @@
 
       <%= f.input :password, placeholder: 'Password' %>
 
+      <%= f.label :lembrar_me, class: "checkbox inline" do %>
+        <%= f.check_box :lembrar_me %>
+        <span>&emsp; Lembrar-me</span>
+      <% end %>
+
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
-    <p>New user? <%= link_to "Sign up now!", registo_path %></p>
+    <p><%= link_to "Registar-me", registo_path %> | <%= link_to "Esqueci-me da palavra-passe", new_password_reset_path %> </p>
   </div>
 </div>
 <% else %>

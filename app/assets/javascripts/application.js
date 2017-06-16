@@ -16,3 +16,5 @@
 //= require_tree .
 //= require bootstrap
 //= require tinymce
+//= require moment
+//= require bootstrap-datetimepicker

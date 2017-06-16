@@ -1,0 +1,28 @@
+<h3> Empresas interessadas em mim </h3>
+<% if homeinteresse(candidato_atual).any? %>
+<% homeinteresse(candidato_atual).each do |perfil| %>
+    <div class="col-md-2">
+        <% entidade= perfil.entidade %>
+        <%= image_tag entidade.perfil.foto.url if entidade.perfil.foto? %><br>
+    </div>
+    <div class="col-md-10">
+      <%= link_to entidade.perfil.conta.nome,entidade %><br>
+      <%= num_ofertas_activas(entidade)%> oferta(s) ativa(s)<br>
+      <%= entidade.actividade_profissional.actividade%><br>
+      <%= entidade.perfil.apresentacao.html_safe%><br><br>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <br>
+  </div>
+<% end %>
+<div class="col-md-12">
+<%=link_to 'Ver todos as empresas', interessadas_path, class: "btn btn-primary" %>
+</div>
+<% else %>
+<div class="col-md-9">
+<br>
+<br>
+<h2>Ainda nenhuma empresa manisfestou interesse em si</h2>
+</div>
+<%end%>

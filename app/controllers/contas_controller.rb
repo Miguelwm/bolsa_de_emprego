@@ -11,8 +11,9 @@ class ContasController < ApplicationController
     @conta.admin = true
     @conta.password = "BolsaAdmin"
     @conta.password_confirmation ="BolsaAdmin"
+    @conta.tipo = "Backoffice"
     if @conta.save
-      flash[:success] = "Bem vindo à Bolsa de Emprego!"
+      @conta.ativar
       redirect_to utilizadores_path
     else
       render 'new'
@@ -20,7 +21,17 @@ class ContasController < ApplicationController
   end
 
   def index
-    @todas_contas = Conta.all
+    if params[:search] && !params[:search].blank?
+      if params[:searchtipo] && !params[:searchtipo].blank?
+        @todas_contas = Conta.where(tipo:params[:searchtipo]).search(params[:search])
+      else
+        @todas_contas = Conta.search(params[:search])
+      end
+    elsif params[:searchtipo] && !params[:searchtipo].blank?
+        @todas_contas = Conta.where(tipo:params[:searchtipo])
+    else
+      @todas_contas = Conta.all
+    end
   end
 
   def edit
@@ -57,15 +68,13 @@ class ContasController < ApplicationController
     else
       render 'edit_password'
     end
-
   end
-
 
 
   private
     def conta_params
       params.require(:conta).permit( :nome ,:email ,:activo ,:password,
-                                    :password_confirmation)
+                                    :password_confirmation, :tipo)
     end
 
 

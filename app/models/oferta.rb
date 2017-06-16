@@ -9,4 +9,13 @@ class Oferta < ApplicationRecord
                                    foreign_key: "oferta_id",
                                    dependent:   :destroy
   has_many :candidatos, through: :candidaturas, source: :candidato
+
+
+
+
+  def self.search(search)
+    search=search.downcase
+    where("LOWER(titulo) LIKE ? ", "%#{search}%")
+  end
+
 end

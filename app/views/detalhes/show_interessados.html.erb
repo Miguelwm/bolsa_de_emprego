@@ -1,0 +1,9 @@
+<h3> Empresas interessadas em mim </h3>
+<% if @perfils.any? %>
+  <ul>
+    <%= render @perfils %>
+  </ul>
+  <%= will_paginate %>
+<% end %>
+</div>
+</div>

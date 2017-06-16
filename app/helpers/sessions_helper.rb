@@ -3,13 +3,32 @@ module SessionsHelper
     session[:conta_id] = conta.id
   end
 
+  def lembrar(conta)
+    conta.lembrar
+    cookies.permanent.signed[:conta_id] = conta.id
+    cookies.permanent[:lembrar_token] = conta.lembrar_token
+  end
 
   def conta_atual?(conta)
     conta == conta_atual
   end
 
   def conta_atual
-    @conta_atual ||= Conta.find_by(id: session[:conta_id])
+    if (conta_id = session[:conta_id])
+      @current_conta ||= Conta.find_by(id: conta_id)
+    elsif (conta_id = cookies.signed[:conta_id])
+      conta = Conta.find_by(id: conta_id)
+      if conta && conta.autenticado?(:lembrar, cookies[:lembrar_token])
+        log_in conta
+        @current_conta = conta
+      end
+    end
+  end
+
+  def esquecer(conta)
+    conta.esquecer
+    cookies.delete(:conta_id)
+    cookies.delete(:lembrar_token)
   end
 
   def logged_in?
@@ -23,7 +42,9 @@ module SessionsHelper
   end
 
   def candidato_atual
-    conta_atual.perfil.candidato
+    if !conta_atual.perfil.nil?
+      conta_atual.perfil.candidato
+    end
   end
 
   def is_entidade?
@@ -31,10 +52,13 @@ module SessionsHelper
   end
 
   def entidade_atual
-    conta_atual.perfil.entidade
+    if !conta_atual.perfil.nil?
+      conta_atual.perfil.entidade
+    end
   end
 
   def log_out
+    esquecer(conta_atual)
     session.delete(:conta_id)
     @conta_atual = nil
   end

@@ -13,7 +13,7 @@ class OfertasController < ApplicationController
   def create
     @oferta = conta_atual.perfil.entidade.ofertas.build(oferta_params)
     if @oferta.save
-      redirect_to root_url
+      redirect_to detalhes_path
     else
       render 'new'
     end
@@ -35,7 +35,17 @@ class OfertasController < ApplicationController
   end
 
   def index
-    @ofertas = Oferta.paginate(page: params[:page], per_page: 8)
+    if params[:search] && !params[:search].blank?
+      if params[:searcharea] && !params[:searcharea].blank?
+        @ofertas = Oferta.search(params[:search]).joins(:area_profissional).where("area_profissional_id = ?", params[:searcharea]).paginate(page: params[:page], per_page: 8)
+      else
+        @ofertas = Oferta.search(params[:search]).paginate(page: params[:page], per_page: 8)
+      end
+    elsif params[:searcharea] && !params[:searcharea].blank?
+        @ofertas = Oferta.joins(:area_profissional).where("area_profissional_id = ?", params[:searcharea]).paginate(page: params[:page], per_page: 8)
+    else
+      @ofertas = Oferta.paginate(page: params[:page], per_page: 8)
+    end
   end
 
   def show

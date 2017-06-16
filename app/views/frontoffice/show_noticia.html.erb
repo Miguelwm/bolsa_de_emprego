@@ -1,13 +1,13 @@
 <% provide(:title, @noticia.titulo) %>
-<h3><%=@noticia.titulo%></h3>
+<h3><%=@noticia.titulo%></h3><br>
 <div class="row">
   <div class="col-md-12">
     <div class="col-md-9">
-      <%= @noticia.data %>
+      <%= @noticia.data %><br><br>
       <%= @noticia.texto %>
     </div>
     <div class="col-md-3">
-      <%= image_tag @noticia.picture.url if @noticia.picture? %><br>
+      <%= image_tag @noticia.foto.url if @noticia.foto? %><br>
     </div>
   </div>
 </div>

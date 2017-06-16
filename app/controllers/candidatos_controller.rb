@@ -12,8 +12,10 @@ class CandidatosController < ApplicationController
 
   def create
     @candidato = Candidato.new(candidato_params)
+    @candidato.perfil.conta.tipo = "Candidato"
     if @candidato.save
-      log_in @candidato.perfil.conta
+      @candidato.perfil.conta.mandar_email_ativacao
+      flash[:info] = "Por favor verifique o seu email para ativar a sua conta"
       redirect_to root_url
     else
       render 'new'
@@ -37,7 +39,17 @@ class CandidatosController < ApplicationController
   end
 
   def index
-    @candidatos = Candidato.paginate(page: params[:page], per_page: 8)
+      if params[:search] && !params[:search].blank?
+        if params[:searcharea] && !params[:searcharea].blank?
+          @candidatos = Conta.where(tipo:"Candidato").search(params[:search]).joins(perfil: :candidato).where("area_profissional_id = ?", params[:searcharea]).paginate(page: params[:page], per_page: 8)
+        else
+          @candidatos = Conta.where(tipo:"Candidato").search(params[:search]).paginate(page: params[:page], per_page: 8)
+        end
+      elsif params[:searcharea] && !params[:searcharea].blank?
+          @candidatos = Conta.where(tipo:"Candidato").joins(perfil: :candidato).where("area_profissional_id = ?", params[:searcharea]).paginate(page: params[:page], per_page: 8)
+      else
+        @candidatos = Conta.where(tipo:"Candidato").paginate(page: params[:page], per_page: 8)
+      end
   end
 
   def show
@@ -46,12 +58,13 @@ class CandidatosController < ApplicationController
 
   private
     def candidato_params
+
       params.require(:candidato).permit(:nascimento, :bi, :cv, :area_profissional_id,
                     :nivel_habilitacao_id, :habilitacao, :situacao_profissional_id,
                     :experiencia ,perfil_attributes: [:foto, :morada,
                     :codigo_postal,:localidade, :contacto1, :contacto2,
                     :pagina, :apresentacao, conta_attributes: [:nome, :email,
-                    :password, :password_confirmation]])
+                    :password, :password_confirmation, :tipo]])
     end
 
     def conta_correcta

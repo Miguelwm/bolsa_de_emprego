@@ -1,0 +1,30 @@
+<%= provide :title, "ofertas"%>
+<h1> Ofertas ativas </h1><br><br>
+
+<div class="row">
+<% if @ofertas_activas.any? %>
+<% @ofertas_activas.each do |oferta| %>
+  <div class="col-md-2">
+      <%= image_tag oferta.foto.url if oferta.foto? %><br>
+  </div>
+  <div class="col-md-10">
+    <%= link_to oferta.titulo, oferta %><br>
+    <%= oferta.val_inicio %> a <%= oferta.val_fim %><br>
+    <%= oferta.entidade.perfil.conta.nome%><br>
+    <%= oferta.descricao%><br>
+  </div>
+  <div class="col-md-12">
+    <br>
+ </div>
+<% end %>
+</div>
+<%= will_paginate @ofertas_activas %>
+
+<% else %>
+<div class="col-md-9">
+<br>
+<br>
+<h2>Não tem nenhuma oferta inativa</h2>
+</div>
+<% end %>
+</div>
