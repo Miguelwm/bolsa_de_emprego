@@ -28,7 +28,8 @@ conta1 = Conta.create!(nome: "Wiremaze",
                       email:"entidade@seed.com",
                       password:              "foobar",
                       password_confirmation: "foobar", activo: true,
-                      tipo: "Entidade")
+                      tipo: "Entidade",
+                      newsletter:true)
 
 perfil1 = conta1.create_perfil!(morada:"Rua do Sobe e Desce,150",
                               codigo_postal:"4421-569",
@@ -61,7 +62,8 @@ conta2 = Conta.create!(nome: "Miguel Pereira",
                       email:"candidato@seed.com",
                       password:              "foobar",
                       password_confirmation: "foobar", activo: true,
-                      tipo: "Candidato")
+                      tipo: "Candidato",
+                      newsletter:true)
 
 perfil2 = conta2.create_perfil!(morada:"Rua da Curva e Contracurva,999",
                               codigo_postal:"4456-859",
@@ -106,7 +108,7 @@ Oferta.create!(titulo:"Programação Web",val_inicio: DateTime.new(2017,4,2),
   area_profissional_id:area.id, entidade_id: entidade1.id, foto: File.open(File.join(Rails.root, "/app/assets/images/seed/100x150.png")))
 
   15.times do |n|
-    Oferta.create!(titulo:"#{n+1}",val_inicio: DateTime.new(2017,4,2),
+    Oferta.create!(titulo:Faker::StarWars.character,val_inicio: DateTime.new(2017,4,2),
       val_fim: DateTime.new(2019,4,2)  ,descricao:Faker::Lorem.sentence(5) ,
       activo: true ,tipo_contrato_id:tipo.id ,salario_id: salario.id ,
       area_profissional_id:area.id, entidade_id: entidade1.id,foto: File.open(File.join(Rails.root, "/app/assets/images/seed/100x150.png")))

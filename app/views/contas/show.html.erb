@@ -14,11 +14,15 @@
   <div class="col-md-6">
       <div class ="tipo">
         <b>Tipo</b><br>
-        <%= tipo_conta(@conta) %>
+        <%= @conta.tipo %>
       </div>
     <div class ="activo">
       <b>Activo</b><br>
       <%= actividade_conta(@conta) %>
+    </div>
+    <div>
+      <b>Destaque</b><br>
+      <%= destaque_conta(@conta) %>
     </div>
   </div>
 </div>

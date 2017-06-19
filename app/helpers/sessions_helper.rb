@@ -52,7 +52,7 @@ module SessionsHelper
   end
 
   def entidade_atual
-    if !conta_atual.perfil.nil?
+    if !conta_atual.nil? && !conta_atual.perfil.nil?
       conta_atual.perfil.entidade
     end
   end

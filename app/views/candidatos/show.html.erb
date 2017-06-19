@@ -25,22 +25,22 @@
       <%= @candidato.perfil.morada %><br>
       <%= @candidato.perfil.codigo_postal %>,<%= @candidato.perfil.localidade %><br>
       <b>Contactos</b><br>
-      <%if @candidato.perfil.contacto2.nil?%>
-        <% if !@candidato.perfil.contacto1.nil? %>
+      <%if @candidato.perfil.contacto2.blank?%>
+        <% if !@candidato.perfil.contacto1.blank? %>
           <%= "Contacto: " + @candidato.perfil.contacto1 %>
           <p>
           <%end%><%end%>
-      <%if @candidato.perfil.contacto1.nil? %>
-       <%if !@candidato.perfil.contacto2.nil? %>
+      <%if @candidato.perfil.contacto1.blank? %>
+       <%if !@candidato.perfil.contacto2.blank? %>
           <%= "Contacto: " + @candidato.perfil.contacto2 %>
           <p>
           <%end%><%end%>
-      <%if !@candidato.perfil.contacto1.nil?%>
-       <%if !@candidato.perfil.contacto2.nil?%>
+      <%if !@candidato.perfil.contacto1.blank?%>
+       <%if !@candidato.perfil.contacto2.blank?%>
           <%= "Contactos: " + @candidato.perfil.contacto1 + " ; " + @candidato.perfil.contacto2 %>
           <p>
           <%end%><%end%>
-      <% if !@candidato.perfil.conta.email.nil? %>
+      <% if !@candidato.perfil.conta.email.blank? %>
       <%= "Email: " + @candidato.perfil.conta.email %>
       <p>
       <%end%>

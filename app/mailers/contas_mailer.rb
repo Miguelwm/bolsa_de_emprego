@@ -19,4 +19,10 @@ class ContasMailer < ApplicationMailer
     @conta = conta
     mail to: conta.email, subject: "Palavra-passe perdida"
   end
+
+
+  def newsletter(conta)
+    mail to: conta.email, subject: "Bolsa de Emprego - Newsletter semanal"
+  end
+
 end

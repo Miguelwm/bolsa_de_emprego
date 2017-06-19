@@ -29,14 +29,42 @@
           <th>Nome</th>
           <th>Tipo</th>
           <th>Activo</th>
+          <th>Destaque</th>
           <th>Acções</th>
         </tr>
       </thead>
-      <% @todas_contas.each do |conta| %>
+      <% @todas_contas.where(admin:true).each do |conta| %>
         <tbody>
           <td><%=conta.nome%></td>
           <td><%=conta.tipo%></td>
           <td><%=actividade_conta(conta)%></td>
+          <td><%=destaque_conta(conta)%></td>
+          <td>
+            <%=button_to 'Detalhes', conta, method: :get%>
+            <%=button_to 'Editar', edit_conta_path(conta), method: :get%>
+            <%=button_to 'Apagar', conta, method: :delete%>
+          </td>
+        </tbody>
+      <% end %>
+      <% @todas_contas.where(destaque:true).each do |conta| %>
+        <tbody>
+          <td><%=conta.nome%></td>
+          <td><%=conta.tipo%></td>
+          <td><%=actividade_conta(conta)%></td>
+          <td><%=destaque_conta(conta)%></td>
+          <td>
+            <%=button_to 'Detalhes', conta, method: :get%>
+            <%=button_to 'Editar', edit_conta_path(conta), method: :get%>
+            <%=button_to 'Apagar', conta, method: :delete%>
+          </td>
+        </tbody>
+      <% end %>
+      <% @todas_contas.where(admin:false).where(destaque:false).each do |conta| %>
+        <tbody>
+          <td><%=conta.nome%></td>
+          <td><%=conta.tipo%></td>
+          <td><%=actividade_conta(conta)%></td>
+          <td><%=destaque_conta(conta)%></td>
           <td>
             <%=button_to 'Detalhes', conta, method: :get%>
             <%=button_to 'Editar', edit_conta_path(conta), method: :get%>

@@ -9,10 +9,7 @@
 
       <%= f.input :password, placeholder: 'Password' %>
 
-      <%= f.label :lembrar_me, class: "checkbox inline" do %>
-        <%= f.check_box :lembrar_me %>
-        <span>&emsp; Lembrar-me</span>
-      <% end %>
+      <%= f.input :lembrar_me, inline_label:"Lembrar-me", :as => :boolean %>
 
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>

@@ -8,10 +8,13 @@
     <div class="col-md-6">
       <div class ="tipo">
         <b>Tipo</b><br>
-        <%= tipo_conta(@conta) %>
+        <%= @conta.tipo %>
       </div>
       <div class ="activo">
         <%= f.input :activo, label: 'Activo'%>
+        <% if !@conta.admin? %>
+        <%= f.input :destaque, label: 'Destaque'%>
+        <% end %>
       </div>
   </div>
 

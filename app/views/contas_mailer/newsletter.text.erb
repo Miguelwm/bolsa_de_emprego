@@ -1,0 +1,25 @@
+Bolsa de Emprego
+<% @contas= Conta.all %>
+<% @ofertas= Oferta.all %>
+<% if @contas.where(novo:true).where(tipo:"Candidato").any? || @contas.where(novo:true).where(tipo:"Entidade").any? || @ofertas.where(novo:true).any? %>
+  <% if @contas.where(novo:true).where(tipo:"Candidato").any? %>
+  Novos candidatos:
+    <% @contas.where(novo:true).where(tipo:"Candidato").each do |conta|%>
+      <%=conta.nome%>
+    <%end%>
+  <%end%>
+  <% if @contas.where(novo:true).where(tipo:"Entidade").any? %>
+  Novas entidades:
+      <% @contas.where(novo:true).where(tipo:"Entidade").each do |conta|%>
+          <%=conta.nome%>
+      <%end%>
+  <%end%>
+  <% if @ofertas.where(novo:true).any? %>
+  Novas ofertas:
+      <% @ofertas.where(novo:true).each do |oferta|%>
+          <%=oferta.titulo%>, entidade: <%=oferta.entidade.perfil.conta.nome%>
+      <%end%>
+  <%end%>
+<% else %>
+Nao houve atividade nova esta semana
+<%end%>

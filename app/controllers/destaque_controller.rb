@@ -1,0 +1,2 @@
+class DestaqueController < ApplicationController
+end

@@ -40,6 +40,17 @@ class ContasController < ApplicationController
 
   def update
     @conta = Conta.find(params[:id])
+
+
+    if conta_params[:destaque]=1
+        Conta.where(destaque:true).where(tipo:@conta.tipo).each do |contas|
+          if contas!=@conta
+          contas.update_attribute(:destaque, false)
+          end
+        end
+    end
+
+
     if @conta.update_attributes(conta_params)
       redirect_to @conta
     else
@@ -74,7 +85,7 @@ class ContasController < ApplicationController
   private
     def conta_params
       params.require(:conta).permit( :nome ,:email ,:activo ,:password,
-                                    :password_confirmation, :tipo)
+                                    :password_confirmation, :tipo, :destaque)
     end
 
 

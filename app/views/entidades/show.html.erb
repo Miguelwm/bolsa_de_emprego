@@ -15,22 +15,22 @@
       <%= @entidade.perfil.morada %><br>
       <%= @entidade.perfil.codigo_postal %>,<%= @entidade.perfil.localidade %><br><br>
       <b>Contactos</b><br>
-      <%if @entidade.perfil.contacto2.nil?%>
-        <% if !@entidade.perfil.contacto1.nil? %>
+      <%if @entidade.perfil.contacto2.blank?%>
+        <% if !@entidade.perfil.contacto1.blank? %>
           <%= "Contacto: " + @entidade.perfil.contacto1 %>
           <p>
           <%end%><%end%>
-      <%if @entidade.perfil.contacto1.nil? %>
-       <%if !@entidade.perfil.contacto2.nil? %>
+      <%if @entidade.perfil.contacto1.blank? %>
+       <%if !@entidade.perfil.contacto2.blank? %>
           <%= "Contacto: " + @entidade.perfil.contacto2 %>
           <p>
           <%end%><%end%>
-      <%if !@entidade.perfil.contacto1.nil?%>
-       <%if !@entidade.perfil.contacto2.nil?%>
+      <%if !@entidade.perfil.contacto1.blank?%>
+       <%if !@entidade.perfil.contacto2.blank?%>
           <%= "Contactos: " + @entidade.perfil.contacto1 + " ; " + @entidade.perfil.contacto2 %>
           <p>
           <%end%><%end%>
-      <% if !@entidade.perfil.conta.email.nil? %>
+      <% if !@entidade.perfil.conta.email.blank? %>
       <%= "Email: " + @entidade.perfil.conta.email %>
       <p>
       <%end%>

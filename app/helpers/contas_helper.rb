@@ -1,22 +1,28 @@
 module ContasHelper
 
-  # def tipo_conta(conta)
-  #   if(conta.perfil == nil)
-  #       tipo = "Backoffice"
-  #     else
-  #       if(conta.perfil.entidade == nil)
-  #         tipo = "Candidato"
-  #       else
-  #         tipo = "Entidade"
-  #       end
-  #     end
-  # end
+  def tipo_conta(conta)
+    conta.tipo
+  end
 
   def actividade_conta(conta)
     if(conta.activo?)
       activo = "Sim"
     else
       activo = "Não"
+    end
+  end
+
+  def destaque_conta(conta)
+
+    if conta.admin?
+      "-----"
+    end
+
+
+    if conta.destaque?
+      "Sim"
+    else
+      "Não"
     end
   end
 

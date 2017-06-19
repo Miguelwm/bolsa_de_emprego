@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170616085422) do
+ActiveRecord::Schema.define(version: 20170619101747) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,9 @@ ActiveRecord::Schema.define(version: 20170616085422) do
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
     t.string   "tipo"
+    t.boolean  "destaque",        default: false
+    t.boolean  "novo",            default: true
+    t.boolean  "newsletter",      default: false
   end
 
   create_table "entidades", force: :cascade do |t|
@@ -92,6 +95,11 @@ ActiveRecord::Schema.define(version: 20170616085422) do
     t.index ["interessado_em_id"], name: "index_interesses_on_interessado_em_id", using: :btree
     t.index ["interessado_id", "interessado_em_id"], name: "index_interesses_on_interessado_id_and_interessado_em_id", unique: true, using: :btree
     t.index ["interessado_id"], name: "index_interesses_on_interessado_id", using: :btree
+  end
+
+  create_table "newsletters", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "nivel_habilitacaos", force: :cascade do |t|
@@ -129,6 +137,7 @@ ActiveRecord::Schema.define(version: 20170616085422) do
     t.integer  "salario_id"
     t.string   "picture"
     t.string   "foto"
+    t.boolean  "novo",                 default: true
     t.index ["area_profissional_id"], name: "index_ofertas_on_area_profissional_id", using: :btree
     t.index ["entidade_id"], name: "index_ofertas_on_entidade_id", using: :btree
     t.index ["salario_id"], name: "index_ofertas_on_salario_id", using: :btree
