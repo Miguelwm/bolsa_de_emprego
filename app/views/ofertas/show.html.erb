@@ -33,10 +33,10 @@
 <% if @oferta.candidatos.any? %>
   <div class="col-md-12">
     <% @oferta.candidatos.each do |candidato|%>
-      <div class="col-md-2">
+      <div class="col-md-3">
         <%= image_tag candidato.perfil.foto.url if candidato.perfil.foto? %>
       </div>
-      <div class="col-md-10">
+      <div class="col-md-9">
         <%= link_to candidato.perfil.conta.nome,candidato %><br>
         <%= candidato.area_profissional.area%><br>
         <%= candidato.experiencia.html_safe%><br>

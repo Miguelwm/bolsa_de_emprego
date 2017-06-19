@@ -1,23 +1,17 @@
-  <%= simple_form_for(@conta) do |f| %>
-    <div class="col-md-6">
-      <%= f.input :nome, label: 'Nome', placeholder: 'Nome'%>
+<%= simple_form_for(@conta) do |f| %>
+  <div class="col-md-6">
+    <%= f.input :nome, label: 'Nome', placeholder: 'Nome'%>
 
-      <%= f.input :email, label: 'Email', placeholder: 'email@example.com'%>
-    </div>
-
-    <div class="col-md-6">
-      <div class ="tipo">
-        <b>Tipo</b><br>
-        <%= @conta.tipo %>
-      </div>
-      <div class ="activo">
-        <%= f.input :activo, label: 'Activo'%>
-        <% if !@conta.admin? %>
-        <%= f.input :destaque, label: 'Destaque'%>
-        <% end %>
-      </div>
+    <%= f.input :email, label: 'Email', placeholder: 'email@example.com'%>
   </div>
 
-    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
-    <%= link_to "Cancelar", contas_path, class: "btn btn-warning"%>
-  <% end %>
+  <div class="col-md-6">
+    <div class ="tipo">
+      <b>Tipo</b><br>
+      Backoffice<br><br><br><br>
+    </div>
+</div>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  <%= link_to "Cancelar", contas_path, class: "btn btn-warning"%>
+<% end %>

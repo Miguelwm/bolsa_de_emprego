@@ -12,9 +12,10 @@ class ContasController < ApplicationController
     @conta.password = "BolsaAdmin"
     @conta.password_confirmation ="BolsaAdmin"
     @conta.tipo = "Backoffice"
+    @conta.destaque=false
     if @conta.save
       @conta.ativar
-      redirect_to utilizadores_path
+      redirect_to contas_path
     else
       render 'new'
     end

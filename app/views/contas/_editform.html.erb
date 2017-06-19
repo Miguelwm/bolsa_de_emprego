@@ -1,0 +1,23 @@
+  <%= simple_form_for(@conta) do |f| %>
+    <div class="col-md-6">
+      <%= f.input :nome, label: 'Nome', placeholder: 'Nome'%>
+
+      <%= f.input :email, label: 'Email', placeholder: 'email@example.com'%>
+    </div>
+
+    <div class="col-md-6">
+      <div class ="tipo">
+        <b>Tipo</b><br>
+        <%= @conta.tipo %>
+      </div>
+      <div class ="activo">
+      <% if !@conta.admin? %>
+        <%= f.input :activo, label: 'Activo'%>
+        <%= f.input :destaque, label: 'Destaque'%>
+      <% end %>
+      </div>
+  </div>
+
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    <%= link_to "Cancelar", contas_path, class: "btn btn-warning"%>
+  <% end %>
