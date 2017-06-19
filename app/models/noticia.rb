@@ -4,7 +4,7 @@ class Noticia < ApplicationRecord
 
 
   def self.search(search)
-    search=search.downcase
+    search=search.downcase.gsub(/\s+/, "%")
     where("LOWER(titulo) LIKE ? OR LOWER(sumario) LIKE ? OR LOWER(texto) LIKE ?", "%#{search}%","%#{search}%","%#{search}%")
   end
 

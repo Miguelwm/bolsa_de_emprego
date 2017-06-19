@@ -14,7 +14,7 @@ class Oferta < ApplicationRecord
 
 
   def self.search(search)
-    search=search.downcase
+    search=search.downcase.gsub(/\s+/, "%")
     where("LOWER(titulo) LIKE ? ", "%#{search}%")
   end
 

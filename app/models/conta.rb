@@ -70,7 +70,7 @@ class Conta < ApplicationRecord
   end
 
   def self.search(search)
-    search=search.downcase
+    search=search.downcase.gsub(/\s+/, "%")
     where("LOWER(nome) LIKE ? ", "%#{search}%")
   end
 
