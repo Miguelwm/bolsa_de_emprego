@@ -17,4 +17,4 @@
 .byebug_history
 
 #test images
-/public/uploads
+/public/uploads/*
