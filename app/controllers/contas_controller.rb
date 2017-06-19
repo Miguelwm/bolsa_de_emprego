@@ -64,9 +64,14 @@ class ContasController < ApplicationController
   end
 
   def destroy
+    if Conta.find(params[:id])==conta_atual
+      redirect_to contas_path
+      flash[:danger] = "Você não pode apagar a sua própria conta!"
+    else
     @conta = Conta.find(params[:id]).destroy
     flash[:success] = "A conta " + @conta.nome + " foi eliminada com sucesso"
     redirect_to contas_path
+    end
   end
 
   def edit_password

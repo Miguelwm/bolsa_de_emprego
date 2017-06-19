@@ -42,7 +42,7 @@
           <td>
             <%=button_to 'Detalhes', conta, method: :get%>
             <%=button_to 'Editar', edit_conta_path(conta), method: :get%>
-            <%=button_to 'Apagar', conta, method: :delete%>
+            <%=button_to 'Apagar', conta, method: :delete, data: { confirm:'Apagar conta?'}%>
           </td>
         </tbody>
       <% end %>
@@ -55,7 +55,7 @@
           <td>
             <%=button_to 'Detalhes', conta, method: :get%>
             <%=button_to 'Editar', edit_conta_path(conta), method: :get%>
-            <%=button_to 'Apagar', conta, method: :delete%>
+            <%=button_to 'Apagar', conta, method: :delete, data: { confirm:'Apagar conta?'}%>
           </td>
         </tbody>
       <% end %>
@@ -68,7 +68,7 @@
           <td>
             <%=button_to 'Detalhes', conta, method: :get%>
             <%=button_to 'Editar', edit_conta_path(conta), method: :get%>
-            <%=button_to 'Apagar', conta, method: :delete%>
+            <%=button_to 'Apagar', conta, method: :delete, data: { confirm:'Apagar conta?'}%>
           </td>
         </tbody>
       <% end %>
