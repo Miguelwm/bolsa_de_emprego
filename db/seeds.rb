@@ -124,7 +124,7 @@ end
               email:email,
               password:              "foobar",
               password_confirmation: "foobar", activo: true,
-              tipo: "Entidade")
+              tipo: "Entidade",newsletter:true)
 
   localidade = Faker::Lorem.sentence(5)
   apresentacao = Faker::Lorem.sentence(5)
