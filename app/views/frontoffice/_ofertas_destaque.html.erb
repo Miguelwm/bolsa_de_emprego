@@ -1,0 +1,67 @@
+<h3>Ofertas em destaque</h3>
+<% if @idprimeiro!=0 %>
+<% oferta = Oferta.find_by_id(@idprimeiro) %>
+<div class="col-md-4">
+  <div class="foto">
+    <%= image_tag oferta.foto.url if oferta.foto? %><br>
+  </div>
+</div>
+
+<div class="col-md-8">
+  <div class="conteudo">
+    <%=link_to oferta.titulo, oferta%><br>
+    <%= oferta.val_inicio%> a <%= oferta.val_fim%><br>
+    <%= oferta.entidade.perfil.conta.nome%><br>
+    <%= oferta.area_profissional.area%><br>
+    <%= oferta.descricao%><br>
+  </div>
+</div>
+<div class="col-md-12">
+  <br>
+</div>
+<%if @idsegundo!=0%>
+<% oferta = Oferta.find_by_id(@idsegundo) %>
+<div class="col-md-4">
+  <div class="foto">
+    <%= image_tag oferta.foto.url if oferta.foto? %><br>
+  </div>
+</div>
+
+<div class="col-md-8">
+  <div class="conteudo">
+    <%=link_to oferta.titulo, oferta%><br>
+    <%= oferta.val_inicio%> a <%= oferta.val_fim%><br>
+    <%= oferta.entidade.perfil.conta.nome%><br>
+    <%= oferta.area_profissional.area%><br>
+    <%= oferta.descricao%><br>
+  </div>
+</div>
+<div class="col-md-12">
+  <br>
+</div>
+<%end%>
+<%if @idterceiro!=0%>
+<% oferta = Oferta.find_by_id(@idterceiro) %>
+<div class="col-md-4">
+  <div class="foto">
+    <%= image_tag oferta.foto.url if oferta.foto? %><br>
+  </div>
+</div>
+
+<div class="col-md-8">
+  <div class="conteudo">
+    <%=link_to oferta.titulo, oferta%><br>
+    <%= oferta.val_inicio%> a <%= oferta.val_fim%><br>
+    <%= oferta.entidade.perfil.conta.nome%><br>
+    <%= oferta.area_profissional.area%><br>
+    <%= oferta.descricao%><br>
+  </div>
+</div>
+<div class="col-md-12">
+  <br>
+</div>
+<%end%>
+
+<% else %>
+<br><br><h4> Não existe nenhuma oferta em destaque. </h4><br><br>
+<%end%>

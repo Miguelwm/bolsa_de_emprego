@@ -1,0 +1,24 @@
+<h3>Entidades em destaque</h3>
+<% if @entidades_destaque.any?%>
+  <% @entidades_destaque.each do |entidade| %>
+    <div class="col-md-4">
+      <div class="foto">
+        <%= image_tag entidade.perfil.foto.url if entidade.perfil.foto? %><br>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="conteudo">
+        <%=link_to entidade.perfil.conta.nome, entidade%><br>
+        <%= num_ofertas_activas(entidade)%> oferta(s) ativa(s)<br>
+        <%= entidade.actividade_profissional.actividade%><br>
+        <%= entidade.perfil.apresentacao.html_safe%><br>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <br>
+    </div>
+  <% end %>
+<% else %>
+<br><br><h4> Não existe nenhuma entidade em destaque. </h4><br><br>
+<%end%>

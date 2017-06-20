@@ -1,0 +1,24 @@
+<h3>Candidatos em destaque</h3>
+<% if @candidatos_destaque.any?%>
+  <% @candidatos_destaque.each do |candidato| %>
+    <div class="col-md-4">
+      <div class="foto">
+        <%= image_tag candidato.perfil.foto.url if candidato.perfil.foto? %><br>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="conteudo">
+        <%=link_to candidato.perfil.conta.nome, candidato%><br>
+        <%= candidato.area_profissional.area%><br>
+        <%= candidato.habilitacao.html_safe%><br>
+        <%= candidato.experiencia.html_safe%><br>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <br>
+    </div>
+  <% end %>
+<% else %>
+<br><br><h4> Não existe nenhum candidato em destaque. </h4><br><br>
+<%end%>
