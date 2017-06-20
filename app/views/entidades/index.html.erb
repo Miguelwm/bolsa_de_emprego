@@ -7,7 +7,8 @@
         <%= text_field_tag :search, params[:search], placeholder: "Procurar Entidades" %>
         <b><%= "Actividade Profissional: " %> </b>
         <%= select_tag :searchactividade, options_from_collection_for_select(ActividadeProfissional.all, :id, :actividade, params[:searchactividade]), include_blank:true %>
-        <%= submit_tag "Procurar", :name => nil %><br><br>
+        &ensp;<%= submit_tag "Procurar", :name => nil, class:"btn btn-primary" %>
+        <%= link_to "Reset", entidades_path, class:"btn btn-primary" %><br><br>
     <% end %>
   </div>
   <div class="col-md-12">

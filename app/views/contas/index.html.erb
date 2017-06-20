@@ -7,11 +7,12 @@
         <%= text_field_tag :search, params[:search], placeholder: "Procurar" %>
         <b><%= "Tipo: " %> </b>
         <%= select_tag :searchtipo, options_for_select(['Backoffice','Candidato','Entidade'], params[:searchtipo]), include_blank:true %>
-        <%= submit_tag "Procurar", :name => nil %><br><br>
+        &ensp;<%= submit_tag "Procurar", :name => nil, class:"btn btn-primary" %>
+        <%= link_to "Reset", contas_path, class:"btn btn-primary" %><br><br>
     <% end %>
   </div>
   <div class="col-md-1">
-    <%=button_to 'Inserir', new_conta_path, method: :get%>
+    <%=button_to 'Inserir', new_conta_path, method: :get, class:"btn btn-primary"%>
   </div>
   <div class="col-md-12">
     <br>
@@ -40,22 +41,22 @@
           <td>-----</td>
           <td>-----</td>
           <td>
-            <%=button_to 'Detalhes', conta, method: :get%>
-            <%=button_to 'Editar', edit_conta_path(conta), method: :get%>
-            <%=button_to 'Apagar', conta, method: :delete, data: { confirm:'Apagar conta?'}%>
+            <%=button_to 'Detalhes', conta, method: :get, class:"btn btn-primary"%>
+            <%=button_to 'Editar', edit_conta_path(conta), method: :get, class:"btn btn-primary"%>
+            <%=button_to 'Apagar', conta, method: :delete, data: { confirm:'Apagar conta?'}, class:"btn btn-primary"%>
           </td>
         </tbody>
       <% end %>
-      <% @todas_contas.where(destaque:true).each do |conta| %>
+      <% @todas_contas.where(destaque:true).where(admin:false).each do |conta| %>
         <tbody>
           <td><%=conta.nome%></td>
           <td><%=conta.tipo%></td>
           <td><%=actividade_conta(conta)%></td>
           <td><%=destaque_conta(conta)%></td>
           <td>
-            <%=button_to 'Detalhes', conta, method: :get%>
-            <%=button_to 'Editar', edit_conta_path(conta), method: :get%>
-            <%=button_to 'Apagar', conta, method: :delete, data: { confirm:'Apagar conta?'}%>
+            <%=button_to 'Detalhes', conta, method: :get, class:"btn btn-primary"%>
+            <%=button_to 'Editar', edit_conta_path(conta), method: :get, class:"btn btn-primary"%>
+            <%=button_to 'Apagar', conta, method: :delete, data: { confirm:'Apagar conta?'}, class:"btn btn-primary"%>
           </td>
         </tbody>
       <% end %>
@@ -66,9 +67,9 @@
           <td><%=actividade_conta(conta)%></td>
           <td><%=destaque_conta(conta)%></td>
           <td>
-            <%=button_to 'Detalhes', conta, method: :get%>
-            <%=button_to 'Editar', edit_conta_path(conta), method: :get%>
-            <%=button_to 'Apagar', conta, method: :delete, data: { confirm:'Apagar conta?'}%>
+            <%=button_to 'Detalhes', conta, method: :get, class:"btn btn-primary"%>
+            <%=button_to 'Editar', edit_conta_path(conta), method: :get, class:"btn btn-primary"%>
+            <%=button_to 'Apagar', conta, method: :delete, data: { confirm:'Apagar conta?'}, class:"btn btn-primary"%>
           </td>
         </tbody>
       <% end %>

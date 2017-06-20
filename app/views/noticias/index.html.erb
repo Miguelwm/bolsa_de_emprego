@@ -5,11 +5,12 @@
   <div class="col-md-11">
     <%= form_tag(noticias_path, :method => "get", id: "search-form") do %>
         <%= text_field_tag :search, params[:search], placeholder: "Procurar noticias" %>
-        <%= submit_tag "Procurar", :name => nil %><br><br>
+        &ensp;<%= submit_tag "Procurar", :name => nil, class:"btn btn-primary" %>
+        <%= link_to "Reset", noticias_path, class:"btn btn-primary"%><br><br>
     <% end %>
   </div>
   <div class="col-md-1">
-  <%=button_to 'Inserir', new_noticia_path, method: :get%>
+  <%=button_to 'Inserir', new_noticia_path, method: :get, class:"btn btn-primary"%>
   </div>
   <div class="col-md-12">
     <br>
@@ -38,9 +39,9 @@
           <td><%=noticia.destaque%></td>
           <td><%=noticia.activo%></td>
           <td>
-            <%=button_to 'Detalhes', noticia, method: :get%>
-            <%=button_to 'Editar', edit_noticia_path(noticia), method: :get%>
-            <%=button_to 'Apagar', noticia, method: :delete%>
+            <%=button_to 'Detalhes', noticia, method: :get, class:"btn btn-primary"%>
+            <%=button_to 'Editar', edit_noticia_path(noticia), method: :get, class:"btn btn-primary"%>
+            <%=button_to 'Apagar', noticia, method: :delete, class:"btn btn-primary"%>
           </td>
         </tbody>
       <% end %>
