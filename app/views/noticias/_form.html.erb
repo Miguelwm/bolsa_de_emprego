@@ -2,10 +2,9 @@
 <%= simple_form_for(@noticia) do |f| %>
 
     <%= f.input :titulo, label: 'Titulo'%>
-
-    <%= f.input :data, label: 'Data'%>
     <b>Sumário</b><br>
     <%= f.text_area :sumario, label: 'Sumario', :class => "tinymce" %><br>
+    <%= f.input :data, label: 'Data', as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d/%m/%Y') }%>
     <b>Texto</b><br>
     <%= f.text_area :texto, label: 'Texto', :class => "tinymce" %><br>
 
@@ -18,3 +17,9 @@
     <%= f.submit yield(:button_text), class: "btn btn-primary" %>
     <%= link_to "Cancelar", noticias_path , class: "btn btn-warning" %>
   <% end %>
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('.datepicker').datepicker();
+  });
+</script>

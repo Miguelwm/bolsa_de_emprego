@@ -17,4 +17,4 @@
 //= require bootstrap
 //= require tinymce
 //= require moment
-//= require bootstrap-datetimepicker
+//= require bootstrap-datepicker

@@ -28,7 +28,7 @@
 
     <% end %>
 
-    <%= f.input :nascimento, label: 'Data de Nascimento', data:{ provide:'datepicker' }%>
+    <%= f.input :nascimento, label: 'Data de nascimento', as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d/%m/%Y') }%>
 
     <%= f.input :bi, label: 'Bilhete de Identidade'%>
     <%= f.input :cv, label: 'Curriculum Vitae'%>
@@ -59,3 +59,9 @@
 
     <%= f.submit yield(:button_text), class: "btn btn-primary" %>
   <% end %>
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('.datepicker').datepicker();
+  });
+</script>

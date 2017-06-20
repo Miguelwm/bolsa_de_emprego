@@ -2,10 +2,12 @@
 
     <%= f.input :titulo, label: 'Titulo'%>
 
-    <%= f.input :val_inicio, label: 'Validade Inicio'%>
-    <%= f.input :val_fim, label: 'Validade fim'%>
 
     <%= f.input :descricao, label: 'Descrição' %>
+
+    <%= f.input :val_inicio, label: 'Validade Inicio', as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d/%m/%Y') }%>
+    <%= f.input :val_fim, label: 'Validade fim', as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d/%m/%Y') }%>
+
 
     <%= f.input :area_profissional_id, :collection => @todas_areas,
     :label_method => :area,
@@ -26,3 +28,10 @@
 
     <%= f.submit yield(:button_text), class: "btn btn-primary" %>
   <% end %>
+
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+  $('.datepicker').datepicker();
+  });
+  </script>
