@@ -33,6 +33,8 @@ Rails.application.routes.draw do
 
     scope 'detalhes' do
     resources :alterar_password,     only: [:edit, :update]
+    get 'alterar_password', to: "alterar_password#home"
+    get 'alterar_password/:id', to: "alterar_password#home"
     get 'candidaturas', to: 'detalhes#showcandidaturas', as: 'candidaturascandidato'
     get 'interessadas', to: 'detalhes#showinteressadas'
     get 'ofertas', to: 'detalhes#showofertasativas', as: 'ofertasativas'
