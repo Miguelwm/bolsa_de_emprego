@@ -27,7 +27,7 @@
         <div class="col-md-10">
           <%= link_to noticia.titulo, noticia_frontoffice_index_path(noticia) %><br>
           <%= noticia.data%><br>
-          <%= noticia.sumario%><br>
+          <%= noticia.sumario.html_safe%><br>
         </div>
         <div class="col-md-12">
           <br>

@@ -17,17 +17,17 @@
   <div class="col-md-12">
       <div class ="sumario">
         <b>Sumario</b><br>
-        <%= @noticia.data %>
+        <%= @noticia.sumario.html_safe %><br>
       </div>
     <div class ="activo">
       <b>Texto</b><br>
-      <%= @noticia.texto %>
+      <%= @noticia.texto.html_safe %><br>
     </div>
   </div>
 
   <div class="col-md-6">
     <div class ="imagem">
-      <b>Imagem</b><br>
+      <br><br><b>Imagem</b><br>
       <%= image_tag @noticia.foto.url%>
     </div>
   </div>

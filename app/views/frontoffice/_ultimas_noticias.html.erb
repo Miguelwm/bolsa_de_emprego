@@ -10,7 +10,7 @@
         <div class="conteudo">
           <%= link_to noticia.titulo, noticia_frontoffice_index_path(noticia) %><br>
           <%= noticia.data%><br>
-          <%= noticia.sumario%><br>
+          <%= noticia.sumario.html_safe%><br>
         </div>
       </div>
       <div class="col-md-12">

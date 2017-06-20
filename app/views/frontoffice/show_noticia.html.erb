@@ -4,7 +4,7 @@
   <div class="col-md-12">
     <div class="col-md-9">
       <%= @noticia.data %><br><br>
-      <%= @noticia.texto %>
+      <%= @noticia.texto.html_safe %>
     </div>
     <div class="col-md-3">
       <%= image_tag @noticia.foto.url if @noticia.foto? %><br>

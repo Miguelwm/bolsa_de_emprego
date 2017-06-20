@@ -1,7 +1,11 @@
 class FrontofficeController < ApplicationController
   def home
     @ultimas_ofertas = Oferta.where(activo:true).last(3).to_a.reverse
-    @ultimas_noticias = Noticia.where(activo:true).last(3).to_a.reverse
+    if Noticia.where(destaque:true).any?
+      @ultimas_noticias = Noticia.where(destaque:true).to_a.reverse
+    else
+      @ultimas_noticias = Noticia.where(activo:true).last(3).to_a.reverse
+    end
     @ultimas_entidades = Entidade.last(3).to_a.reverse
     @ultimos_candidatos = Candidato.last(3).to_a.reverse
   end
@@ -19,7 +23,7 @@ class FrontofficeController < ApplicationController
       @frontoffice = Noticia.search(params[:search]).paginate(page: params[:page], per_page: 8)
     else
       @frontoffice = Noticia.paginate(page: params[:page], per_page: 8)
-    end  
+    end
   end
 
   def show_noticia
