@@ -6,6 +6,7 @@ class AccountActivationnsController < ApplicationController
     if !conta.nil? && !conta.activo? && conta.autenticado?(:activo, params[:id])
       conta.ativar
       log_in conta
+      Newsletter.novo(conta)
       flash[:success] = "Conta ativada com sucesso!"
       redirect_to root_url
     else

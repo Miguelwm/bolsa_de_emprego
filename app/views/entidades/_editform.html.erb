@@ -6,10 +6,9 @@
 
       <%= c.input :email, placeholder: 'email@example.com' %>
 
-      <%= c.input :newsletter, label: 'Pretende receber a newsletter semanal com informação de atividade nova?'%>
-    <% end %>
+
     <b><%= "Fotografia: " %> </b>
-    <%= p.file_field :foto, label: 'Foto' %>
+    <%= p.input :foto, label: 'Fotografia' %>
 
     <%= p.input :morada, placeholder: 'Morada'%>
 
@@ -26,7 +25,6 @@
     <b><%= "Apresentação: "%></b><br>
     <%= p.text_area :apresentacao, :class => "tinymce"%><br>
 
-  <% end %>
 
   <%= f.input :nif, label: 'NIF', placeholder: 'xxxxxxxxx'%>
   <%= f.input :actividade_profissional_id, :collection => ActividadeProfissional.order(:actividade), :label_method => :actividade,
@@ -35,5 +33,11 @@
                                                                                                      :include_blank => true %>
 <p>
 <br>
+  <%= c.input :newsletter, label: 'Pretende receber a newsletter semanal com informação de atividade nova?'%>
+  <%= c.input :candidatos, label: "Pretende receber notificações de novos candidatos?" %>
+  <%= c.input :candidaturas, label: "Pretende receber notificações de novas candidaturas às suas ofertas?"%>
+  <br><br>
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    <%end%>
+  <%end%>
 <% end %>

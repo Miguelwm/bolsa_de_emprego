@@ -25,4 +25,25 @@ class ContasMailer < ApplicationMailer
     mail to: conta.email, subject: "Bolsa de Emprego - Newsletter semanal"
   end
 
+  def candidato(conta,candidato)
+    @candidato=candidato
+    mail to: conta.email, subject: "Novo candidato - #{candidato.nome}"
+  end
+
+  def entidade(conta,entidade)
+    @entidade=entidade
+    mail to: conta.email, subject: "Nova entidade - #{entidade.nome}"
+  end
+
+  def oferta(conta,oferta)
+    @oferta=oferta
+    mail to: conta.email, subject: "Nova oferta - #{oferta.titulo}"
+  end
+
+  def candidatura(oferta,candidato)
+    @oferta=oferta
+    @candidato=candidato
+    mail to: oferta.entidade.perfil.conta.email, subject: "Nova candidatura - #{oferta.titulo}"
+  end
+
 end

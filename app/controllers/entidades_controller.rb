@@ -51,6 +51,7 @@ class EntidadesController < ApplicationController
 
   def show
     @entidade = Entidade.find(params[:id])
+    @ofertas=ofertas_activas(@entidade).paginate(page:params[:page],per_page:4)
   end
 
 
@@ -60,7 +61,7 @@ class EntidadesController < ApplicationController
                     perfil_attributes: [:foto, :morada, :codigo_postal,:localidade,
                     :contacto1, :contacto2, :pagina, :apresentacao,
                     conta_attributes: [:nome, :email,:password,
-                    :password_confirmation, :tipo]])
+                    :password_confirmation, :tipo, :candidatos, :candidaturas, :newsletter]])
     end
 
     def ofertas_activas(entidade)

@@ -29,7 +29,7 @@ conta1 = Conta.create!(nome: "Wiremaze",
                       password:              "foobar",
                       password_confirmation: "foobar", activo: true,
                       tipo: "Entidade",
-                      newsletter:true)
+                      newsletter:true, candidatos:true, candidaturas:true)
 
 perfil1 = conta1.create_perfil!(morada:"Rua do Sobe e Desce,150",
                               codigo_postal:"4421-569",
@@ -63,7 +63,7 @@ conta2 = Conta.create!(nome: "Miguel Pereira",
                       password:              "foobar",
                       password_confirmation: "foobar", activo: true,
                       tipo: "Candidato",
-                      newsletter:true)
+                      newsletter:true, entidades:true,ofertas:true)
 
 perfil2 = conta2.create_perfil!(morada:"Rua da Curva e Contracurva,999",
                               codigo_postal:"4456-859",

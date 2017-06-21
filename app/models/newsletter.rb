@@ -15,7 +15,30 @@ class Newsletter < ApplicationRecord
     end
   end
 
+  def self.novo(conta)
+    @conta=conta
+      if @conta.tipo=="Entidade"
+        Conta.where(entidades:true).each do |conta|
+          ContasMailer.entidade(conta,@conta).deliver_now
+        end
+      elsif @conta.tipo=="Candidato"
+        Conta.where(candidatos:true).each do |conta|
+          ContasMailer.candidato(conta,@conta).deliver_now
+        end
+      end
+  end
 
+  def self.oferta(oferta)
+    @candidatos=Conta.where(ofertas:true)
+    @candidatos.each do |candidato|
+      ContasMailer.oferta(candidato,oferta).deliver_now
+    end
+  end
 
+  def self.candidatura(oferta,conta)
+    if oferta.entidade.perfil.conta.candidaturas?
+      ContasMailer.candidatura(oferta,conta).deliver_now
+    end
+  end
 
 end

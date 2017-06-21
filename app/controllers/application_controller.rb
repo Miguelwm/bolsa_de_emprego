@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
     def conta_logged_in
       unless logged_in?
-        redirect_to frontoffice_login_path
+        redirect_to  login_path
       end
     end
 

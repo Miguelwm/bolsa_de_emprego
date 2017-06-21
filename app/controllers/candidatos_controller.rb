@@ -64,7 +64,7 @@ class CandidatosController < ApplicationController
                     :experiencia ,perfil_attributes: [:foto, :morada,
                     :codigo_postal,:localidade, :contacto1, :contacto2,
                     :pagina, :apresentacao, conta_attributes: [:nome, :email,
-                    :password, :password_confirmation, :tipo]])
+                    :password, :password_confirmation, :tipo, :newsletter, :entidades, :ofertas]])
     end
 
     def conta_correcta

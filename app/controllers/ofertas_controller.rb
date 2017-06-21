@@ -13,6 +13,7 @@ class OfertasController < ApplicationController
   def create
     @oferta = conta_atual.perfil.entidade.ofertas.build(oferta_params)
     if @oferta.save
+      Newsletter.oferta(@oferta)
       redirect_to detalhes_path
     else
       render 'new'

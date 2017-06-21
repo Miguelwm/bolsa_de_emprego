@@ -10,8 +10,7 @@
 
         <%= c.input :password_confirmation,label: 'Confirmação de Password', placeholder: 'Password' %>
 
-        <br><%= c.input :newsletter, label: 'Pretende receber a newsletter semanal com informação de atividade nova?'%><br><br>
-      <% end %>
+
       <%= p.input :foto, label: 'Fotografia' %>
 
       <%= p.input :morada, placeholder: 'Morada'%>
@@ -28,9 +27,9 @@
       <b><%= "Apresentação: "%></b><br>
       <%= p.text_area :apresentacao, :class => "tinymce"%>
 
-    <% end %>
 
-    <%= f.input :nascimento, label: 'Data de Nascimento', data:{ provide:'datepicker' }%>
+
+    <%= f.input :nascimento, label: 'Data de nascimento', as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d/%m/%Y') }%>
 
     <%= f.input :bi, label: 'Bilhete de Identidade'%>
     <%= f.input :cv, label: 'Curriculum Vitae'%>
@@ -59,5 +58,21 @@
     <b><%= "Experiencia: "%></b><br>
     <%= f.text_area :experiencia, :class => "tinymce"%><br>
 
+
+    <br><%= c.input :newsletter, label: 'Pretende receber a newsletter semanal com informação de atividade nova?'%>
+    <%= c.input :entidades, label: "Pretende receber notificações de novas entidades?" %>
+    <%= c.input :ofertas, label: "Pretende receber notificações de novas ofertas?" %>
+    <br><br>
+    
     <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+      <% end %>
+    <% end %>
   <% end %>
+
+
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('.datepicker').datepicker();
+  });
+</script>

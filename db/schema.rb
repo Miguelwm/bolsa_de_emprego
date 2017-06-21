@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170619101747) do
+ActiveRecord::Schema.define(version: 20170621103029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,10 @@ ActiveRecord::Schema.define(version: 20170619101747) do
     t.boolean  "destaque",        default: false
     t.boolean  "novo",            default: true
     t.boolean  "newsletter",      default: false
+    t.boolean  "candidatos",      default: false
+    t.boolean  "entidades",       default: false
+    t.boolean  "ofertas",         default: false
+    t.boolean  "candidaturas",    default: false
   end
 
   create_table "entidades", force: :cascade do |t|
