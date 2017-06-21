@@ -8,6 +8,7 @@
     <%= f.input :val_inicio, label: 'Validade Inicio', as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d/%m/%Y') }%>
     <%= f.input :val_fim, label: 'Validade fim', as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d/%m/%Y') }%>
 
+    <%= f.input :foto, label: 'Fotografia' %>
 
     <%= f.input :area_profissional_id, :collection => @todas_areas,
     :label_method => :area,

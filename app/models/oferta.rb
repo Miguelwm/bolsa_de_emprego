@@ -4,6 +4,7 @@ class Oferta < ApplicationRecord
   belongs_to :tipo_contrato
   belongs_to :salario
   mount_uploader :foto, PictureUploader
+  validates :foto, presence:true, allow_blank:false
 
   has_many :candidaturas, class_name:  "Candidatura",
                                    foreign_key: "oferta_id",

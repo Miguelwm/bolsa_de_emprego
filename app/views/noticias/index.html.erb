@@ -32,8 +32,8 @@
         <tbody>
           <td><%=noticia.titulo%></td>
           <td><%=noticia.data%></td>
-          <td><%=noticia.destaque%></td>
-          <td><%=noticia.activo%></td>
+          <td><%=traduzido(noticia.destaque)%></td>
+          <td><%=traduzido(noticia.activo)%></td>
           <td>
             <%=button_to 'Detalhes', noticia, method: :get, class:"btn btn-default btn-sm"%>
             <%=button_to 'Editar', edit_noticia_path(noticia), method: :get, class:"btn btn-success btn-sm"%>
@@ -45,8 +45,8 @@
         <tbody>
           <td><%=noticia.titulo%></td>
           <td><%=noticia.data%></td>
-          <td><%=noticia.destaque%></td>
-          <td><%=noticia.activo%></td>
+          <td><%=traduzido(noticia.destaque)%></td>
+          <td><%=traduzido(noticia.activo)%></td>
           <td>
             <%=button_to 'Detalhes', noticia, method: :get, class:"btn btn-default btn-sm"%>
             <%=button_to 'Editar', edit_noticia_path(noticia), method: :get, class:"btn btn-success btn-sm"%>
