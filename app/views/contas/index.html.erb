@@ -3,13 +3,7 @@
 <div class="row">
 
   <div class="col-md-11">
-    <%= form_tag(contas_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Procurar" %>
-        <b><%= "Tipo: " %> </b>
-        <%= select_tag :searchtipo, options_for_select(['Backoffice','Candidato','Entidade'], params[:searchtipo]), include_blank:true %>
-        &ensp;<%= submit_tag "Procurar", :name => nil, class:"btn btn-primary" %>
-        <%= link_to "Reset", contas_path, class:"btn btn-default" %><br><br>
-    <% end %>
+    <%= render 'search' %>
   </div>
   <div class="col-md-1">
     <%=button_to 'Inserir', new_conta_path, method: :get, class:"btn btn-success"%>

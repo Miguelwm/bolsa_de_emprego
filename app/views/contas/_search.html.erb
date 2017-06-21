@@ -1,0 +1,7 @@
+<%= form_tag(contas_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Procurar" %>
+    <b><%= "Tipo: " %> </b>
+    <%= select_tag :searchtipo, options_for_select([["Todos", ""],["Backoffice","Backoffice"],["Candidato","Candidato"],["Entidade","Entidade"]], params[:searchtipo]),  class:"btn btn-default dropdown-toggle" %>
+    &ensp;<%= submit_tag "Procurar", :name => nil, class:"btn btn-primary" %>
+    <%= link_to "Reset", contas_path, class:"btn btn-default" %><br><br>
+<% end %>

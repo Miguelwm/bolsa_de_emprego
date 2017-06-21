@@ -1,0 +1,7 @@
+<%= form_tag(entidades_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Procurar Entidades" %>
+    &ensp;<b><%= "Actividade Profissional: " %> </b>
+    <%= select_tag :searchactividade, (options_for_select([["Todas", ""]]) + options_from_collection_for_select(ActividadeProfissional.all, :id, :actividade, params[:searchactividade])), class:"btn btn-default dropdown-toggle"  %>
+    &ensp;<%= submit_tag "Procurar", :name => nil, class:"btn btn-primary" %>
+    <%= link_to "Reset", entidades_path, class:"btn btn-default" %><br><br>
+<% end %>

@@ -3,13 +3,7 @@
 <div class="row">
 
   <div class="col-md-12">
-    <%= form_tag(entidades_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Procurar Entidades" %>
-        <b><%= "Actividade Profissional: " %> </b>
-        <%= select_tag :searchactividade, options_from_collection_for_select(ActividadeProfissional.all, :id, :actividade, params[:searchactividade]), include_blank:true %>
-        &ensp;<%= submit_tag "Procurar", :name => nil, class:"btn btn-primary" %>
-        <%= link_to "Reset", entidades_path, class:"btn btn-default" %><br><br>
-    <% end %>
+    <%= render 'search' %>
   </div>
   <div class="col-md-12">
     <br>

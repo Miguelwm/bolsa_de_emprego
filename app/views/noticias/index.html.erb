@@ -3,11 +3,7 @@
 <div class="row">
 
   <div class="col-md-11">
-    <%= form_tag(noticias_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Procurar noticias" %>
-        &ensp;<%= submit_tag "Procurar", :name => nil, class:"btn btn-primary" %>
-        <%= link_to "Reset", noticias_path, class:"btn btn-default"%><br><br>
-    <% end %>
+    <%= render 'search' %>
   </div>
   <div class="col-md-1">
   <%=button_to 'Inserir', new_noticia_path, method: :get, class:"btn btn-success"%>
