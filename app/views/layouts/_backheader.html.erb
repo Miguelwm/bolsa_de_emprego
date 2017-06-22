@@ -1,21 +1,31 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "Bolsa de Emprego", backhome_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to "Home", backhome_path %></li>
-        <li><%= link_to "Utilizadores", contas_path %></li>
-        <li><%= link_to "Noticias", noticias_path %></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <% if logged_in? %>
-          <li><%= link_to conta_atual.nome , '#' %></li>
-          <li><%= link_to "Sair", logout_path, method: "delete" %></li>
-        <% else %>
-          <li><%= link_to "Registar-me", registo_path %></li>
-          <li><%= link_to "Log in", login_path %></li>
-        <% end %>
-      </ul>
-    </nav>
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Bolsa de Emprego", backhome_path, id: "logo"%>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <nav>
+        <ul class="nav navbar-nav navbar-left">
+          <li><%= link_to "Home", backhome_path %></li>
+          <li><%= link_to "Utilizadores", contas_path %></li>
+          <li><%= link_to "Noticias", noticias_path %></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if logged_in? %>
+            <li><%= link_to conta_atual.nome , '#' %></li>
+            <li><%= link_to "Sair", logout_path, method: "delete" %></li>
+          <% else %>
+            <li><%= link_to "Registar-me", registo_path %></li>
+            <li><%= link_to "Log in", login_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
