@@ -38,35 +38,7 @@
   </div>
 </div>
 <br>
-<div class="row">
-  <h3>Ofertas Activas</h3>
-  <div class="col-md-12">
-    <% @ofertas.each do |oferta| %>
-      <div class="col-md-2">
-        <%= image_tag oferta.foto.url if oferta.foto? %><br>
-      </div>
-      <div class="col-md-5">
-        <%= link_to oferta.titulo, oferta %><br>
-        <%= oferta.val_inicio %> a <%= oferta.val_fim %><br>
-        <%= oferta.entidade.perfil.conta.nome %><br>
-        <%= oferta.descricao %><br>
-        <% if oferta.entidade==entidade_atual %>
-          <%= link_to "Editar", edit_oferta_path(oferta), class: "btn btn-success btn-sm" %>
-          <div class="col-md-12">
-            <p>
-          </div>
-        <% end %>
-      </div>
-      <div class="col-md-12">
-        <br>
-      </div>
-    <% end %>
-  </div>
-</div>
-<br>
-<div class="col-md-12">
-  <%= will_paginate @ofertas %>
-</div>
+  <div class = "sort_paginate_ajax"><%= render 'show' %></div>
 <div class="row">
   <%= link_to "Ver Entidades", entidades_path %>
 </div>

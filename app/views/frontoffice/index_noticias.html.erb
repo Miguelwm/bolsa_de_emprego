@@ -4,32 +4,15 @@
 
 
   <div class="col-md-12">
-    <%= render 'search' %>
+    <%= form_tag(noticias_frontoffice_index_path, :method => "get", id: "search-form", remote:true) do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Procurar noticias" %>
+        &ensp;<%= submit_tag "Procurar", :name => nil, class:"btn btn-primary" %>
+        <%= link_to "Reset", noticias_frontoffice_index_path, class:"btn btn-default" %><br><br>
+
   </div>
   <div class="col-md-12">
     <br>
   </div>
-  <div class="col-md-12">
-    <% if @frontoffice.blank? && params[:search]%>
-       <h3>Não existem noticias que coincidam com a sua pesquisa</h3><br><br>
-    <% end %>
-  </div>
-
-
-    <div class="col-md-12">
-      <% @frontoffice.each do |noticia| %>
-        <div class="col-md-2">
-            <%= image_tag noticia.foto.url if noticia.foto? %><br>
-        </div>
-        <div class="col-md-10">
-          <%= link_to noticia.titulo, noticia_frontoffice_index_path(noticia) %><br>
-          <%= noticia.data%><br>
-          <%= noticia.sumario.html_safe%><br>
-        </div>
-        <div class="col-md-12">
-          <br>
-        </div>
-      <% end %>
-    </div>
-  <%= will_paginate %>
+<div class = "sort_paginate_ajax"><%= render 'index_noticias' %></div>
+<% end %>
 </div>

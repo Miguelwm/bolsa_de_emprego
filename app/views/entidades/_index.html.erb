@@ -1,0 +1,28 @@
+<div class="col-md-12">
+  <% if @entidades.blank? && (params[:search] || params[:searcharea]) %>
+     <h3>Não existem entidades que coincidam com a sua pesquisa</h3><br><br>
+  <% end %>
+
+  <div class="col-md-12">
+    <% @entidades.each do |conta| %>
+    <% @entidade = conta.perfil.entidade %>
+      <div class="col-md-2">
+          <%= image_tag @entidade.perfil.foto.url if @entidade.perfil.foto? %><br>
+      </div>
+      <div class="col-md-10">
+        <%= link_to @entidade.perfil.conta.nome,@entidade %><br>
+        <%= num_ofertas_activas(@entidade)%> oferta(s) ativa(s)<br>
+        <%= @entidade.actividade_profissional.actividade%><br>
+        <%= @entidade.perfil.apresentacao.html_safe%><br><br>
+        <%= render 'editar' if logged_in? && entidade_atual==@entidade%>
+        <%= render 'interessado_form' if logged_in? && is_candidato?%>
+
+      </div>
+      <div class="col-md-12">
+        <br>
+      </div>
+        <% end %>
+        <br>
+      </div>
+  </div>
+<%= js_will_paginate @entidades %>

@@ -1,8 +1,0 @@
-<%= form_tag(candidatos_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Procurar Candidatos" %>
-    &ensp;<b><%= "Area Profissional: " %> </b>
-    <%= select_tag :searcharea, (options_for_select([["Todas", ""]]) + options_from_collection_for_select(AreaProfissional.all, :id, :area, params[:searcharea])),  class:"btn btn-default dropdown-toggle" %>
-     &ensp;<%= submit_tag "Procurar", :name => nil, class:"btn btn-primary" %>
-     <%= link_to "Reset", candidatos_path, class:"btn btn-default" %><br><br>
-
-<% end %>

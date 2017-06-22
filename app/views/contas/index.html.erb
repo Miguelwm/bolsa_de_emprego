@@ -3,7 +3,13 @@
 <div class="row">
 
   <div class="col-md-11">
-    <%= render 'search' %>
+    <%= form_tag(contas_path, :method => "get", id: "search-form", remote:true) do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Procurar" %>
+        <b><%= "Tipo: " %> </b>
+        <%= select_tag :searchtipo, options_for_select([["Todos", ""],["Backoffice","Backoffice"],["Candidato","Candidato"],["Entidade","Entidade"]], params[:searchtipo]),  class:"btn btn-default dropdown-toggle" %>
+        &ensp;<%= submit_tag "Procurar", :name => nil, class:"btn btn-primary" %>
+        <%= link_to "Reset", contas_path, class:"btn btn-default" %><br><br>
+
   </div>
   <div class="col-md-1">
     <%=button_to 'Inserir', new_conta_path, method: :get, class:"btn btn-success"%>
@@ -11,63 +17,7 @@
   <div class="col-md-12">
     <br>
   </div>
-  <div class="col-md-12">
-    <% if @todas_contas.blank? && (params[:search] || params[:searcharea]) %>
-       <h3>Não existem contas que coincidam com a sua pesquisa</h3><br><br>
-    <% end %>
-  </div>
-
-  <div class="col-md-12">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Nome</th>
-          <th>Tipo</th>
-          <th>Activo</th>
-          <th>Destaque</th>
-          <th>Acções</th>
-        </tr>
-      </thead>
-      <% @todas_contas.where(admin:true).each do |conta| %>
-        <tbody>
-          <td><%=conta.nome%></td>
-          <td><%=conta.tipo%></td>
-          <td>-----</td>
-          <td>-----</td>
-          <td>
-            <%= button_to 'Detalhes', conta, method: :get, class:"btn btn-default btn-sm"%>
-            <%= button_to 'Editar', edit_conta_path(conta), method: :get, class:"btn btn-success btn-sm"%>
-            <%= button_to 'Apagar', conta, method: :delete, data: { confirm:'Apagar conta?'}, class:"btn btn-danger btn-sm"%>
-          </td>
-        </tbody>
-      <% end %>
-      <% @todas_contas.where(destaque:true).where(admin:false).each do |conta| %>
-        <tbody>
-          <td><%=conta.nome%></td>
-          <td><%=conta.tipo%></td>
-          <td><%=actividade_conta(conta)%></td>
-          <td><%=destaque_conta(conta)%></td>
-          <td>
-            <%=button_to 'Detalhes', conta, method: :get, class:"btn btn-default btn-sm"%>
-            <%=button_to 'Editar', edit_conta_path(conta), method: :get, class:"btn btn-success btn-sm"%>
-            <%=button_to 'Apagar', conta, method: :delete, data: { confirm:'Apagar conta?'}, class:"btn btn-danger btn-sm"%>
-          </td>
-        </tbody>
-      <% end %>
-      <% @todas_contas.where(admin:false).where(destaque:false).each do |conta| %>
-        <tbody>
-          <td><%=conta.nome%></td>
-          <td><%=conta.tipo%></td>
-          <td><%=actividade_conta(conta)%></td>
-          <td><%=destaque_conta(conta)%></td>
-          <td>
-            <%=button_to 'Detalhes', conta, method: :get, class:"btn btn-default btn-sm"%>
-            <%=button_to 'Editar', edit_conta_path(conta), method: :get, class:"btn btn-success btn-sm"%>
-            <%=button_to 'Apagar', conta, method: :delete, data: { confirm:'Apagar conta?'}, class:"btn btn-danger btn-sm"%>
-          </td>
-        </tbody>
-      <% end %>
-    </table>
-
+  <div class = "sort_paginate_ajax"><%= render 'index' %></div>
+  <% end %>
   </div>
 </div>

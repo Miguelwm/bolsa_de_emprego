@@ -1,0 +1,44 @@
+<div class="col-md-12">
+  <% if @todas_noticias.blank? && params[:search]%>
+     <h3>Não existem noticias que coincidam com a sua pesquisa</h3><br><br>
+  <% end %>
+</div>
+
+<div class="col-md-12">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Noticia</th>
+        <th>Data</th>
+        <th>Destaque</th>
+        <th>Activo</th>
+        <th>Acções</th>
+      </tr>
+    </thead>
+    <% @todas_noticias.where(destaque:true).each do |noticia| %>
+      <tbody>
+        <td><%=noticia.titulo%></td>
+        <td><%=noticia.data%></td>
+        <td><%=traduzido(noticia.destaque)%></td>
+        <td><%=traduzido(noticia.activo)%></td>
+        <td>
+          <%=button_to 'Detalhes', noticia, method: :get, class:"btn btn-default btn-sm"%>
+          <%=button_to 'Editar', edit_noticia_path(noticia), method: :get, class:"btn btn-success btn-sm"%>
+          <%=button_to 'Apagar', noticia, method: :delete, class:"btn btn-danger btn-sm"%>
+        </td>
+      </tbody>
+    <% end %>
+    <% @todas_noticias.where(destaque:false).each do |noticia| %>
+      <tbody>
+        <td><%=noticia.titulo%></td>
+        <td><%=noticia.data%></td>
+        <td><%=traduzido(noticia.destaque)%></td>
+        <td><%=traduzido(noticia.activo)%></td>
+        <td>
+          <%=button_to 'Detalhes', noticia, method: :get, class:"btn btn-default btn-sm"%>
+          <%=button_to 'Editar', edit_noticia_path(noticia), method: :get, class:"btn btn-success btn-sm"%>
+          <%=button_to 'Apagar', noticia, method: :delete, class:"btn btn-danger btn-sm"%>
+        </td>
+      </tbody>
+    <% end %>
+  </table>
