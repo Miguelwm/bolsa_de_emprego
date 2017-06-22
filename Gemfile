@@ -17,7 +17,7 @@ gem 'fog',                     '1.38.0'
 gem 'simple_form'
 gem 'will_paginate',           '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
-gem 'faker',        '1.6.6'
+gem 'faker',        :git => 'git://github.com/stympy/faker.git'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 gem 'whenever', :require => false

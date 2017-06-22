@@ -108,7 +108,7 @@ Oferta.create!(titulo:"Programação Web",val_inicio: DateTime.new(2017,4,2),
   area_profissional_id:area.id, entidade_id: entidade1.id, foto: File.open(File.join(Rails.root, "/app/assets/images/seed/100x150.png")))
 
   50.times do |n|
-    Oferta.create!(titulo:Faker::StarWars.character,val_inicio: DateTime.new(2017,4,2),
+    Oferta.create!(titulo:Faker::Job.title,val_inicio: DateTime.new(2017,4,2),
       val_fim: DateTime.new(2019,4,2)  ,descricao:Faker::Lorem.sentence(5) ,
       activo: true ,tipo_contrato_id:tipo.id ,salario_id: salario.id ,
       area_profissional_id:area.id, entidade_id: entidade1.id,foto: File.open(File.join(Rails.root, "/app/assets/images/seed/100x150.png")))
