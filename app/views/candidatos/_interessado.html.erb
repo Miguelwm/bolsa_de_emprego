@@ -1,6 +1,6 @@
 <%= form_for(conta_atual.perfil.interesses_activos.build, remote:true) do |f| %>
   <div><%= hidden_field_tag :interessado_id, @candidato.perfil.id %></div>
-  <%= f.submit "Interessado", class: "btn btn-primary btn-sm" %>
+  <%= f.submit "Interessado", class: "btn btn-success btn-sm" %>
   <div class="col-md-12">
     <p>
   </div>

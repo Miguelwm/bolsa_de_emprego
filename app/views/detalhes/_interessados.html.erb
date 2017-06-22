@@ -3,20 +3,20 @@
 <% homeinteresse(entidade_atual).each do |perfil| %>
     <div class="col-md-3">
       <% candidato = perfil.candidato %>
-      <%= image_tag candidato.perfil.foto.url if candidato.perfil.foto? %><br><br>
+      <%= image_tag candidato.perfil.foto.url if candidato.perfil.foto? %>
     </div>
     <div class="col-md-9">
       <%= link_to candidato.perfil.conta.nome,candidato %><br>
       <%= candidato.area_profissional.area%><br>
       <%= candidato.experiencia.html_safe%><br>
-      <%= candidato.nivel_habilitacao.nivel%><br><br>
+      <%= candidato.nivel_habilitacao.nivel%>
     </div>
   <div class="col-md-12">
     <br>
   </div>
 <% end %>
 <div class="col-md-12">
-<%=link_to 'Ver todos os candidatos', interessados_path, class: "btn btn-primary" %>
+<%=link_to 'Ver todos os candidatos interessados', interessados_path, class: "btn btn-default" %>
 </div>
 <% else %>
 <div class="col-md-9">

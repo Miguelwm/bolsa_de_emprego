@@ -13,8 +13,8 @@
       <%= oferta.val_inicio%> a <%= oferta.val_fim%><br>
       <%= oferta.entidade.perfil.conta.nome%><br>
       <%= oferta.entidade.perfil.conta.nome%><br>
-      <%= oferta.descricao%><br>
-      <%= link_to "Editar", edit_oferta_path(oferta), class: "btn btn-primary" %>
+      <%= oferta.descricao%><br><p><p>
+      <%= link_to "Editar", edit_oferta_path(oferta), class: "btn btn-success btn-sm" %>
     </div>
   </div>
   <div class="col-md-12">
@@ -22,8 +22,8 @@
   </div>
 <% end %>
 <div class="col-md-12">
-<%=link_to 'Inserir', new_oferta_path, class: "btn btn-primary"%>
-<%=link_to 'Ver todos as Ofertas', ofertasativas_path, class: "btn btn-primary" %>
+<%=link_to 'Inserir', new_oferta_path, class: "btn btn-success"%>
+<%=link_to 'Ver todos as Ofertas', ofertasativas_path, class: "btn btn-default" %>
 </div>
 <% else %>
 <div class="col-md-9">

@@ -6,7 +6,7 @@
       <%= image_tag @oferta.foto if @oferta.foto? %><br><br>
       <div><%= render 'form_candidatura' if logged_in? && is_candidato?%></div>
       <% if @oferta.entidade==entidade_atual %>
-        <%= link_to "Editar", edit_oferta_path(@oferta), class: "btn btn-primary" %>
+        <%= link_to "Editar", edit_oferta_path(@oferta), class: "btn btn-success btn-lg" %>
         <div class="col-md-12">
           <p>
         </div>
@@ -43,7 +43,7 @@
           <%= oferta.area_profissional.area%><br>
           <%= oferta.descricao%><br>
           <% if oferta.entidade==entidade_atual %>
-            <%= link_to "Editar", edit_oferta_path(oferta), class: "btn btn-primary" %>
+            <p><p><%= link_to "Editar", edit_oferta_path(oferta), class: "btn btn-success btn-sm" %>
           <%end%>
         </div>
 
