@@ -1,7 +1,9 @@
-  <div id="form_candidatura">
+<% if logged_in? && is_candidato? %>
+  <div id="form_candidatura<%=@oferta.id%>">
   <% if candidato_atual.ofertas?(@oferta) %>
     <%= render 'candidatado' %>
   <% else %>
     <%= render 'candidatar' %>
   <% end %>
   </div>
+<%end%>
