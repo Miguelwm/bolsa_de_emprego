@@ -7,7 +7,7 @@
         <%= text_field_tag :search, params[:search], placeholder: "Procurar noticias" %>
         &ensp;<%= submit_tag "Procurar", :name => nil, class:"btn btn-primary" %>
         <%= link_to "Reset", noticias_path, class:"btn btn-default"%><br><br>
-
+        <% end %>
   </div>
   <div class="col-md-1">
   <%=button_to 'Inserir', new_noticia_path, method: :get, class:"btn btn-success"%>
@@ -16,6 +16,6 @@
     <br>
   </div>
     <div class = "sort_paginate_ajax"><%= render 'index' %></div>
-    <% end %>
+
   </div>
 </div>
