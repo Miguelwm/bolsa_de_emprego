@@ -1,1 +1,6 @@
-$("#interessado_form").html("<%= escape_javascript(render('candidatos/interessado')) %>");
+
+<% if @entidade.nil?%>
+$("#interessado_form<%=@candidato.id%>").html("<%= escape_javascript(render('candidatos/interessado')) %>");
+<% elsif @candidato.nil?%>
+$("#interessado_form<%=@entidade.id%>").html("<%= escape_javascript(render('entidades/interessado')) %>");
+<%end%>

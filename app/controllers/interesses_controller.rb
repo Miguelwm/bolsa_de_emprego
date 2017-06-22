@@ -6,16 +6,36 @@ class InteressesController < ApplicationController
     conta_atual.perfil.interesse(@perfil)
 
     if @perfil.entidade.nil?
-      redirect_to @perfil.candidato
+      @candidato=@perfil.candidato
+      respond_to do |format|
+        format.html { redirect_to @candidato }
+        format.js
+      end
       elsif @perfil.candidato.nil?
-        redirect_to @perfil.entidade
-    end
+        @entidade=@perfil.entidade
+        respond_to do |format|
+          format.html { redirect_to @entidade}
+          format.js
+        end
+      end
   end
 
   def destroy
-    perfil = Interesse.find(params[:id]).interessado
-    conta_atual.perfil.desinteresse(perfil)
+    @perfil = Interesse.find(params[:id]).interessado
+    conta_atual.perfil.desinteresse(@perfil)
 
-    redirect_to root_url
+    if @perfil.entidade.nil?
+      @candidato=@perfil.candidato
+      respond_to do |format|
+        format.html { redirect_to @candidato }
+        format.js
+      end
+      elsif @perfil.candidato.nil?
+        @entidade=@perfil.entidade
+        respond_to do |format|
+          format.html { redirect_to @entidade}
+          format.js
+        end
+      end
   end
 end

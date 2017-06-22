@@ -17,8 +17,8 @@ class Perfil < ApplicationRecord
                                  foreign_key: "interessado_id",
                                  dependent:   :destroy
 
-  has_many :interessados, through: :interesses_activos, source: :interessado #Following
-  has_many :interessados_em, through: :interesses_passivos, source: :interessado_em #Followers
+  has_many :interessados, through: :interesses_activos, source: :interessado #Following/Followed
+  has_many :interessados_em, through: :interesses_passivos, source: :interessado_em #Followers/Follower
 
 
 

@@ -1,5 +1,5 @@
 <% if logged_in? && is_entidade? %>
-  <div id="interessado_form">
+  <div id="interessado_form<%=@candidato.id%>">
   <% if conta_atual.perfil.interessados?(@candidato.perfil) %>
     <%= render 'desinteressado' %>
   <% else %>

@@ -9,13 +9,13 @@
         <%= select_tag :searchactividade, (options_for_select([["Todas", ""]]) + options_from_collection_for_select(ActividadeProfissional.all, :id, :actividade, params[:searchactividade])), class:"btn btn-default dropdown-toggle"  %>
         &ensp;<%= submit_tag "Procurar", :name => nil, class:"btn btn-primary" %>
         <%= link_to "Reset", entidades_path, class:"btn btn-default" %><br><br>
-
+    <% end %>
   </div>
   <div class="col-md-12">
     <br>
   </div>
     <div class = "sort_paginate_ajax"><%= render 'index' %></div>
-    <% end %>
+
   <br>
   <br>
   <%= link_to "Quero-me registar", registo_path %>
