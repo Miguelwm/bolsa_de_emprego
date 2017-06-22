@@ -1,9 +1,6 @@
 <h3> Empresas interessadas em mim </h3>
 <% if @perfils.any? %>
-  <ul>
-    <%= render @perfils %>
-  </ul>
-  <%= will_paginate %>
+    <div class = "sort_paginate_ajax"><%= render 'show_interessados' %></div>
 <% end %>
 </div>
 </div>

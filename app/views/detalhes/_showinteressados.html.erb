@@ -1,0 +1,28 @@
+<% if @interessados.any? %>
+  <div class="col-md-12">
+<% @interessados.each do |perfil| %>
+<% candidato = perfil.candidato %>
+  <div class="col-md-2">
+    <%= image_tag perfil.foto.url if perfil.foto? %><br><br>
+  </div>
+  <div class="col-md-10">
+    <%= link_to perfil.conta.nome,candidato %><br>
+    <%= candidato.area_profissional.area%><br>
+    <%= candidato.experiencia.html_safe%><br>
+    <%= candidato.nivel_habilitacao.nivel%><br>
+  </div>
+  <div class="col-md-12">
+    <br>
+  </div>
+<% end %>
+</div>
+<%= js_will_paginate @interessados %>
+<% else %>
+<div class="col-md-9">
+<br>
+<br>
+<h2>Ainda nenhuma empresa manisfestou interesse em si</h2>
+</div>
+<%end%>
+<br>
+<br>
