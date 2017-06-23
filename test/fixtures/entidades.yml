@@ -1,13 +1,14 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+entidade_perfil_conta_entidade:
+    nif: '123456789'
+    actividade_profissional_id: 1
+    perfil: perfil_conta_entidade
 
-one:
-  nif: MyString
-  apresentacao: MyText
-  perfil: one
-  actividade_profissional: one
 
-two:
-  nif: MyString
-  apresentacao: MyText
-  perfil: two
-  actividade_profissional: two
+<% 30.times do |n|%>
+
+entidade_perfil_conta_entidade<%=n%>:
+  nif: <%=rand(999999999)%>
+  actividade_profissional_id: <%=rand(3)%>
+  perfil: perfil_conta_entidade<%=n%>
+
+<%end%>

@@ -1,21 +1,819 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  titulo: MyString
-  val_inicio: 2017-03-06
-  val_fim: 2017-03-06
-  descricao: MyText
+---
+ofertas_001:
+  id: 1
+  titulo: Programação Web
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Procura-se trabalhador com conhecimentos de programação web para contrato
+    de dois anos
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:04.605101'
+  updated_at: '2017-06-22 15:13:04.605101'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_002:
+  id: 2
+  titulo: Forward Manager
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Impedit cum quisquam saepe et accusamus.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:04.71618'
+  updated_at: '2017-06-22 15:13:04.71618'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_003:
+  id: 3
+  titulo: Legacy Facilitator
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Illum dolorem molestiae eos nihil dolorem quo accusamus.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:04.806953'
+  updated_at: '2017-06-22 15:13:04.806953'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_004:
+  id: 4
+  titulo: Global Retail Agent
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Consequatur eum sapiente commodi non ipsum et.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:04.883452'
+  updated_at: '2017-06-22 15:13:04.883452'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_005:
+  id: 5
+  titulo: Lead Designer
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Dolor voluptatem nihil nam excepturi sed itaque quia.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:04.954582'
+  updated_at: '2017-06-22 15:13:04.954582'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_006:
+  id: 6
+  titulo: Internal Associate
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Vero qui odit occaecati qui consequatur at.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:05.03699'
+  updated_at: '2017-06-22 15:13:05.03699'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_007:
+  id: 7
+  titulo: Technology Designer
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Alias accusamus nihil deleniti saepe molestias.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:05.139928'
+  updated_at: '2017-06-22 15:13:05.139928'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_008:
+  id: 8
+  titulo: Healthcare Officer
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Vero ratione molestias quis maxime inventore debitis.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:05.211349'
+  updated_at: '2017-06-22 15:13:05.211349'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_009:
+  id: 9
+  titulo: Consulting Producer
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Id omnis aliquam ab ut aut repellat harum.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:05.287399'
+  updated_at: '2017-06-22 15:13:05.287399'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_010:
+  id: 10
+  titulo: Forward Marketing Director
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Voluptatem accusamus qui alias dolor rerum nemo.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:05.344813'
+  updated_at: '2017-06-22 15:13:05.344813'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_011:
+  id: 11
+  titulo: Healthcare Consultant
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Rem quasi consectetur velit perspiciatis.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:05.402514'
+  updated_at: '2017-06-22 15:13:05.402514'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_012:
+  id: 12
+  titulo: Legacy Community-Services Producer
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Dolores aut laudantium vitae et aut totam ex eos.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:05.457955'
+  updated_at: '2017-06-22 15:13:05.457955'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_013:
+  id: 13
+  titulo: Dynamic Healthcare Producer
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Suscipit non repellat voluptates quis veritatis.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:05.507311'
+  updated_at: '2017-06-22 15:13:05.507311'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_014:
+  id: 14
+  titulo: Healthcare Designer
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Hic corrupti consequatur aut cum.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:05.581806'
+  updated_at: '2017-06-22 15:13:05.581806'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_015:
+  id: 15
+  titulo: Chief Technology Officer
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Facilis eum et accusamus vero dolorem.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:05.638119'
+  updated_at: '2017-06-22 15:13:05.638119'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_016:
+  id: 16
+  titulo: International Retail Representative
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Sint perspiciatis ut libero beatae accusamus.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:05.708893'
+  updated_at: '2017-06-22 15:13:05.708893'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_017:
+  id: 17
+  titulo: Lead Advertising Associate
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Quidem atque minus omnis maiores.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:05.774474'
+  updated_at: '2017-06-22 15:13:05.774474'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_018:
+  id: 18
+  titulo: Hospitality Facilitator
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Iusto sunt at voluptas veniam rerum rerum aperiam.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:05.854509'
+  updated_at: '2017-06-22 15:13:05.854509'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_019:
+  id: 19
+  titulo: Construction Representative
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Eos sunt maiores dolores aperiam cum ducimus officiis.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:05.921568'
+  updated_at: '2017-06-22 15:13:05.921568'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_020:
+  id: 20
+  titulo: Retail Technician
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Exercitationem at ea non aperiam nihil tenetur similique.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:05.990819'
+  updated_at: '2017-06-22 15:13:05.990819'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_021:
+  id: 21
+  titulo: Administration Architect
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Necessitatibus sunt non tempore qui consequatur.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:06.059217'
+  updated_at: '2017-06-22 15:13:06.059217'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_022:
+  id: 22
+  titulo: Education Director
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Delectus dolorem cupiditate veritatis quas omnis amet.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:06.144677'
+  updated_at: '2017-06-22 15:13:06.144677'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_023:
+  id: 23
+  titulo: Legacy Real-Estate Facilitator
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Sit magnam mollitia non cupiditate eligendi iste.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:06.2172'
+  updated_at: '2017-06-22 15:13:06.2172'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_024:
+  id: 24
+  titulo: Retail Orchestrator
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Qui enim quo a quidem.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:06.299204'
+  updated_at: '2017-06-22 15:13:06.299204'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_025:
+  id: 25
+  titulo: Hospitality Engineer
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Sit aut culpa earum fugiat eveniet nulla.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:06.35871'
+  updated_at: '2017-06-22 15:13:06.35871'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_026:
+  id: 26
+  titulo: Real-Estate Director
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Maxime omnis voluptatem distinctio nemo fugiat nulla et.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:06.420178'
+  updated_at: '2017-06-22 15:13:06.420178'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_027:
+  id: 27
+  titulo: Chief Accounting Associate
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Sapiente magni quia non temporibus dolor ipsa.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:06.49373'
+  updated_at: '2017-06-22 15:13:06.49373'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_028:
+  id: 28
+  titulo: Lead IT Architect
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Minima nemo aut aliquid ratione fugit ut sequi quaerat.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:06.575477'
+  updated_at: '2017-06-22 15:13:06.575477'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_029:
+  id: 29
+  titulo: Lead Planner
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Illum omnis animi ducimus provident in deserunt rerum ab.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:06.645657'
+  updated_at: '2017-06-22 15:13:06.645657'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_030:
+  id: 30
+  titulo: Accounting Technician
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Sit corporis ut voluptatem ad consequatur rem velit.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:06.70922'
+  updated_at: '2017-06-22 15:13:06.70922'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_031:
+  id: 31
+  titulo: Accounting Designer
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Facere ratione vero maiores doloremque illum expedita.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:06.766876'
+  updated_at: '2017-06-22 15:13:06.766876'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_032:
+  id: 32
+  titulo: Customer Administrator
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Minus eveniet tempore porro quidem.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:06.838477'
+  updated_at: '2017-06-22 15:13:06.838477'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_033:
+  id: 33
+  titulo: Chief Engineer
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Ratione quos unde et consequatur quo ad est facere.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:06.898541'
+  updated_at: '2017-06-22 15:13:06.898541'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_034:
+  id: 34
+  titulo: District Sales Associate
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Molestias magni est animi ea autem praesentium hic.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:06.973755'
+  updated_at: '2017-06-22 15:13:06.973755'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_035:
+  id: 35
+  titulo: Customer Developer
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Ipsam ut soluta quia eveniet est itaque aliquid perspiciatis.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:07.048508'
+  updated_at: '2017-06-22 15:13:07.048508'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_036:
+  id: 36
+  titulo: Lead Consultant
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Ratione eos excepturi nihil eaque autem fuga ipsa.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:07.130622'
+  updated_at: '2017-06-22 15:13:07.130622'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_037:
+  id: 37
+  titulo: International Education Technician
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: In fugit velit minus qui ducimus voluptatem aut vitae sunt.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:07.206262'
+  updated_at: '2017-06-22 15:13:07.206262'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_038:
+  id: 38
+  titulo: Investor Community-Services Supervisor
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Maiores nihil assumenda ut nulla.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:07.274067'
+  updated_at: '2017-06-22 15:13:07.274067'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_039:
+  id: 39
+  titulo: Government Officer
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Explicabo ab voluptas amet sit placeat.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:07.335954'
+  updated_at: '2017-06-22 15:13:07.335954'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_040:
+  id: 40
+  titulo: Government Liaison
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Aut ratione explicabo asperiores omnis.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:07.396977'
+  updated_at: '2017-06-22 15:13:07.396977'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_041:
+  id: 41
+  titulo: Marketing Associate
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Asperiores dignissimos possimus optio ea exercitationem fuga soluta vel
+    deserunt.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:07.499126'
+  updated_at: '2017-06-22 15:13:07.499126'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_042:
+  id: 42
+  titulo: Senior Manufacturing Manager
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Aliquid tempore similique voluptatem velit cum quas est doloribus.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:07.571433'
+  updated_at: '2017-06-22 15:13:07.571433'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_043:
+  id: 43
+  titulo: Mining Analyst
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Aliquam eos et laborum adipisci et eligendi eum consequatur fugiat.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:07.654241'
+  updated_at: '2017-06-22 15:13:07.654241'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_044:
+  id: 44
+  titulo: Senior IT Assistant
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Et nihil laudantium eum aut amet non est fugit sed.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:07.738404'
+  updated_at: '2017-06-22 15:13:07.738404'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_045:
+  id: 45
+  titulo: Banking Liaison
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Eum officia velit placeat quam.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:07.834155'
+  updated_at: '2017-06-22 15:13:07.834155'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_046:
+  id: 46
+  titulo: Global Farming Assistant
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Maxime rerum illum dolor quia occaecati quisquam nihil quidem.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:07.888901'
+  updated_at: '2017-06-22 15:13:07.888901'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_047:
+  id: 47
+  titulo: Senior Agent
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Qui alias sit occaecati consequatur amet quis possimus.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:07.970365'
+  updated_at: '2017-06-22 15:13:07.970365'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_048:
+  id: 48
+  titulo: Government Engineer
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Dolorem quo eligendi est sed non facere quia ea aut.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:08.036656'
+  updated_at: '2017-06-22 15:13:08.036656'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_049:
+  id: 49
+  titulo: National Consultant
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Consequatur commodi itaque eum magni.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:08.087582'
+  updated_at: '2017-06-22 15:13:08.087582'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_050:
+  id: 51
+  titulo: Chief Manager
+  val_inicio: '2017-04-02'
+  val_fim: '2019-04-02'
+  descricao: Et qui ut nostrum dolores inventore sequi ab.
+  activo: true
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:08.210022'
+  updated_at: '2017-06-22 15:13:08.210022'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true
+ofertas_051:
+  id: 50
+  titulo: Chief Manufacturing Developer
+  val_inicio: '2017-06-22'
+  val_fim: '2017-06-22'
+  descricao: Provident et dolorum atque numquam.
   activo: false
-  entidade: one
-  area_profissional: one
-  tipo_contrato: one
-
-two:
-  titulo: MyString
-  val_inicio: 2017-03-06
-  val_fim: 2017-03-06
-  descricao: MyText
-  activo: false
-  entidade: two
-  area_profissional: two
-  tipo_contrato: two
+  entidade_id: 1
+  area_profissional_id: 2
+  tipo_contrato_id: 1
+  created_at: '2017-06-22 15:13:08.147953'
+  updated_at: '2017-06-22 16:24:12.695511'
+  salario_id: 2
+  picture: 
+  foto: 100x150.png
+  novo: true

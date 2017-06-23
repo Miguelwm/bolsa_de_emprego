@@ -1,9 +1,19 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  candidato_id: 
+---
+candidaturas_001:
+  id: 1
+  candidato_id: 1
   oferta_id: 1
-
-two:
-  candidato_id: 
-  oferta_id: 1
+  created_at: '2017-06-22 15:53:31.632526'
+  updated_at: '2017-06-22 15:53:31.632526'
+candidaturas_002:
+  id: 2
+  candidato_id: 1
+  oferta_id: 2
+  created_at: '2017-06-22 15:56:56.3899'
+  updated_at: '2017-06-22 15:56:56.3899'
+candidaturas_003:
+  id: 3
+  candidato_id: 1
+  oferta_id: 3
+  created_at: '2017-06-22 15:57:17.037084'
+  updated_at: '2017-06-22 15:57:17.037084'

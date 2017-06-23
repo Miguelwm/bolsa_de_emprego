@@ -1,17 +1,47 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+perfil_conta_entidade:
+ morada: Rua do Sobe e Desce,150
+ codigo_postal: 4421-569
+ localidade: Baguim do Monte
+ contacto1: '966698551'
+ contacto2:
+ pagina: http://stackoverflow.com/
+ apresentacao: Entidade Reguladora de Angulos
+ foto: 100x150.png
+ conta: entidade
 
-one:
-  morada: MyText
-  codigo_postal: MyString
-  localidade: MyString
-  contactos: MyString
-  pagina: MyString
-  conta: one
+perfil_conta_candidato:
+ morada: Rua da Curva e Contracurva,999
+ codigo_postal: 4456-859
+ localidade: Praça do Delgaco
+ contacto1: '215669235'
+ contacto2:
+ pagina: https://www.w3schools.com/
+ apresentacao: Candidato a Trabalho
+ foto: 100x150.png
+ conta: candidato
 
-two:
-  morada: MyText
-  codigo_postal: MyString
-  localidade: MyString
-  contactos: MyString
-  pagina: MyString
-  conta: two
+<% 30.times do |n| %>
+perfil_conta_entidade<%=n%>:
+ morada: Rua do Sobe e Desce,150
+ codigo_postal: 4421-569
+ localidade: Earum voluptas quidem unde totam quaerat non corrupti sit et.
+ contacto1: '966698551'
+ contacto2:
+ pagina: http://stackoverflow.com/
+ apresentacao: Sed qui non necessitatibus est omnis qui.
+ foto: 100x150.png
+ conta: entidade<%=n%>
+<%end%>
+
+<% 30.times do |n| %>
+perfil_conta_candidato<%=n%>:
+ morada: Rua do Sobe e Desce,150
+ codigo_postal: 4421-569
+ localidade: Earum voluptas quidem unde totam quaerat non corrupti sit et.
+ contacto1: '966698551'
+ contacto2:
+ pagina: http://stackoverflow.com/
+ apresentacao: Sed qui non necessitatibus est omnis qui.
+ foto: 100x150.png
+ conta: candidato<%=n%>
+<%end%>

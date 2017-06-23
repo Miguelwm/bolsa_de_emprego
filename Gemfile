@@ -24,6 +24,7 @@ gem 'whenever', :require => false
 gem 'rufus-scheduler', '~> 3.4', '>= 3.4.2'
 gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
                               :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 gem 'pg_search'
@@ -58,6 +59,13 @@ gem 'heritage'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+end
+
+group :test do
+  gem 'rails-controller-testing', '1.0.2'
+  gem 'minitest-reporters',       '1.1.14'
+  gem 'guard',                    '2.13.0'
+  gem 'guard-minitest',           '2.4.4'
 end
 
 group :development do

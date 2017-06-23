@@ -1,7 +1,26 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  nivel: MyString
-
-two:
-  nivel: MyString
+---
+nivel_habilitacaos_001:
+  id: 1
+  nivel: 9º
+  created_at: '2017-06-22 15:13:03.933613'
+  updated_at: '2017-06-22 15:13:03.933613'
+nivel_habilitacaos_002:
+  id: 2
+  nivel: 12º
+  created_at: '2017-06-22 15:13:03.94531'
+  updated_at: '2017-06-22 15:13:03.94531'
+nivel_habilitacaos_003:
+  id: 3
+  nivel: Licenciartura
+  created_at: '2017-06-22 15:13:03.952685'
+  updated_at: '2017-06-22 15:13:03.952685'
+nivel_habilitacaos_004:
+  id: 4
+  nivel: Mestrado
+  created_at: '2017-06-22 15:13:03.961054'
+  updated_at: '2017-06-22 15:13:03.961054'
+nivel_habilitacaos_005:
+  id: 5
+  nivel: Douturamento
+  created_at: '2017-06-22 15:13:03.969889'
+  updated_at: '2017-06-22 15:13:03.969889'

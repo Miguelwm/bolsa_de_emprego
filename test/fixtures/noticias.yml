@@ -1,17 +1,881 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  titulo: MyString
-  data: 2017-03-07
-  sumario: MyText
-  texto: MyText
+---
+noticias_001:
+  id: 1
+  titulo: Noticia do dia
+  data: '2017-03-07'
+  sumario: Texto muito resumido
+  texto: Texto elquentemente elaborado
+  destaque: true
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:12:59.331116'
+  updated_at: '2017-06-22 15:12:59.331116'
+  picture: 
+  foto: 100x150.png
+noticias_002:
+  id: 2
+  titulo: Jupiter
+  data: '2016-07-26'
+  sumario: Chuck Norris' programs occupy 150% of CPU, even when they are not executing.
+  texto: When a bug sees Chuck Norris, it flees screaming in terror, and then immediately
+    self-destructs to avoid being roundhouse-kicked.When a bug sees Chuck Norris,
+    it flees screaming in terror, and then immediately self-destructs to avoid being
+    roundhouse-kicked.When a bug sees Chuck Norris, it flees screaming in terror,
+    and then immediately self-destructs to avoid being roundhouse-kicked.When a bug
+    sees Chuck Norris, it flees screaming in terror, and then immediately self-destructs
+    to avoid being roundhouse-kicked.When a bug sees Chuck Norris, it flees screaming
+    in terror, and then immediately self-destructs to avoid being roundhouse-kicked.
   destaque: false
-  activo: false
-
-two:
-  titulo: MyString
-  data: 2017-03-07
-  sumario: MyText
-  texto: MyText
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:00.049916'
+  updated_at: '2017-06-22 15:13:00.049916'
+  picture: 
+  foto: 100x150.png
+noticias_003:
+  id: 3
+  titulo: Jupiter
+  data: '2016-07-03'
+  sumario: Chuck Norris doesn't use web standards as the web will conform to him.
+  texto: Chuck Norris doesn't pair program.Chuck Norris doesn't pair program.Chuck
+    Norris doesn't pair program.Chuck Norris doesn't pair program.Chuck Norris doesn't
+    pair program.
   destaque: false
-  activo: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:00.128567'
+  updated_at: '2017-06-22 15:13:00.128567'
+  picture: 
+  foto: 100x150.png
+noticias_004:
+  id: 4
+  titulo: Mars
+  data: '2016-11-11'
+  sumario: Chuck Norris doesn't use a computer because a computer does everything
+    slower than Chuck Norris.
+  texto: Chuck Norris writes code that optimizes itself.Chuck Norris writes code that
+    optimizes itself.Chuck Norris writes code that optimizes itself.Chuck Norris writes
+    code that optimizes itself.Chuck Norris writes code that optimizes itself.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:00.204149'
+  updated_at: '2017-06-22 15:13:00.204149'
+  picture: 
+  foto: 100x150.png
+noticias_005:
+  id: 5
+  titulo: Jupiter
+  data: '2016-08-10'
+  sumario: Anonymous methods and anonymous types are really all called Chuck Norris.
+    They just don't like to boast.
+  texto: Project managers never ask Chuck Norris for estimations... ever.Project managers
+    never ask Chuck Norris for estimations... ever.Project managers never ask Chuck
+    Norris for estimations... ever.Project managers never ask Chuck Norris for estimations...
+    ever.Project managers never ask Chuck Norris for estimations... ever.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:00.323816'
+  updated_at: '2017-06-22 15:13:00.323816'
+  picture: 
+  foto: 100x150.png
+noticias_006:
+  id: 6
+  titulo: Mercury
+  data: '2017-03-09'
+  sumario: Chuck Norris can unit test an entire application with a single assert.
+  texto: Chuck Norris doesn't need to know about class factory pattern. He can instantiate
+    interfaces.Chuck Norris doesn't need to know about class factory pattern. He can
+    instantiate interfaces.Chuck Norris doesn't need to know about class factory pattern.
+    He can instantiate interfaces.Chuck Norris doesn't need to know about class factory
+    pattern. He can instantiate interfaces.Chuck Norris doesn't need to know about
+    class factory pattern. He can instantiate interfaces.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:00.394514'
+  updated_at: '2017-06-22 15:13:00.394514'
+  picture: 
+  foto: 100x150.png
+noticias_007:
+  id: 7
+  titulo: Saturn
+  data: '2017-05-06'
+  sumario: Chuck Norris' programs occupy 150% of CPU, even when they are not executing.
+  texto: Chuck Norris went out of an infinite loop.Chuck Norris went out of an infinite
+    loop.Chuck Norris went out of an infinite loop.Chuck Norris went out of an infinite
+    loop.Chuck Norris went out of an infinite loop.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:00.467275'
+  updated_at: '2017-06-22 15:13:00.467275'
+  picture: 
+  foto: 100x150.png
+noticias_008:
+  id: 8
+  titulo: Jupiter
+  data: '2016-08-10'
+  sumario: Chuck Norris knows the last digit of PI.
+  texto: Chuck Norris doesn't have performance bottlenecks. He just makes the universe
+    wait its turn.Chuck Norris doesn't have performance bottlenecks. He just makes
+    the universe wait its turn.Chuck Norris doesn't have performance bottlenecks.
+    He just makes the universe wait its turn.Chuck Norris doesn't have performance
+    bottlenecks. He just makes the universe wait its turn.Chuck Norris doesn't have
+    performance bottlenecks. He just makes the universe wait its turn.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:00.531911'
+  updated_at: '2017-06-22 15:13:00.531911'
+  picture: 
+  foto: 100x150.png
+noticias_009:
+  id: 9
+  titulo: Neptune
+  data: '2016-10-14'
+  sumario: Chuck Norris compresses his files by doing a flying round house kick to
+    the hard drive.
+  texto: Chuck Norris doesn't use a computer because a computer does everything slower
+    than Chuck Norris.Chuck Norris doesn't use a computer because a computer does
+    everything slower than Chuck Norris.Chuck Norris doesn't use a computer because
+    a computer does everything slower than Chuck Norris.Chuck Norris doesn't use a
+    computer because a computer does everything slower than Chuck Norris.Chuck Norris
+    doesn't use a computer because a computer does everything slower than Chuck Norris.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:00.602332'
+  updated_at: '2017-06-22 15:13:00.602332'
+  picture: 
+  foto: 100x150.png
+noticias_010:
+  id: 10
+  titulo: Mercury
+  data: '2016-06-22'
+  sumario: Project managers never ask Chuck Norris for estimations... ever.
+  texto: Chuck Norris's beard can type 140 wpm.Chuck Norris's beard can type 140 wpm.Chuck
+    Norris's beard can type 140 wpm.Chuck Norris's beard can type 140 wpm.Chuck Norris's
+    beard can type 140 wpm.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:00.669405'
+  updated_at: '2017-06-22 15:13:00.669405'
+  picture: 
+  foto: 100x150.png
+noticias_011:
+  id: 11
+  titulo: Mercury
+  data: '2017-03-02'
+  sumario: Chuck Norris doesn't need a debugger, he just stares down the bug until
+    the code confesses.
+  texto: Chuck Norris can recite π. Backwards.Chuck Norris can recite π. Backwards.Chuck
+    Norris can recite π. Backwards.Chuck Norris can recite π. Backwards.Chuck Norris
+    can recite π. Backwards.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:00.730026'
+  updated_at: '2017-06-22 15:13:00.730026'
+  picture: 
+  foto: 100x150.png
+noticias_012:
+  id: 12
+  titulo: Neptune
+  data: '2017-04-23'
+  sumario: The only pattern Chuck Norris knows is God Object.
+  texto: Chuck Norris doesn't program with a keyboard. He stares the computer down
+    until it does what he wants.Chuck Norris doesn't program with a keyboard. He stares
+    the computer down until it does what he wants.Chuck Norris doesn't program with
+    a keyboard. He stares the computer down until it does what he wants.Chuck Norris
+    doesn't program with a keyboard. He stares the computer down until it does what
+    he wants.Chuck Norris doesn't program with a keyboard. He stares the computer
+    down until it does what he wants.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:00.796326'
+  updated_at: '2017-06-22 15:13:00.796326'
+  picture: 
+  foto: 100x150.png
+noticias_013:
+  id: 13
+  titulo: Uranus
+  data: '2017-03-20'
+  sumario: Chuck Norris compresses his files by doing a flying round house kick to
+    the hard drive.
+  texto: When Chuck Norris presses Ctrl+Alt+Delete, worldwide computer restart is
+    initiated.When Chuck Norris presses Ctrl+Alt+Delete, worldwide computer restart
+    is initiated.When Chuck Norris presses Ctrl+Alt+Delete, worldwide computer restart
+    is initiated.When Chuck Norris presses Ctrl+Alt+Delete, worldwide computer restart
+    is initiated.When Chuck Norris presses Ctrl+Alt+Delete, worldwide computer restart
+    is initiated.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:00.879907'
+  updated_at: '2017-06-22 15:13:00.879907'
+  picture: 
+  foto: 100x150.png
+noticias_014:
+  id: 14
+  titulo: Mercury
+  data: '2016-12-15'
+  sumario: Chuck Norris can use GOTO as much as he wants to. Telling him otherwise
+    is considered harmful.
+  texto: Chuck Norris' programs occupy 150% of CPU, even when they are not executing.Chuck
+    Norris' programs occupy 150% of CPU, even when they are not executing.Chuck Norris'
+    programs occupy 150% of CPU, even when they are not executing.Chuck Norris' programs
+    occupy 150% of CPU, even when they are not executing.Chuck Norris' programs occupy
+    150% of CPU, even when they are not executing.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:00.947093'
+  updated_at: '2017-06-22 15:13:00.947093'
+  picture: 
+  foto: 100x150.png
+noticias_015:
+  id: 15
+  titulo: Neptune
+  data: '2017-06-11'
+  sumario: Chuck Norris can divide by zero.
+  texto: All arrays Chuck Norris declares are of infinite size, because Chuck Norris
+    knows no bounds.All arrays Chuck Norris declares are of infinite size, because
+    Chuck Norris knows no bounds.All arrays Chuck Norris declares are of infinite
+    size, because Chuck Norris knows no bounds.All arrays Chuck Norris declares are
+    of infinite size, because Chuck Norris knows no bounds.All arrays Chuck Norris
+    declares are of infinite size, because Chuck Norris knows no bounds.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:01.01312'
+  updated_at: '2017-06-22 15:13:01.01312'
+  picture: 
+  foto: 100x150.png
+noticias_016:
+  id: 16
+  titulo: Earth
+  data: '2016-12-21'
+  sumario: The class object inherits from Chuck Norris.
+  texto: Chuck Norris rewrote the Google search engine from scratch.Chuck Norris rewrote
+    the Google search engine from scratch.Chuck Norris rewrote the Google search engine
+    from scratch.Chuck Norris rewrote the Google search engine from scratch.Chuck
+    Norris rewrote the Google search engine from scratch.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:01.087717'
+  updated_at: '2017-06-22 15:13:01.087717'
+  picture: 
+  foto: 100x150.png
+noticias_017:
+  id: 17
+  titulo: Neptune
+  data: '2016-11-02'
+  sumario: Chuck Norris can spawn threads that complete before they are started.
+  texto: The only pattern Chuck Norris knows is God Object.The only pattern Chuck
+    Norris knows is God Object.The only pattern Chuck Norris knows is God Object.The
+    only pattern Chuck Norris knows is God Object.The only pattern Chuck Norris knows
+    is God Object.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:01.153239'
+  updated_at: '2017-06-22 15:13:01.153239'
+  picture: 
+  foto: 100x150.png
+noticias_018:
+  id: 18
+  titulo: Neptune
+  data: '2016-12-17'
+  sumario: When Chuck Norris' code fails to compile the compiler apologises.
+  texto: The only pattern Chuck Norris knows is God Object.The only pattern Chuck
+    Norris knows is God Object.The only pattern Chuck Norris knows is God Object.The
+    only pattern Chuck Norris knows is God Object.The only pattern Chuck Norris knows
+    is God Object.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:01.212684'
+  updated_at: '2017-06-22 15:13:01.212684'
+  picture: 
+  foto: 100x150.png
+noticias_019:
+  id: 19
+  titulo: Earth
+  data: '2016-12-12'
+  sumario: When Chuck Norris gives a method an argument, the method loses.
+  texto: Chuck Norris's beard can type 140 wpm.Chuck Norris's beard can type 140 wpm.Chuck
+    Norris's beard can type 140 wpm.Chuck Norris's beard can type 140 wpm.Chuck Norris's
+    beard can type 140 wpm.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:01.270148'
+  updated_at: '2017-06-22 15:13:01.270148'
+  picture: 
+  foto: 100x150.png
+noticias_020:
+  id: 20
+  titulo: Jupiter
+  data: '2016-09-12'
+  sumario: Chuck Norris breaks RSA 128-bit encrypted codes in milliseconds.
+  texto: Anonymous methods and anonymous types are really all called Chuck Norris.
+    They just don't like to boast.Anonymous methods and anonymous types are really
+    all called Chuck Norris. They just don't like to boast.Anonymous methods and anonymous
+    types are really all called Chuck Norris. They just don't like to boast.Anonymous
+    methods and anonymous types are really all called Chuck Norris. They just don't
+    like to boast.Anonymous methods and anonymous types are really all called Chuck
+    Norris. They just don't like to boast.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:01.335988'
+  updated_at: '2017-06-22 15:13:01.335988'
+  picture: 
+  foto: 100x150.png
+noticias_021:
+  id: 21
+  titulo: Mercury
+  data: '2017-01-16'
+  sumario: When Chuck Norris gives a method an argument, the method loses.
+  texto: There is no need to try catching Chuck Norris' exceptions for recovery; every
+    single throw he does is fatal.There is no need to try catching Chuck Norris' exceptions
+    for recovery; every single throw he does is fatal.There is no need to try catching
+    Chuck Norris' exceptions for recovery; every single throw he does is fatal.There
+    is no need to try catching Chuck Norris' exceptions for recovery; every single
+    throw he does is fatal.There is no need to try catching Chuck Norris' exceptions
+    for recovery; every single throw he does is fatal.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:01.405297'
+  updated_at: '2017-06-22 15:13:01.405297'
+  picture: 
+  foto: 100x150.png
+noticias_022:
+  id: 22
+  titulo: Earth
+  data: '2016-08-13'
+  sumario: Chuck Norris doesn't use web standards as the web will conform to him.
+  texto: Chuck Norris's beard can type 140 wpm.Chuck Norris's beard can type 140 wpm.Chuck
+    Norris's beard can type 140 wpm.Chuck Norris's beard can type 140 wpm.Chuck Norris's
+    beard can type 140 wpm.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:01.475308'
+  updated_at: '2017-06-22 15:13:01.475308'
+  picture: 
+  foto: 100x150.png
+noticias_023:
+  id: 23
+  titulo: Saturn
+  data: '2016-09-09'
+  sumario: When Chuck Norris points to null, null quakes in fear.
+  texto: Chuck Norris never gets a syntax error. Instead, the language gets a DoesNotConformToChuck
+    error.Chuck Norris never gets a syntax error. Instead, the language gets a DoesNotConformToChuck
+    error.Chuck Norris never gets a syntax error. Instead, the language gets a DoesNotConformToChuck
+    error.Chuck Norris never gets a syntax error. Instead, the language gets a DoesNotConformToChuck
+    error.Chuck Norris never gets a syntax error. Instead, the language gets a DoesNotConformToChuck
+    error.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:01.537652'
+  updated_at: '2017-06-22 15:13:01.537652'
+  picture: 
+  foto: 100x150.png
+noticias_024:
+  id: 24
+  titulo: Mars
+  data: '2016-08-18'
+  sumario: Chuck Norris can recite π. Backwards.
+  texto: When Chuck Norris points to null, null quakes in fear.When Chuck Norris points
+    to null, null quakes in fear.When Chuck Norris points to null, null quakes in
+    fear.When Chuck Norris points to null, null quakes in fear.When Chuck Norris points
+    to null, null quakes in fear.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:01.598752'
+  updated_at: '2017-06-22 15:13:01.598752'
+  picture: 
+  foto: 100x150.png
+noticias_025:
+  id: 25
+  titulo: Neptune
+  data: '2016-09-07'
+  sumario: Chuck Norris can compile syntax errors.
+  texto: Chuck Norris doesn't program with a keyboard. He stares the computer down
+    until it does what he wants.Chuck Norris doesn't program with a keyboard. He stares
+    the computer down until it does what he wants.Chuck Norris doesn't program with
+    a keyboard. He stares the computer down until it does what he wants.Chuck Norris
+    doesn't program with a keyboard. He stares the computer down until it does what
+    he wants.Chuck Norris doesn't program with a keyboard. He stares the computer
+    down until it does what he wants.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:01.672326'
+  updated_at: '2017-06-22 15:13:01.672326'
+  picture: 
+  foto: 100x150.png
+noticias_026:
+  id: 26
+  titulo: Venus
+  data: '2017-04-14'
+  sumario: Chuck Norris doesn't have performance bottlenecks. He just makes the universe
+    wait its turn.
+  texto: Chuck Norris doesn't believe in floating point numbers because they can't
+    be typed on his binary keyboard.Chuck Norris doesn't believe in floating point
+    numbers because they can't be typed on his binary keyboard.Chuck Norris doesn't
+    believe in floating point numbers because they can't be typed on his binary keyboard.Chuck
+    Norris doesn't believe in floating point numbers because they can't be typed on
+    his binary keyboard.Chuck Norris doesn't believe in floating point numbers because
+    they can't be typed on his binary keyboard.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:01.739142'
+  updated_at: '2017-06-22 15:13:01.739142'
+  picture: 
+  foto: 100x150.png
+noticias_027:
+  id: 27
+  titulo: Jupiter
+  data: '2016-08-31'
+  sumario: Chuck Norris doesn't delete files, he blows them away.
+  texto: Chuck Norris can spawn threads that complete before they are started.Chuck
+    Norris can spawn threads that complete before they are started.Chuck Norris can
+    spawn threads that complete before they are started.Chuck Norris can spawn threads
+    that complete before they are started.Chuck Norris can spawn threads that complete
+    before they are started.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:01.803335'
+  updated_at: '2017-06-22 15:13:01.803335'
+  picture: 
+  foto: 100x150.png
+noticias_028:
+  id: 28
+  titulo: Venus
+  data: '2017-01-12'
+  sumario: Chuck Norris programs do not accept input.
+  texto: When Chuck Norris' code fails to compile the compiler apologises.When Chuck
+    Norris' code fails to compile the compiler apologises.When Chuck Norris' code
+    fails to compile the compiler apologises.When Chuck Norris' code fails to compile
+    the compiler apologises.When Chuck Norris' code fails to compile the compiler
+    apologises.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:01.870316'
+  updated_at: '2017-06-22 15:13:01.870316'
+  picture: 
+  foto: 100x150.png
+noticias_029:
+  id: 29
+  titulo: Saturn
+  data: '2017-05-20'
+  sumario: Chuck Norris can write multi-threaded applications with a single thread.
+  texto: Chuck Norris is immutable. If something's going to change, it's going to
+    have to be the rest of the universe.Chuck Norris is immutable. If something's
+    going to change, it's going to have to be the rest of the universe.Chuck Norris
+    is immutable. If something's going to change, it's going to have to be the rest
+    of the universe.Chuck Norris is immutable. If something's going to change, it's
+    going to have to be the rest of the universe.Chuck Norris is immutable. If something's
+    going to change, it's going to have to be the rest of the universe.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:01.937502'
+  updated_at: '2017-06-22 15:13:01.937502'
+  picture: 
+  foto: 100x150.png
+noticias_030:
+  id: 30
+  titulo: Venus
+  data: '2016-10-02'
+  sumario: Chuck Norris can spawn threads that complete before they are started.
+  texto: Chuck Norris doesn't need garbage collection because he doesn't call .Dispose(),
+    he calls .DropKick().Chuck Norris doesn't need garbage collection because he doesn't
+    call .Dispose(), he calls .DropKick().Chuck Norris doesn't need garbage collection
+    because he doesn't call .Dispose(), he calls .DropKick().Chuck Norris doesn't
+    need garbage collection because he doesn't call .Dispose(), he calls .DropKick().Chuck
+    Norris doesn't need garbage collection because he doesn't call .Dispose(), he
+    calls .DropKick().
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:02.00659'
+  updated_at: '2017-06-22 15:13:02.00659'
+  picture: 
+  foto: 100x150.png
+noticias_031:
+  id: 31
+  titulo: Mercury
+  data: '2016-10-18'
+  sumario: Chuck Norris doesn't have performance bottlenecks. He just makes the universe
+    wait its turn.
+  texto: Chuck Norris doesn't need to know about class factory pattern. He can instantiate
+    interfaces.Chuck Norris doesn't need to know about class factory pattern. He can
+    instantiate interfaces.Chuck Norris doesn't need to know about class factory pattern.
+    He can instantiate interfaces.Chuck Norris doesn't need to know about class factory
+    pattern. He can instantiate interfaces.Chuck Norris doesn't need to know about
+    class factory pattern. He can instantiate interfaces.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:02.09283'
+  updated_at: '2017-06-22 15:13:02.09283'
+  picture: 
+  foto: 100x150.png
+noticias_032:
+  id: 32
+  titulo: Mars
+  data: '2016-10-24'
+  sumario: Chuck Norris went out of an infinite loop.
+  texto: Chuck Norris doesn't have performance bottlenecks. He just makes the universe
+    wait its turn.Chuck Norris doesn't have performance bottlenecks. He just makes
+    the universe wait its turn.Chuck Norris doesn't have performance bottlenecks.
+    He just makes the universe wait its turn.Chuck Norris doesn't have performance
+    bottlenecks. He just makes the universe wait its turn.Chuck Norris doesn't have
+    performance bottlenecks. He just makes the universe wait its turn.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:02.160513'
+  updated_at: '2017-06-22 15:13:02.160513'
+  picture: 
+  foto: 100x150.png
+noticias_033:
+  id: 33
+  titulo: Saturn
+  data: '2016-11-10'
+  sumario: When Chuck Norris presses Ctrl+Alt+Delete, worldwide computer restart is
+    initiated.
+  texto: Chuck Norris can read all encrypted data, because nothing can hide from Chuck
+    Norris.Chuck Norris can read all encrypted data, because nothing can hide from
+    Chuck Norris.Chuck Norris can read all encrypted data, because nothing can hide
+    from Chuck Norris.Chuck Norris can read all encrypted data, because nothing can
+    hide from Chuck Norris.Chuck Norris can read all encrypted data, because nothing
+    can hide from Chuck Norris.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:02.228714'
+  updated_at: '2017-06-22 15:13:02.228714'
+  picture: 
+  foto: 100x150.png
+noticias_034:
+  id: 34
+  titulo: Mars
+  data: '2017-05-23'
+  sumario: Chuck Norris never gets a syntax error. Instead, the language gets a DoesNotConformToChuck
+    error.
+  texto: There is no Esc key on Chuck Norris' keyboard, because no one escapes Chuck
+    Norris.There is no Esc key on Chuck Norris' keyboard, because no one escapes Chuck
+    Norris.There is no Esc key on Chuck Norris' keyboard, because no one escapes Chuck
+    Norris.There is no Esc key on Chuck Norris' keyboard, because no one escapes Chuck
+    Norris.There is no Esc key on Chuck Norris' keyboard, because no one escapes Chuck
+    Norris.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:02.28756'
+  updated_at: '2017-06-22 15:13:02.28756'
+  picture: 
+  foto: 100x150.png
+noticias_035:
+  id: 35
+  titulo: Saturn
+  data: '2017-03-28'
+  sumario: Chuck Norris doesn't need garbage collection because he doesn't call .Dispose(),
+    he calls .DropKick().
+  texto: Chuck Norris can write infinite recursion functions... and have them return.Chuck
+    Norris can write infinite recursion functions... and have them return.Chuck Norris
+    can write infinite recursion functions... and have them return.Chuck Norris can
+    write infinite recursion functions... and have them return.Chuck Norris can write
+    infinite recursion functions... and have them return.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:02.37832'
+  updated_at: '2017-06-22 15:13:02.37832'
+  picture: 
+  foto: 100x150.png
+noticias_036:
+  id: 36
+  titulo: Mercury
+  data: '2016-08-05'
+  sumario: Chuck Norris can compile syntax errors.
+  texto: Chuck Norris can solve the Towers of Hanoi in one move.Chuck Norris can solve
+    the Towers of Hanoi in one move.Chuck Norris can solve the Towers of Hanoi in
+    one move.Chuck Norris can solve the Towers of Hanoi in one move.Chuck Norris can
+    solve the Towers of Hanoi in one move.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:02.48015'
+  updated_at: '2017-06-22 15:13:02.48015'
+  picture: 
+  foto: 100x150.png
+noticias_037:
+  id: 37
+  titulo: Venus
+  data: '2016-06-22'
+  sumario: Whiteboards are white because Chuck Norris scared them that way.
+  texto: Chuck Norris doesn't need an OS.Chuck Norris doesn't need an OS.Chuck Norris
+    doesn't need an OS.Chuck Norris doesn't need an OS.Chuck Norris doesn't need an
+    OS.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:02.543006'
+  updated_at: '2017-06-22 15:13:02.543006'
+  picture: 
+  foto: 100x150.png
+noticias_038:
+  id: 38
+  titulo: Neptune
+  data: '2016-11-09'
+  sumario: Chuck Norris's keyboard doesn't have a Ctrl key because nothing controls
+    Chuck Norris.
+  texto: Chuck Norris doesn't delete files, he blows them away.Chuck Norris doesn't
+    delete files, he blows them away.Chuck Norris doesn't delete files, he blows them
+    away.Chuck Norris doesn't delete files, he blows them away.Chuck Norris doesn't
+    delete files, he blows them away.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:02.606285'
+  updated_at: '2017-06-22 15:13:02.606285'
+  picture: 
+  foto: 100x150.png
+noticias_039:
+  id: 39
+  titulo: Mars
+  data: '2016-10-28'
+  sumario: Chuck Norris can unit test an entire application with a single assert.
+  texto: You don't disable the Chuck Norris plug-in, it disables you.You don't disable
+    the Chuck Norris plug-in, it disables you.You don't disable the Chuck Norris plug-in,
+    it disables you.You don't disable the Chuck Norris plug-in, it disables you.You
+    don't disable the Chuck Norris plug-in, it disables you.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:02.664783'
+  updated_at: '2017-06-22 15:13:02.664783'
+  picture: 
+  foto: 100x150.png
+noticias_040:
+  id: 40
+  titulo: Mercury
+  data: '2017-02-18'
+  sumario: Chuck Norris doesn't need an OS.
+  texto: Chuck Norris can read all encrypted data, because nothing can hide from Chuck
+    Norris.Chuck Norris can read all encrypted data, because nothing can hide from
+    Chuck Norris.Chuck Norris can read all encrypted data, because nothing can hide
+    from Chuck Norris.Chuck Norris can read all encrypted data, because nothing can
+    hide from Chuck Norris.Chuck Norris can read all encrypted data, because nothing
+    can hide from Chuck Norris.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:02.724827'
+  updated_at: '2017-06-22 15:13:02.724827'
+  picture: 
+  foto: 100x150.png
+noticias_041:
+  id: 41
+  titulo: Neptune
+  data: '2016-09-05'
+  sumario: Chuck Norris doesn't need garbage collection because he doesn't call .Dispose(),
+    he calls .DropKick().
+  texto: Chuck Norris doesn't delete files, he blows them away.Chuck Norris doesn't
+    delete files, he blows them away.Chuck Norris doesn't delete files, he blows them
+    away.Chuck Norris doesn't delete files, he blows them away.Chuck Norris doesn't
+    delete files, he blows them away.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:02.793981'
+  updated_at: '2017-06-22 15:13:02.793981'
+  picture: 
+  foto: 100x150.png
+noticias_042:
+  id: 42
+  titulo: Venus
+  data: '2016-12-14'
+  sumario: Chuck Norris can binary search unsorted data.
+  texto: Chuck Norris doesn't need a debugger, he just stares down the bug until the
+    code confesses.Chuck Norris doesn't need a debugger, he just stares down the bug
+    until the code confesses.Chuck Norris doesn't need a debugger, he just stares
+    down the bug until the code confesses.Chuck Norris doesn't need a debugger, he
+    just stares down the bug until the code confesses.Chuck Norris doesn't need a
+    debugger, he just stares down the bug until the code confesses.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:02.857662'
+  updated_at: '2017-06-22 15:13:02.857662'
+  picture: 
+  foto: 100x150.png
+noticias_043:
+  id: 43
+  titulo: Saturn
+  data: '2017-06-17'
+  sumario: For Chuck Norris, NP-Hard = O(1).
+  texto: Chuck Norris doesn't need a debugger, he just stares down the bug until the
+    code confesses.Chuck Norris doesn't need a debugger, he just stares down the bug
+    until the code confesses.Chuck Norris doesn't need a debugger, he just stares
+    down the bug until the code confesses.Chuck Norris doesn't need a debugger, he
+    just stares down the bug until the code confesses.Chuck Norris doesn't need a
+    debugger, he just stares down the bug until the code confesses.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:02.919956'
+  updated_at: '2017-06-22 15:13:02.919956'
+  picture: 
+  foto: 100x150.png
+noticias_044:
+  id: 44
+  titulo: Jupiter
+  data: '2017-05-07'
+  sumario: Chuck Norris can binary search unsorted data.
+  texto: Chuck Norris can read all encrypted data, because nothing can hide from Chuck
+    Norris.Chuck Norris can read all encrypted data, because nothing can hide from
+    Chuck Norris.Chuck Norris can read all encrypted data, because nothing can hide
+    from Chuck Norris.Chuck Norris can read all encrypted data, because nothing can
+    hide from Chuck Norris.Chuck Norris can read all encrypted data, because nothing
+    can hide from Chuck Norris.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:02.999008'
+  updated_at: '2017-06-22 15:13:02.999008'
+  picture: 
+  foto: 100x150.png
+noticias_045:
+  id: 45
+  titulo: Uranus
+  data: '2017-01-09'
+  sumario: Quantum cryptography does not work on Chuck Norris. When something is being
+    observed by Chuck it stays in the same state until he's finished.
+  texto: Chuck Norris doesn't need an OS.Chuck Norris doesn't need an OS.Chuck Norris
+    doesn't need an OS.Chuck Norris doesn't need an OS.Chuck Norris doesn't need an
+    OS.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:03.097222'
+  updated_at: '2017-06-22 15:13:03.097222'
+  picture: 
+  foto: 100x150.png
+noticias_046:
+  id: 46
+  titulo: Mars
+  data: '2017-04-27'
+  sumario: Chuck Norris can write multi-threaded applications with a single thread.
+  texto: All arrays Chuck Norris declares are of infinite size, because Chuck Norris
+    knows no bounds.All arrays Chuck Norris declares are of infinite size, because
+    Chuck Norris knows no bounds.All arrays Chuck Norris declares are of infinite
+    size, because Chuck Norris knows no bounds.All arrays Chuck Norris declares are
+    of infinite size, because Chuck Norris knows no bounds.All arrays Chuck Norris
+    declares are of infinite size, because Chuck Norris knows no bounds.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:03.150398'
+  updated_at: '2017-06-22 15:13:03.150398'
+  picture: 
+  foto: 100x150.png
+noticias_047:
+  id: 47
+  titulo: Earth
+  data: '2017-02-27'
+  sumario: Chuck Norris rewrote the Google search engine from scratch.
+  texto: Chuck Norris went out of an infinite loop.Chuck Norris went out of an infinite
+    loop.Chuck Norris went out of an infinite loop.Chuck Norris went out of an infinite
+    loop.Chuck Norris went out of an infinite loop.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:03.206826'
+  updated_at: '2017-06-22 15:13:03.206826'
+  picture: 
+  foto: 100x150.png
+noticias_048:
+  id: 48
+  titulo: Earth
+  data: '2016-07-28'
+  sumario: Chuck Norris compresses his files by doing a flying round house kick to
+    the hard drive.
+  texto: Chuck Norris can write multi-threaded applications with a single thread.Chuck
+    Norris can write multi-threaded applications with a single thread.Chuck Norris
+    can write multi-threaded applications with a single thread.Chuck Norris can write
+    multi-threaded applications with a single thread.Chuck Norris can write multi-threaded
+    applications with a single thread.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:03.312851'
+  updated_at: '2017-06-22 15:13:03.312851'
+  picture: 
+  foto: 100x150.png
+noticias_049:
+  id: 49
+  titulo: Neptune
+  data: '2016-12-28'
+  sumario: Chuck Norris can write infinite recursion functions... and have them return.
+  texto: Chuck Norris can instantiate an abstract class.Chuck Norris can instantiate
+    an abstract class.Chuck Norris can instantiate an abstract class.Chuck Norris
+    can instantiate an abstract class.Chuck Norris can instantiate an abstract class.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:03.370079'
+  updated_at: '2017-06-22 15:13:03.370079'
+  picture: 
+  foto: 100x150.png
+noticias_050:
+  id: 50
+  titulo: Uranus
+  data: '2016-12-28'
+  sumario: Chuck Norris doesn't have performance bottlenecks. He just makes the universe
+    wait its turn.
+  texto: Chuck Norris compresses his files by doing a flying round house kick to the
+    hard drive.Chuck Norris compresses his files by doing a flying round house kick
+    to the hard drive.Chuck Norris compresses his files by doing a flying round house
+    kick to the hard drive.Chuck Norris compresses his files by doing a flying round
+    house kick to the hard drive.Chuck Norris compresses his files by doing a flying
+    round house kick to the hard drive.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:03.432492'
+  updated_at: '2017-06-22 15:13:03.432492'
+  picture: 
+  foto: 100x150.png
+noticias_051:
+  id: 51
+  titulo: Venus
+  data: '2017-04-03'
+  sumario: Chuck Norris never gets a syntax error. Instead, the language gets a DoesNotConformToChuck
+    error.
+  texto: Chuck Norris programs do not accept input.Chuck Norris programs do not accept
+    input.Chuck Norris programs do not accept input.Chuck Norris programs do not accept
+    input.Chuck Norris programs do not accept input.
+  destaque: false
+  activo: true
+  conta_id: 1
+  created_at: '2017-06-22 15:13:03.494563'
+  updated_at: '2017-06-22 15:13:03.494563'
+  picture: 
+  foto: 100x150.png

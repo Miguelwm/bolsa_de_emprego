@@ -13,11 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require bootstrap
 //= require tinymce
 //= require moment
 //= require bootstrap-datepicker
+//= require_tree .
+
+
 $(function() {
   $("#products th a, #products .pagination a").live("click", function() {
     $.getScript(this.href);

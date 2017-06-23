@@ -1,7 +1,16 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  actividade: MyString
-
-two:
-  actividade: MyString
+---
+actividade_profissionals_001:
+  id: 1
+  actividade: Informatica
+  created_at: '2017-06-22 15:13:03.535478'
+  updated_at: '2017-06-22 15:13:03.535478'
+actividade_profissionals_002:
+  id: 2
+  actividade: Mecanica
+  created_at: '2017-06-22 15:13:03.544172'
+  updated_at: '2017-06-22 15:13:03.544172'
+actividade_profissionals_003:
+  id: 3
+  actividade: Farmaceutica
+  created_at: '2017-06-22 15:13:03.552306'
+  updated_at: '2017-06-22 15:13:03.552306'

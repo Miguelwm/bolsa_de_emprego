@@ -1,0 +1,44 @@
+admin:
+ nome: Admin
+ email: admin@seed.com
+ password_digest: <%= Conta.digest('password')%>
+ admin: true
+ activo: true
+ ativado_em: <%= Time.zone.now %>
+ tipo: Backoffice
+
+entidade:
+ nome: Wiremaze
+ email: entidade@seed.com
+ password_digest: <%= Conta.digest('password')%>
+ activo: true
+ ativado_em: <%= Time.zone.now %>
+ tipo: Entidade
+
+candidato:
+ nome: Miguel Pereira
+ email: candidato@seed.com
+ password_digest: <%= Conta.digest('password')%>
+ activo: true
+ ativado_em: <%= Time.zone.now %>
+ tipo: Candidato
+
+<% 30.times do |n| %>
+entidade<%=n%>:
+ nome: <%="Entidade #{n}"%>
+ email: <%="entidade#{n}@seed.com"%>
+ password_digest: <%= Conta.digest('password')%>
+ activo: true
+ ativado_em: <%= Time.zone.now %>
+ tipo: Entidade
+<%end%>
+
+<% 30.times do |n| %>
+candidato<%=n%>:
+ nome: <%="Candidato #{n}"%>
+ email: <%="candidato#{n}@seed.com"%>
+ password_digest: <%= Conta.digest('password')%>
+ activo: true
+ ativado_em: <%= Time.zone.now %>
+ tipo: Candidato
+<%end%>

@@ -1,7 +1,31 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  quantia: MyString
-
-two:
-  quantia: MyString
+---
+salarios_001:
+  id: 1
+  quantia: 500 - 750
+  created_at: '2017-06-22 15:13:04.475256'
+  updated_at: '2017-06-22 15:13:04.475256'
+salarios_002:
+  id: 2
+  quantia: 750 - 1000
+  created_at: '2017-06-22 15:13:04.485881'
+  updated_at: '2017-06-22 15:13:04.485881'
+salarios_003:
+  id: 3
+  quantia: 1000 - 1250
+  created_at: '2017-06-22 15:13:04.494082'
+  updated_at: '2017-06-22 15:13:04.494082'
+salarios_004:
+  id: 4
+  quantia: 1250 - 1500
+  created_at: '2017-06-22 15:13:04.503667'
+  updated_at: '2017-06-22 15:13:04.503667'
+salarios_005:
+  id: 5
+  quantia: 1500 - 1750
+  created_at: '2017-06-22 15:13:04.511595'
+  updated_at: '2017-06-22 15:13:04.511595'
+salarios_006:
+  id: 6
+  quantia: 1750 - 2000
+  created_at: '2017-06-22 15:13:04.519528'
+  updated_at: '2017-06-22 15:13:04.519528'

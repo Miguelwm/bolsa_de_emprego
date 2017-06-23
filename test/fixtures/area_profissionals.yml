@@ -1,7 +1,11 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  area: MyString
-
-two:
-  area: MyString
+---
+area_profissionals_001:
+  id: 1
+  area: Designer
+  created_at: '2017-06-22 15:13:03.906646'
+  updated_at: '2017-06-22 15:13:03.906646'
+area_profissionals_002:
+  id: 2
+  area: Programador Web
+  created_at: '2017-06-22 15:13:03.910608'
+  updated_at: '2017-06-22 15:13:03.910608'

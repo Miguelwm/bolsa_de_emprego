@@ -1,23 +1,718 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  nascimento: 2017-03-01
-  bi: MyString
-  apresentacao: MyText
-  habilitacao: MyText
-  experiencia: MyText
-  perfil: one
-  area_profissional: one
-  nivel_habilitacao: one
-  situacao_profissional: one
-
-two:
-  nascimento: 2017-03-01
-  bi: MyString
-  apresentacao: MyText
-  habilitacao: MyText
-  experiencia: MyText
-  perfil: two
-  area_profissional: two
-  nivel_habilitacao: two
-  situacao_profissional: two
+---
+candidatos_001:
+  id: 1
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Incompetente
+  experiencia: Nenhuma
+  cv: 100x150.png
+  perfil_id: 2
+  area_profissional_id: 2
+  nivel_habilitacao_id: 2
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:04.335117'
+  updated_at: '2017-06-22 15:13:04.335117'
+  user: 
+candidatos_002:
+  id: 2
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Dolore magni sapiente omnis saepe fuga aspernatur.
+  experiencia: Et velit ea maxime voluptate consequatur illum sit.
+  cv: 100x150.png
+  perfil_id: 53
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:23.49665'
+  updated_at: '2017-06-22 15:13:23.49665'
+  user: 
+candidatos_003:
+  id: 3
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Itaque dolorum quia eum dolore laborum natus.
+  experiencia: Magni hic ut doloremque id.
+  cv: 100x150.png
+  perfil_id: 54
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:23.759272'
+  updated_at: '2017-06-22 15:13:23.759272'
+  user: 
+candidatos_004:
+  id: 4
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Nam soluta et et et voluptatem praesentium consequatur rem.
+  experiencia: Eum cum ut iure quae laudantium.
+  cv: 100x150.png
+  perfil_id: 55
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:24.078978'
+  updated_at: '2017-06-22 15:13:24.078978'
+  user: 
+candidatos_005:
+  id: 5
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Veniam atque veritatis id facere.
+  experiencia: Est et et deserunt non rerum itaque repudiandae cumque est.
+  cv: 100x150.png
+  perfil_id: 56
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:24.378325'
+  updated_at: '2017-06-22 15:13:24.378325'
+  user: 
+candidatos_006:
+  id: 6
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Harum dignissimos ratione labore sint corporis et provident voluptates
+    asperiores.
+  experiencia: Pariatur sequi et ut odit.
+  cv: 100x150.png
+  perfil_id: 57
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:24.68184'
+  updated_at: '2017-06-22 15:13:24.68184'
+  user: 
+candidatos_007:
+  id: 7
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Soluta eveniet modi rerum saepe aut.
+  experiencia: Autem molestiae commodi quod laboriosam laborum.
+  cv: 100x150.png
+  perfil_id: 58
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:24.969678'
+  updated_at: '2017-06-22 15:13:24.969678'
+  user: 
+candidatos_008:
+  id: 8
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Est rerum quis excepturi tempora dolorem mollitia reiciendis quaerat.
+  experiencia: Recusandae reiciendis est aperiam ea aliquam molestiae consequuntur
+    blanditiis odio.
+  cv: 100x150.png
+  perfil_id: 59
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:25.282543'
+  updated_at: '2017-06-22 15:13:25.282543'
+  user: 
+candidatos_009:
+  id: 9
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Ratione nihil et quis dignissimos ex sunt ut quibusdam.
+  experiencia: Iusto quos sequi omnis fuga et dolorem.
+  cv: 100x150.png
+  perfil_id: 60
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:25.57597'
+  updated_at: '2017-06-22 15:13:25.57597'
+  user: 
+candidatos_010:
+  id: 10
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Perferendis ut consequuntur assumenda quis.
+  experiencia: Commodi illum error maiores nihil.
+  cv: 100x150.png
+  perfil_id: 61
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:26.061026'
+  updated_at: '2017-06-22 15:13:26.061026'
+  user: 
+candidatos_011:
+  id: 11
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Illum accusantium consequatur et dolor ratione.
+  experiencia: Velit ullam voluptate qui dolores maxime.
+  cv: 100x150.png
+  perfil_id: 62
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:26.394948'
+  updated_at: '2017-06-22 15:13:26.394948'
+  user: 
+candidatos_012:
+  id: 12
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Omnis eum rerum quis consequuntur in quisquam nemo.
+  experiencia: Ratione consequatur corporis in dolores nisi dolore saepe.
+  cv: 100x150.png
+  perfil_id: 63
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:26.709693'
+  updated_at: '2017-06-22 15:13:26.709693'
+  user: 
+candidatos_013:
+  id: 13
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Eum impedit blanditiis odit rerum.
+  experiencia: Ad eum facilis error dolorem ipsum numquam aut.
+  cv: 100x150.png
+  perfil_id: 64
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:26.982569'
+  updated_at: '2017-06-22 15:13:26.982569'
+  user: 
+candidatos_014:
+  id: 14
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Rem dolorem sint officiis eum et laudantium.
+  experiencia: Qui eligendi mollitia dolorem aspernatur reiciendis recusandae vel
+    illo.
+  cv: 100x150.png
+  perfil_id: 65
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:27.283064'
+  updated_at: '2017-06-22 15:13:27.283064'
+  user: 
+candidatos_015:
+  id: 15
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Aperiam saepe quis consequatur inventore eaque laudantium quia.
+  experiencia: Mollitia enim eum voluptatum laboriosam cupiditate suscipit rem.
+  cv: 100x150.png
+  perfil_id: 66
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:27.570045'
+  updated_at: '2017-06-22 15:13:27.570045'
+  user: 
+candidatos_016:
+  id: 16
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Illo cum quod odit rerum sed id natus quia.
+  experiencia: Unde id quis sit odio sapiente rerum.
+  cv: 100x150.png
+  perfil_id: 67
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:27.884713'
+  updated_at: '2017-06-22 15:13:27.884713'
+  user: 
+candidatos_017:
+  id: 17
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Labore est quis debitis voluptas fugit laboriosam modi dolor.
+  experiencia: Error amet incidunt qui totam quam molestiae.
+  cv: 100x150.png
+  perfil_id: 68
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:28.169932'
+  updated_at: '2017-06-22 15:13:28.169932'
+  user: 
+candidatos_018:
+  id: 18
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Vel possimus nisi ut itaque beatae cum ut voluptatum.
+  experiencia: Minima tempore consequatur mollitia consequuntur.
+  cv: 100x150.png
+  perfil_id: 69
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:28.475886'
+  updated_at: '2017-06-22 15:13:28.475886'
+  user: 
+candidatos_019:
+  id: 19
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Et harum iste nisi minima.
+  experiencia: Natus et est aliquid sed fuga beatae.
+  cv: 100x150.png
+  perfil_id: 70
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:28.769256'
+  updated_at: '2017-06-22 15:13:28.769256'
+  user: 
+candidatos_020:
+  id: 20
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Omnis reiciendis occaecati dolore autem.
+  experiencia: Omnis repellat illo sint et voluptas ea velit voluptatibus.
+  cv: 100x150.png
+  perfil_id: 71
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:29.071684'
+  updated_at: '2017-06-22 15:13:29.071684'
+  user: 
+candidatos_021:
+  id: 21
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Ratione quo reiciendis repellat qui odit.
+  experiencia: Nesciunt et officiis sed dolor accusantium iusto.
+  cv: 100x150.png
+  perfil_id: 72
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:29.360657'
+  updated_at: '2017-06-22 15:13:29.360657'
+  user: 
+candidatos_022:
+  id: 22
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Adipisci dolor fugit praesentium cumque quia molestiae.
+  experiencia: Et est harum id ut.
+  cv: 100x150.png
+  perfil_id: 73
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:29.663281'
+  updated_at: '2017-06-22 15:13:29.663281'
+  user: 
+candidatos_023:
+  id: 23
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Quaerat aut qui cum et.
+  experiencia: Et qui modi cupiditate accusantium aspernatur veniam.
+  cv: 100x150.png
+  perfil_id: 74
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:29.937561'
+  updated_at: '2017-06-22 15:13:29.937561'
+  user: 
+candidatos_024:
+  id: 24
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Dolores iusto voluptatum consequatur voluptas labore delectus eos facere.
+  experiencia: Voluptas expedita recusandae suscipit quaerat et ut.
+  cv: 100x150.png
+  perfil_id: 75
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:30.289354'
+  updated_at: '2017-06-22 15:13:30.289354'
+  user: 
+candidatos_025:
+  id: 25
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: At iste aliquam corrupti est reiciendis.
+  experiencia: Voluptatibus doloribus praesentium aut libero est.
+  cv: 100x150.png
+  perfil_id: 76
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:30.610551'
+  updated_at: '2017-06-22 15:13:30.610551'
+  user: 
+candidatos_026:
+  id: 26
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Minus et cum sint aliquam rem velit quaerat esse quam.
+  experiencia: Rerum fugit reprehenderit ut est blanditiis dolores distinctio.
+  cv: 100x150.png
+  perfil_id: 77
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:30.936218'
+  updated_at: '2017-06-22 15:13:30.936218'
+  user: 
+candidatos_027:
+  id: 27
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Vitae quis dolorem consequuntur aperiam id hic quam omnis.
+  experiencia: Commodi dolores iure ut enim quisquam aspernatur voluptas.
+  cv: 100x150.png
+  perfil_id: 78
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:31.231142'
+  updated_at: '2017-06-22 15:13:31.231142'
+  user: 
+candidatos_028:
+  id: 28
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Ut exercitationem ducimus aliquid accusantium officia.
+  experiencia: Ut quo sequi corrupti tempore aspernatur ex nemo.
+  cv: 100x150.png
+  perfil_id: 79
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:31.487544'
+  updated_at: '2017-06-22 15:13:31.487544'
+  user: 
+candidatos_029:
+  id: 29
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Eos minus rerum non voluptatem totam vel maxime qui quibusdam.
+  experiencia: Iste sunt dicta quae cumque aspernatur mollitia odio voluptatem.
+  cv: 100x150.png
+  perfil_id: 80
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:31.769685'
+  updated_at: '2017-06-22 15:13:31.769685'
+  user: 
+candidatos_030:
+  id: 30
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Est maxime ea accusamus quis et mollitia.
+  experiencia: Ea totam nihil officiis repudiandae labore et voluptatibus.
+  cv: 100x150.png
+  perfil_id: 81
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:32.088921'
+  updated_at: '2017-06-22 15:13:32.088921'
+  user: 
+candidatos_031:
+  id: 31
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Corporis quibusdam assumenda quisquam consectetur veniam impedit numquam.
+  experiencia: Officiis enim voluptas illo magni omnis.
+  cv: 100x150.png
+  perfil_id: 82
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:32.38851'
+  updated_at: '2017-06-22 15:13:32.38851'
+  user: 
+candidatos_032:
+  id: 32
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Dolorum et explicabo dolore voluptatem alias.
+  experiencia: Similique nihil incidunt qui accusamus eaque non dicta.
+  cv: 100x150.png
+  perfil_id: 83
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:32.668455'
+  updated_at: '2017-06-22 15:13:32.668455'
+  user: 
+candidatos_033:
+  id: 33
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Iusto consequuntur aut eveniet architecto qui nemo error minus.
+  experiencia: Blanditiis facilis in ratione qui.
+  cv: 100x150.png
+  perfil_id: 84
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:32.970617'
+  updated_at: '2017-06-22 15:13:32.970617'
+  user: 
+candidatos_034:
+  id: 34
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Numquam incidunt laborum distinctio ducimus.
+  experiencia: Ut unde quidem autem a vel omnis nihil praesentium.
+  cv: 100x150.png
+  perfil_id: 85
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:33.283121'
+  updated_at: '2017-06-22 15:13:33.283121'
+  user: 
+candidatos_035:
+  id: 35
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Est eligendi nobis id est enim quia.
+  experiencia: Blanditiis nemo sunt omnis consequuntur magni.
+  cv: 100x150.png
+  perfil_id: 86
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:33.581482'
+  updated_at: '2017-06-22 15:13:33.581482'
+  user: 
+candidatos_036:
+  id: 36
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Sint iste voluptatem non quae ex nemo aut aliquid labore.
+  experiencia: Aut rerum cumque molestiae quam et vero qui expedita velit.
+  cv: 100x150.png
+  perfil_id: 87
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:33.854046'
+  updated_at: '2017-06-22 15:13:33.854046'
+  user: 
+candidatos_037:
+  id: 37
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Sapiente aut aut asperiores iste ex.
+  experiencia: Impedit est provident placeat ipsa.
+  cv: 100x150.png
+  perfil_id: 88
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:34.151549'
+  updated_at: '2017-06-22 15:13:34.151549'
+  user: 
+candidatos_038:
+  id: 38
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Sequi consequuntur maxime at possimus.
+  experiencia: Reprehenderit et id dolorum optio est quia non.
+  cv: 100x150.png
+  perfil_id: 89
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:34.49616'
+  updated_at: '2017-06-22 15:13:34.49616'
+  user: 
+candidatos_039:
+  id: 39
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Dolore fuga eum totam quidem accusamus consequatur quis repudiandae.
+  experiencia: Ut id maxime necessitatibus dolorem.
+  cv: 100x150.png
+  perfil_id: 90
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:34.760454'
+  updated_at: '2017-06-22 15:13:34.760454'
+  user: 
+candidatos_040:
+  id: 40
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Eveniet omnis et nam voluptatum.
+  experiencia: Aliquam qui in aperiam sed et.
+  cv: 100x150.png
+  perfil_id: 91
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:35.056738'
+  updated_at: '2017-06-22 15:13:35.056738'
+  user: 
+candidatos_041:
+  id: 41
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Laudantium repudiandae enim autem accusamus saepe vitae.
+  experiencia: Corrupti officia voluptas nisi veniam.
+  cv: 100x150.png
+  perfil_id: 92
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:35.395306'
+  updated_at: '2017-06-22 15:13:35.395306'
+  user: 
+candidatos_042:
+  id: 42
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Ducimus modi ut corporis sit eum.
+  experiencia: Et error fugit voluptas sint.
+  cv: 100x150.png
+  perfil_id: 93
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:35.663171'
+  updated_at: '2017-06-22 15:13:35.663171'
+  user: 
+candidatos_043:
+  id: 43
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Voluptatibus nihil incidunt modi maxime inventore fuga sequi et iste.
+  experiencia: Modi qui consequatur nemo quam.
+  cv: 100x150.png
+  perfil_id: 94
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:36.010022'
+  updated_at: '2017-06-22 15:13:36.010022'
+  user: 
+candidatos_044:
+  id: 44
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Tempora et dolores aliquam omnis dolore voluptatem dolorem dolores.
+  experiencia: Eos nulla culpa atque nostrum sit sequi.
+  cv: 100x150.png
+  perfil_id: 95
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:36.268766'
+  updated_at: '2017-06-22 15:13:36.268766'
+  user: 
+candidatos_045:
+  id: 45
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Doloribus non ut labore blanditiis accusamus.
+  experiencia: Laudantium sed commodi quia quis nobis assumenda tempora vel provident.
+  cv: 100x150.png
+  perfil_id: 96
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:36.577182'
+  updated_at: '2017-06-22 15:13:36.577182'
+  user: 
+candidatos_046:
+  id: 46
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Ut et deserunt amet quis ut consequatur.
+  experiencia: Odio repellendus aut quibusdam doloremque optio aut laborum.
+  cv: 100x150.png
+  perfil_id: 97
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:36.882347'
+  updated_at: '2017-06-22 15:13:36.882347'
+  user: 
+candidatos_047:
+  id: 47
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Facere maiores nobis ut earum amet sunt eaque.
+  experiencia: Doloribus maxime ut qui voluptatibus.
+  cv: 100x150.png
+  perfil_id: 98
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:37.161446'
+  updated_at: '2017-06-22 15:13:37.161446'
+  user: 
+candidatos_048:
+  id: 48
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Ab atque dolorum quidem magni.
+  experiencia: Est et asperiores excepturi praesentium.
+  cv: 100x150.png
+  perfil_id: 99
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:37.457698'
+  updated_at: '2017-06-22 15:13:37.457698'
+  user: 
+candidatos_049:
+  id: 49
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Repudiandae minima delectus voluptas rerum similique eum.
+  experiencia: Saepe similique nihil et est.
+  cv: 100x150.png
+  perfil_id: 100
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:37.764315'
+  updated_at: '2017-06-22 15:13:37.764315'
+  user: 
+candidatos_050:
+  id: 50
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Sunt assumenda aspernatur temporibus nulla molestias in modi vel.
+  experiencia: Tenetur facilis totam delectus culpa.
+  cv: 100x150.png
+  perfil_id: 101
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:38.06997'
+  updated_at: '2017-06-22 15:13:38.06997'
+  user: 
+candidatos_051:
+  id: 51
+  nascimento: '1991-05-01'
+  bi: '11564876'
+  habilitacao: Quos aspernatur nostrum rerum doloremque quia eaque aut et.
+  experiencia: Reprehenderit at illo tenetur amet ea.
+  cv: 100x150.png
+  perfil_id: 102
+  area_profissional_id: 1
+  nivel_habilitacao_id: 1
+  situacao_profissional_id: 1
+  created_at: '2017-06-22 15:13:38.357753'
+  updated_at: '2017-06-22 15:13:38.357753'
+  user: 

@@ -1,7 +1,46 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  tipo: MyString
-
-two:
-  tipo: MyString
+---
+tipo_contratos_001:
+  id: 1
+  tipo: Trabalho em termo certo
+  created_at: '2017-06-22 15:13:04.385261'
+  updated_at: '2017-06-22 15:13:04.385261'
+tipo_contratos_002:
+  id: 2
+  tipo: Trabalho em termo incerto
+  created_at: '2017-06-22 15:13:04.39412'
+  updated_at: '2017-06-22 15:13:04.39412'
+tipo_contratos_003:
+  id: 3
+  tipo: Trabalho sem termo
+  created_at: '2017-06-22 15:13:04.402438'
+  updated_at: '2017-06-22 15:13:04.402438'
+tipo_contratos_004:
+  id: 4
+  tipo: Trabalho de muita curta duração
+  created_at: '2017-06-22 15:13:04.411687'
+  updated_at: '2017-06-22 15:13:04.411687'
+tipo_contratos_005:
+  id: 5
+  tipo: Trabalho com trabalhador estrangeiro não comunitário ou apátrida
+  created_at: '2017-06-22 15:13:04.420363'
+  updated_at: '2017-06-22 15:13:04.420363'
+tipo_contratos_006:
+  id: 6
+  tipo: Trabalho a tempo parcial
+  created_at: '2017-06-22 15:13:04.427676'
+  updated_at: '2017-06-22 15:13:04.427676'
+tipo_contratos_007:
+  id: 7
+  tipo: Trabalho com pluralidade de empregadores
+  created_at: '2017-06-22 15:13:04.437059'
+  updated_at: '2017-06-22 15:13:04.437059'
+tipo_contratos_008:
+  id: 8
+  tipo: Trabalho intermitente
+  created_at: '2017-06-22 15:13:04.444499'
+  updated_at: '2017-06-22 15:13:04.444499'
+tipo_contratos_009:
+  id: 9
+  tipo: Trabalho em comissão de serviço
+  created_at: '2017-06-22 15:13:04.453361'
+  updated_at: '2017-06-22 15:13:04.453361'

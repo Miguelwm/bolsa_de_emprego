@@ -1,7 +1,21 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  situacao: MyString
-
-two:
-  situacao: MyString
+---
+situacao_profissionals_001:
+  id: 1
+  situacao: Desempregado
+  created_at: '2017-06-22 15:13:03.998556'
+  updated_at: '2017-06-22 15:13:03.998556'
+situacao_profissionals_002:
+  id: 2
+  situacao: Empregado
+  created_at: '2017-06-22 15:13:04.010649'
+  updated_at: '2017-06-22 15:13:04.010649'
+situacao_profissionals_003:
+  id: 3
+  situacao: Empregado Part-time
+  created_at: '2017-06-22 15:13:04.02015'
+  updated_at: '2017-06-22 15:13:04.02015'
+situacao_profissionals_004:
+  id: 4
+  situacao: Estudante
+  created_at: '2017-06-22 15:13:04.028295'
+  updated_at: '2017-06-22 15:13:04.028295'
