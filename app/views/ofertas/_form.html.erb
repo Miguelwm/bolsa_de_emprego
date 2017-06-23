@@ -5,8 +5,8 @@
 
     <%= f.input :descricao, label: 'Descrição' %>
 
-    <%= f.input :val_inicio, label: 'Validade Inicio', as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d/%m/%Y') }%>
-    <%= f.input :val_fim, label: 'Validade fim', as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d/%m/%Y') }%>
+    <%= f.input :val_inicio, label: 'Validade Inicio', as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%Y/%m/%d') }%>
+    <%= f.input :val_fim, label: 'Validade fim', as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%Y/%m/%d') }%>
 
     <%= f.input :foto, label: 'Fotografia' %>
 
@@ -33,6 +33,6 @@
 
   <script type="text/javascript">
   $(document).ready(function(){
-  $('.datepicker').datepicker();
+  $('.datepicker').datepicker({format: 'yyyy/mm/dd'});
   });
   </script>

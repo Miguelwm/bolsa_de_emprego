@@ -7,7 +7,6 @@
 
         <%= c.input :email, placeholder: 'email@example.com' %>
 
-      <b><%= "Fotografia: " %> </b>
       <%= p.input :foto, label: 'Fotografia' %><br>
 
       <%= p.input :morada, placeholder: 'Morada'%>
@@ -26,7 +25,7 @@
 
 
 
-    <%= f.input :nascimento, label: 'Data de nascimento', as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d/%m/%Y') }%>
+    <%= f.input :nascimento, label: 'Data de nascimento', as: :string, input_html: { class: "datepicker" }%>
 
     <%= f.input :bi, label: 'Bilhete de Identidade'%>
     <%= f.input :cv, label: 'Curriculum Vitae'%>
@@ -67,6 +66,6 @@
 
   <script type="text/javascript">
   $(document).ready(function(){
-    $('.datepicker').datepicker();
+    $('.datepicker').datepicker({format: 'yyyy/mm/dd'});
   });
 </script>

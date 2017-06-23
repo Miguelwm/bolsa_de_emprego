@@ -16,6 +16,7 @@
         <b>Tipo</b><br>
         <%= @conta.tipo %>
       </div>
+    <% if !@conta.admin? %>
     <div class ="activo">
       <b>Activo</b><br>
       <%= actividade_conta(@conta) %>
@@ -24,6 +25,7 @@
       <b>Destaque</b><br>
       <%= destaque_conta(@conta) %>
     </div>
+    <%end%>
   </div>
 </div>
 <br>

@@ -29,7 +29,7 @@
 
 
 
-    <%= f.input :nascimento, label: 'Data de nascimento', as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d/%m/%Y') }%>
+    <%= f.input :nascimento, label: 'Data de nascimento', as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%Y/%m/%d') }%>
 
     <%= f.input :bi, label: 'Bilhete de Identidade'%>
     <%= f.input :cv, label: 'Curriculum Vitae'%>
@@ -63,7 +63,7 @@
     <%= c.input :entidades, label: "Pretende receber notificações de novas entidades?" %>
     <%= c.input :ofertas, label: "Pretende receber notificações de novas ofertas?" %>
     <br><br>
-    
+
     <%= f.submit yield(:button_text), class: "btn btn-primary" %>
       <% end %>
     <% end %>
@@ -73,6 +73,6 @@
 
   <script type="text/javascript">
   $(document).ready(function(){
-    $('.datepicker').datepicker();
+    $('.datepicker').datepicker({format: 'yyyy/mm/dd'});
   });
 </script>

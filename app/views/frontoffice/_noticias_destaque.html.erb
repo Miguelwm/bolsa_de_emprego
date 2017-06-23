@@ -1,5 +1,5 @@
   <h3>Noticias em destaque</h3>
-    <% @ultimas_noticias.each do |noticia| %>
+    <% @noticias_destaque.each do |noticia| %>
       <div class="col-md-3">
         <div class="foto">
           <%= image_tag noticia.foto.url if noticia.foto? %><br>

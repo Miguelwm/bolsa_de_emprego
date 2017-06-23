@@ -4,7 +4,7 @@
     <%= f.input :titulo, label: 'Titulo'%>
     <b>Sumário</b><br>
     <%= f.text_area :sumario, label: 'Sumario', :class => "tinymce" %><br>
-    <%= f.input :data, label: 'Data', as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d/%m/%Y') }%>
+    <%= f.input :data, label: 'Data', as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%Y/%m/%d') }%>
     <b>Texto</b><br>
     <%= f.text_area :texto, label: 'Texto', :class => "tinymce" %><br>
 
@@ -20,6 +20,6 @@
 
   <script type="text/javascript">
   $(document).ready(function(){
-    $('.datepicker').datepicker();
+    $('.datepicker').datepicker({format: 'yyyy/mm/dd'});
   });
 </script>
