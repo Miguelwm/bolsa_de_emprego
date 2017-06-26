@@ -5,8 +5,8 @@
 
     <%= f.input :descricao, label: 'Descrição' %>
 
-    <%= f.input :val_inicio, label: 'Validade Inicio', as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%Y/%m/%d') }%>
-    <%= f.input :val_fim, label: 'Validade fim', as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%Y/%m/%d') }%>
+    <%= f.input :val_inicio, label: 'Validade Inicio', as: :string, input_html: { class: "datepicker" }%>
+    <%= f.input :val_fim, label: 'Validade fim', as: :string, input_html: { class: "datepicker" }%>
 
     <%= f.input :foto, label: 'Fotografia' %>
 

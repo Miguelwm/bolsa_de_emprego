@@ -70,11 +70,12 @@ class ContasController < ApplicationController
 
   def update_password
     @conta = Conta.find(params[:id])
-    if @conta.update_attributes(conta_params)
-      redirect_to @conta
-    else
-      render 'edit_password'
-    end
+      if @conta.update_attributes(conta_params)
+        redirect_to @conta
+      else
+        render 'edit_password'
+      end
+
   end
 
 

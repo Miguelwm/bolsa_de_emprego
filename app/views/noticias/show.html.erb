@@ -43,18 +43,12 @@
 </div>
 
 
-<br>
+<br><br>
 <div class="row">
-  <div class="col-md-1">
-    <%=button_to 'Editar', edit_noticia_path(@noticia), method: :get%>
-  </div>
-  <div class="col-md-1 col-md-offset-1">
-    <%=button_to 'Apagar', @conta, method: :delete%>
-  </div>
-  <div class="col-md-1">
-    <%=button_to 'Inserir', new_noticia_path, method: :get%>
-  </div>
-  <div class="col-md-1">
-    <%=button_to 'Listagem', noticias_path, method: :get%>
+  <div class="col-md-12">
+    <%=button_to 'Editar', edit_noticia_path(@noticia), method: :get, class:"btn btn-success"%>&ensp;
+    <%=button_to 'Apagar', @conta, method: :delete, class:"btn btn-danger"%>&ensp;&ensp;
+    <%=button_to 'Inserir', new_noticia_path, method: :get, class:"btn btn-success"%>&ensp;
+    <%=button_to 'Listagem', noticias_path, method: :get, class:"btn btn-default"%>
   </div>
 </div>

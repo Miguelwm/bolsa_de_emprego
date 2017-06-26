@@ -140,7 +140,7 @@ end
 
   nif = rand(999999999)
 
-  perfil.create_entidade!(nif: nif, actividade_profissional_id: 1)
+  perfil.create_entidade!(nif: nif, actividade_profissional_id: rand(1..3))
 
 end
 
@@ -172,7 +172,7 @@ end
                           bi: "11564876",
                           habilitacao: habilitacao,
                           experiencia: experiencia,
-                          area_profissional_id: 1,
+                          area_profissional_id: rand(1..2),
                           nivel_habilitacao_id: 1,
                           situacao_profissional_id: 1,
                           cv: File.open(File.join(Rails.root, "/app/assets/images/seed/100x150.png")))

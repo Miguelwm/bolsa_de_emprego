@@ -1,1 +1,43 @@
-
+<div class="row">
+  <div class="col-md-12">
+    <div class="col-md-12 col-md-offset-5">
+      <br><%= link_to "Newsletter Manual", newsletter_path, class:@class_params %>
+    </div>
+    <div class="col-md-12">
+      <br>
+    </div>
+    <div class="col-md-4">
+    <%  x = Conta.where(tipo:"Candidato").where(novo:true) %>
+    <h3>Candidatos novos(<%=x.count%>):</h3><br>
+    <% if x.any? %>
+     <% x.each do |candidato| %>
+      <%=candidato.nome%><br>
+     <%end%>
+     <%else%>
+     Não existem candidatos novos
+    <%end%>
+   </div>
+  <div class="col-md-4">
+    <% y = Conta.where(tipo:"Entidade").where(novo:true) %>
+    <h3>Entidades novas(<%=y.count%>):</h3><br>
+    <% if y.any?%>
+      <% y.each do |entidade| %>
+        <%=entidade.nome%><br>
+      <%end%>
+      <%else%>
+      Não existem entidades novas
+      <%end%>
+  </div>
+    <div class="col-md-4">
+    <% z = Oferta.where(novo:true) %>
+    <h3>Ofertas novas(<%=z.count%>):</h3><br>
+    <% if z.any? %>
+      <% z.each do |oferta| %>
+        <%=oferta.titulo%>, <%=oferta.entidade.perfil.conta.nome%><br>
+      <%end%>
+      <%else%>
+      Não existem ofertas novas
+      <%end%>
+    </div>
+  </div>
+</div>

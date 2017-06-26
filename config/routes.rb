@@ -64,11 +64,12 @@ Rails.application.routes.draw do
   scope 'backoffice/' do
     get    'login',    to: 'sessions#new'
     get    'home',     to: 'backoffice#home', as: 'backhome'
-
+    get    'newsletter', to: 'backoffice#newsletter', as:'newsletter'
     resources :contas, path: 'utilizadores' do
       collection do
         get   'alterarpassword/:id', to: 'contas#edit_password' ,as: 'alterarpassword'
         patch  'alterarpassword/:id', to: 'contas#update_password'
+        put  'alterarpassword/:id', to: 'contas#update_password'
 
       end
     end

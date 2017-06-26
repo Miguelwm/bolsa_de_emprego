@@ -20,6 +20,6 @@ module WillPaginateHelper
   end
 
   def js_will_paginate(collection, options = {})
-    will_paginate(collection, options.merge(:renderer => WillPaginateHelper::WillPaginateJSLinkRenderer))
+    will_paginate(collection, options.merge(:renderer => WillPaginateHelper::WillPaginateJSLinkRenderer, :previous_label => "&#8592; Anterior |", :next_label =>"| Próximo &#8594;"))
   end
 end
