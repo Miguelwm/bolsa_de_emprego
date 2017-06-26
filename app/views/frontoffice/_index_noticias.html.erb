@@ -5,7 +5,7 @@
 </div>
 
 
-  <div class="col-md-12">
+  <div class="col-md-12" id="collection_index">
     <% @frontoffice.each do |noticia| %>
       <div class="col-md-2">
           <%= image_tag noticia.foto.url if noticia.foto? %><br>
@@ -20,4 +20,14 @@
       </div>
     <% end %>
   </div>
-<%= js_will_paginate @frontoffice %>
+<div id="collection_paginator">
+<%= will_paginate @frontoffice %>
+</div>
+<script type="text/javascript">
+  $(document).ready( function() {
+    $('#collection_paginator a').each( function() {
+      $(this).attr( 'data-remote', 'true' )
+      $(this).attr( 'data-replace', '#collection_index' )
+    })
+  })
+</script>

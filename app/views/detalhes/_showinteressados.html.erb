@@ -2,6 +2,7 @@
   <div class="col-md-12">
 <% @interessados.each do |perfil| %>
 <% candidato = perfil.candidato %>
+<div id="collection_index">
   <div class="col-md-2">
     <%= image_tag perfil.foto.url if perfil.foto? %><br><br>
   </div>
@@ -14,9 +15,20 @@
   <div class="col-md-12">
     <br>
   </div>
+</div>
 <% end %>
 </div>
-<%= js_will_paginate @interessados %>
+<div id="collection_paginator">
+<%= will_paginate @interessados %>
+</div>
+<script type="text/javascript">
+  $(document).ready( function() {
+    $('#collection_paginator a').each( function() {
+      $(this).attr( 'data-remote', 'true' )
+      $(this).attr( 'data-replace', '#collection_index' )
+    })
+  })
+</script>
 <% else %>
 <div class="col-md-9">
 <br>

@@ -163,7 +163,9 @@ form.button_to {
 
 @media (max-width: 991px) {
   div {
-    text-align: center;
+    align:center;
+    text-align: left;
+    margin: auto;
   }
 
 }

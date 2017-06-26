@@ -3,7 +3,7 @@
      <h3>Não existem ofertas que coincidam com a sua pesquisa</h3><br><br>
   <% end %>
 
-  <div class="col-md-12">
+  <div class="col-md-12" id="collection_index">
     <% @ofertas.where(activo:true).each do |oferta| %>
 
       <div class="col-md-2">
@@ -21,7 +21,7 @@
             <p>
           </div>
         <% end %>
-        <%@oferta=oferta%>
+        <%@oferta=oferta%> 
         <%= render 'form_candidatura' if logged_in? && is_candidato?%>
       </div>
       <div class="col-md-12">
@@ -31,4 +31,14 @@
     <% end %>
     </div>
   </div>
-<%= js_will_paginate @ofertas %>
+<div id="collection_paginator">
+<%= will_paginate @ofertas %>
+</div>
+<script type="text/javascript">
+  $(document).ready( function() {
+    $('#collection_paginator a').each( function() {
+      $(this).attr( 'data-remote', 'true' )
+      $(this).attr( 'data-replace', '#collection_index' )
+    })
+  })
+</script>

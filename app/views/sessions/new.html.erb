@@ -2,7 +2,7 @@
 <h1>Autenticar</h1>
 <% if !logged_in? %>
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-6 col-md-offset-3 col-xs-12 col-xs-offset-0">
     <%= simple_form_for(:session, url: login_path) do |f| %>
 
       <%= f.input :email, placeholder: 'email@example.com' %>

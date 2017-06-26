@@ -1,5 +1,6 @@
 <% if @ofertas_activas.any? %>
 <% @ofertas_activas.each do |oferta| %>
+<div id="collection_index">
   <div class="col-md-2">
       <%= image_tag oferta.foto.url if oferta.foto? %><br>
   </div>
@@ -12,9 +13,19 @@
   <div class="col-md-12">
     <br>
  </div>
+ </div>
 <% end %>
-<%= js_will_paginate @ofertas_activas %>
-
+<div id="collection_paginator">
+<%= will_paginate @ofertas_activas %>
+</div>
+<script type="text/javascript">
+  $(document).ready( function() {
+    $('#collection_paginator a').each( function() {
+      $(this).attr( 'data-remote', 'true' )
+      $(this).attr( 'data-replace', '#collection_index' )
+    })
+  })
+</script>
 <% else %>
 <div class="col-md-9">
 <br>

@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<div class="col-md-12" id="collection_index">
   <% if @candidatos.blank? && (params[:search] || params[:searcharea]) %>
      <h3>Não existem candidatos que coincidam com a sua pesquisa</h3><br><br>
   <% end %>
@@ -25,4 +25,15 @@
   </div>
 </div>
 
-<%= js_will_paginate @candidatos%>
+<div id="collection_paginator">
+  <%= will_paginate @candidatos%>
+</div>
+
+<script type="text/javascript">
+  $(document).ready( function() {
+    $('#collection_paginator a').each( function() {
+      $(this).attr( 'data-remote', 'true' )
+      $(this).attr( 'data-replace', '#collection_index' )
+    })
+  })
+</script>

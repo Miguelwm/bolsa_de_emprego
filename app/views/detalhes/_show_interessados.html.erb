@@ -1,4 +1,18 @@
 <ul>
+  <div id="collection_index">
   <%= render @perfils %>
+  </div>
 </ul>
-<%= js_will_paginate @perfils %>
+<div id="collection_paginator">
+<%= will_paginate @perfils %>
+</div>
+
+
+<script type="text/javascript">
+  $(document).ready( function() {
+    $('#collection_paginator a').each( function() {
+      $(this).attr( 'data-remote', 'true' )
+      $(this).attr( 'data-replace', '#collection_index' )
+    })
+  })
+</script>
