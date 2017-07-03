@@ -1,8 +1,5 @@
   <%= tinymce %>
 
-<%12.times.each do %>
-<div class="col-xs-1">1</div>
-<%end%>
   <%= simple_form_for(@entidade) do |f| %>
     <%= f.fields_for :perfil do |p| %>
       <%= p.fields_for :conta do |c| %>
