@@ -17,6 +17,7 @@
 //= require tinymce
 //= require moment
 //= require bootstrap-datepicker
+//= require serviceworker-companion
 //= require_tree .
 
 
@@ -30,3 +31,24 @@
 //     return false;
 //   });
 // });
+if ('serviceWorker' in navigator) {
+  console.log('Service Worker is supported');
+  navigator.serviceWorker.register('/serviceworker.js')
+    .then(function(registration) {
+      console.log('Successfully registered!', ':^)', registration);
+      registration.pushManager.subscribe({ userVisibleOnly: true })
+        .then(function(subscription) {
+            console.log('endpoint:', subscription.endpoint);
+        });
+  }).catch(function(error) {
+    console.log('Registration failed', ':^(', error);
+  });
+}
+
+if (!('PushManager' in window)) {
+   console.log('Push messaging isn\'t supported.');
+ }
+
+if (Notification.permission === 'denied') {
+  console.log('The user has blocked notifications.');
+}

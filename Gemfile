@@ -24,6 +24,8 @@ gem 'whenever', :require => false
 gem 'rufus-scheduler', '~> 3.4', '>= 3.4.2'
 gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
                               :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
+gem 'webpush'
+gem 'serviceworker-rails'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
