@@ -1,0 +1,16 @@
+
+{
+  "name": "Bolsa de Emprego",
+  "short_name": "BE",
+  "icons": [{
+    "src": "images/icon-192x192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }],
+  "start_url": "/",
+  "display": "standalone",
+  "gcm_sender_id": "1001375988604",
+  "gcm_user_visible_only": true
+}
+
+
