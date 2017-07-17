@@ -15,6 +15,10 @@ Rails.application.routes.draw do
 
     get 'frontoffice', to: 'frontoffice#front'
 
+    
+    post '/subscribe', to: 'subscriptions#create'
+    post '/push', to: 'push_notifications#create'
+
   scope 'frontoffice/' do
     get    'home', to: 'frontoffice#home'
 

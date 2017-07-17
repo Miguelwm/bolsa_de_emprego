@@ -52,3 +52,26 @@ if (!('PushManager' in window)) {
 if (Notification.permission === 'denied') {
   console.log('The user has blocked notifications.');
 }
+reg.pushManager.subscribe({ userVisibleOnly: true })
+  .then(function(subscription) {
+    $.post("/subscribe", { subscription: subscription.toJSON() });
+  });
+
+$(".webpush-button").on("click", (e) => {
+  navigator.serviceWorker.ready
+  .then((serviceWorkerRegistration) => {
+    serviceWorkerRegistration.pushManager.getSubscription()
+    .then((subscription) => {
+      $.post("/push", { subscription: subscription.toJSON(), message: "You clicked a button!" });
+    });
+  });
+
+reg.pushManager.subscribe({ userVisibleOnly: true })
+  .then(function(subscription) {
+    $.post("/subscribe", { subscription: subscription.toJSON() });
+  });
+});
+
+
+
+//= require serviceworker-companion
