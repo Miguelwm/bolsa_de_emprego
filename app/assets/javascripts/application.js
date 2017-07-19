@@ -20,17 +20,6 @@
 //= require serviceworker-companion
 //= require_tree .
 
-
-// $(function() {
-//   $("#products th a, #products .pagination a").live("click", function() {
-//     $.getScript(this.href);
-//     return false;
-//   });
-//   $("#products_search input").keyup(function() {
-//     $.get($("#products_search").attr("action"), $("#products_search").serialize(), null, "script");
-//     return false;
-//   });
-// });
 if ('serviceWorker' in navigator) {
   console.log('Service Worker is supported');
   navigator.serviceWorker.register('/serviceworker.js')
@@ -43,6 +32,12 @@ if ('serviceWorker' in navigator) {
   }).catch(function(error) {
     console.log('Registration failed', ':^(', error);
   });
+  navigator.serviceWorker.ready.then(function(reg) {
+    reg.pushManager.subscribe({ userVisibleOnly: true })
+      .then(function(subscription) {
+        $.post("/subscribe", { subscription: subscription.toJSON() });
+      });
+  });
 }
 
 if (!('PushManager' in window)) {
@@ -52,10 +47,7 @@ if (!('PushManager' in window)) {
 if (Notification.permission === 'denied') {
   console.log('The user has blocked notifications.');
 }
-reg.pushManager.subscribe({ userVisibleOnly: true })
-  .then(function(subscription) {
-    $.post("/subscribe", { subscription: subscription.toJSON() });
-  });
+
 
 $(".webpush-button").on("click", (e) => {
   navigator.serviceWorker.ready
